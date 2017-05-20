@@ -815,32 +815,31 @@
                                 <rect key="frame" x="20" y="64" width="374" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F3y-rs-K6i">
-                                    <size key="itemSize" width="92" height="120"/>
+                                    <size key="itemSize" width="100" height="125"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sport_cell" id="Xnz-Lg-ohE" customClass="SportViewCell" customModule="Diabetes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="108"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="92" height="108"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-SG-hXY">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JiV-mr-uFJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="92"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="92" id="ehN-2q-e0j"/>
-                                                                <constraint firstAttribute="width" constant="92" id="lW2-UO-Ajg"/>
+                                                                <constraint firstAttribute="height" constant="100" id="ehN-2q-e0j"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs7-Ai-Z41">
-                                                            <rect key="frame" x="0.0" y="92" width="92" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs7-Ai-Z41">
+                                                            <rect key="frame" x="0.0" y="100" width="100" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -854,7 +853,7 @@
                                             <constraint firstItem="GjS-SG-hXY" firstAttribute="leading" secondItem="Xnz-Lg-ohE" secondAttribute="leading" id="VBL-O1-Xyf"/>
                                             <constraint firstAttribute="bottom" secondItem="GjS-SG-hXY" secondAttribute="bottom" id="nee-tz-RWY"/>
                                         </constraints>
-                                        <size key="customSize" width="92" height="108"/>
+                                        <size key="customSize" width="100" height="125"/>
                                         <connections>
                                             <outlet property="sportImageView" destination="JiV-mr-uFJ" id="LEd-Vr-bFW"/>
                                             <outlet property="sportLabel" destination="Xs7-Ai-Z41" id="9RU-fu-sLC"/>
