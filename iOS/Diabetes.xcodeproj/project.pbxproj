@@ -17,6 +17,9 @@
 		64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1C1ED075660003780E /* SportViewCell.swift */; };
 		64C36D1F1ED078E30003780E /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1E1ED078E30003780E /* Sport.swift */; };
 		64C36D211ED079050003780E /* ChosenSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenSport.swift */; };
+		64C36D231ED0ACC70003780E /* ExerciseLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */; };
+		64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */; };
+		64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */; };
 		64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */; };
 		64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A11EC4A5170071E81B /* AddViewController.swift */; };
 		64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A31EC4A52D0071E81B /* InfoViewController.swift */; };
@@ -57,6 +60,9 @@
 		64C36D1C1ED075660003780E /* SportViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportViewCell.swift; path = ../SportViewCell.swift; sourceTree = "<group>"; };
 		64C36D1E1ED078E30003780E /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		64C36D201ED079050003780E /* ChosenSport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenSport.swift; sourceTree = "<group>"; };
+		64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLengthViewController.swift; sourceTree = "<group>"; };
+		64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseIntensityViewController.swift; sourceTree = "<group>"; };
+		64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
 		64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsSelectionViewController.swift; sourceTree = "<group>"; };
 		64EC04A11EC4A5170071E81B /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		64EC04A31EC4A52D0071E81B /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				64EC04A31EC4A52D0071E81B /* InfoViewController.swift */,
 				64EC04A91EC4AE430071E81B /* SplashViewController.swift */,
 				64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */,
+				64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */,
+				64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */,
+				64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */,
 				64C36D1E1ED078E30003780E /* Sport.swift */,
 				64C36D201ED079050003780E /* ChosenSport.swift */,
 			);
@@ -287,10 +296,13 @@
 				64C36D1F1ED078E30003780E /* Sport.swift in Sources */,
 				64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */,
 				642E61341EC1D06200F91556 /* AppDelegate.swift in Sources */,
+				64C36D231ED0ACC70003780E /* ExerciseLengthViewController.swift in Sources */,
 				64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */,
 				64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */,
 				642E61361EC1D06200F91556 /* HomeViewController.swift in Sources */,
 				64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */,
+				64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */,
+				64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */,
 				64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

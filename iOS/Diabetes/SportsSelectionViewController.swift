@@ -85,6 +85,15 @@ final class SportsSelectionViewController: UIViewController, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected: " + sports[indexPath.row].name)
+        performSegue(withIdentifier: "goToExerciseLength", sender: sports[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToExerciseLength" {
+            if let destination = segue.destination as? ExerciseLengthViewController {
+                destination.sport = sender as? Sport
+            }
+        }
     }
 
 }

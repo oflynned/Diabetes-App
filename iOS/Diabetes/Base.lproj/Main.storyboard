@@ -254,7 +254,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Finished"/>
                             <connections>
-                                <segue destination="49e-Tb-3d3" kind="show" id="o43-e9-mXV"/>
+                                <segue destination="49e-Tb-3d3" kind="show" id="7S0-YV-U9K"/>
                             </connections>
                         </button>
                         <sections>
@@ -531,10 +531,10 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Cbg-Js-TKW" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="fcG-FP-YX7" kind="relationship" relationship="viewControllers" id="LJC-ma-Fgh"/>
-                        <segue destination="Doh-6U-j3B" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="0nh-JZ-2HC" kind="relationship" relationship="viewControllers" id="dYP-wJ-n5r"/>
+                        <segue destination="Doh-6U-j3B" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="fcG-FP-YX7" kind="relationship" relationship="viewControllers" id="LJC-ma-Fgh"/>
+                        <segue destination="Cbg-Js-TKW" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -838,7 +838,7 @@
                                                                 <constraint firstAttribute="width" constant="92" id="lW2-UO-Ajg"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs7-Ai-Z41">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs7-Ai-Z41">
                                                             <rect key="frame" x="0.0" y="92" width="92" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
@@ -858,7 +858,6 @@
                                         <connections>
                                             <outlet property="sportImageView" destination="JiV-mr-uFJ" id="LEd-Vr-bFW"/>
                                             <outlet property="sportLabel" destination="Xs7-Ai-Z41" id="9RU-fu-sLC"/>
-                                            <segue destination="zsA-mY-otg" kind="show" id="1ER-FL-rut"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -875,6 +874,7 @@
                     <navigationItem key="navigationItem" title="Choose a Sport" id="C8i-SI-JLg"/>
                     <connections>
                         <outlet property="SportsCollectionView" destination="jUv-4T-uhg" id="mcM-K4-MfY"/>
+                        <segue destination="zsA-mY-otg" kind="show" identifier="goToExerciseLength" id="xXa-aY-TXJ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -883,7 +883,7 @@
         <!--Exercise Length-->
         <scene sceneID="Hfs-Q2-cZL">
             <objects>
-                <viewController id="zsA-mY-otg" sceneMemberID="viewController">
+                <viewController id="zsA-mY-otg" customClass="ExerciseLengthViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zMA-Jj-fsJ"/>
                         <viewControllerLayoutGuide type="bottom" id="hev-d2-5xU"/>
@@ -931,7 +931,7 @@
         <!--Exercise Intensity-->
         <scene sceneID="pNw-D8-gT3">
             <objects>
-                <viewController id="Z0O-oy-uLx" sceneMemberID="viewController">
+                <viewController id="Z0O-oy-uLx" customClass="ExerciseIntensityViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="otW-Rl-E7H"/>
                         <viewControllerLayoutGuide type="bottom" id="P0U-D4-5gr"/>
@@ -979,7 +979,7 @@
         <!--Exercise Details-->
         <scene sceneID="Zlh-Q7-V7K">
             <objects>
-                <viewController id="cpT-lO-T33" sceneMemberID="viewController">
+                <viewController id="cpT-lO-T33" customClass="ExerciseDetailsViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CTk-4V-GHh"/>
                         <viewControllerLayoutGuide type="bottom" id="Cw3-Xb-1UF"/>
