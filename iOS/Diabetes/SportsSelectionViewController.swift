@@ -41,7 +41,7 @@ final class SportsSelectionViewController: UIViewController, UICollectionViewDel
         
         // anaerobic
         sports.append(Sport(name: "Sprint Swimming", exercise: Sport.Exercise.anaerobic, image: "swimming"))
-        sports.append(Sport(name: "Weight Lifting", exercise: Sport.Exercise.anaerobic, image: "basketball"))
+        sports.append(Sport(name: "Weight Lifting", exercise: Sport.Exercise.anaerobic, image: "weight_lifting"))
         sports.append(Sport(name: "Body Building", exercise: Sport.Exercise.anaerobic, image: "weight_lifting"))
         sports.append(Sport(name: "Track", exercise: Sport.Exercise.anaerobic, image: "javelin"))
         sports.append(Sport(name: "Archery", exercise: Sport.Exercise.anaerobic, image: "archery"))
