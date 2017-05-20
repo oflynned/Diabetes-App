@@ -14,6 +14,10 @@
 		642E613D1EC1D06200F91556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642E613C1EC1D06200F91556 /* Assets.xcassets */; };
 		642E614B1EC1D06200F91556 /* DiabetesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E614A1EC1D06200F91556 /* DiabetesTests.swift */; };
 		642E61561EC1D06300F91556 /* DiabetesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61551EC1D06300F91556 /* DiabetesUITests.swift */; };
+		64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1C1ED075660003780E /* SportViewCell.swift */; };
+		64C36D1F1ED078E30003780E /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1E1ED078E30003780E /* Sport.swift */; };
+		64C36D211ED079050003780E /* ChosenSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenSport.swift */; };
+		64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */; };
 		64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A11EC4A5170071E81B /* AddViewController.swift */; };
 		64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A31EC4A52D0071E81B /* InfoViewController.swift */; };
 		64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A91EC4AE430071E81B /* SplashViewController.swift */; };
@@ -50,6 +54,10 @@
 		642E61511EC1D06200F91556 /* DiabetesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiabetesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		642E61551EC1D06300F91556 /* DiabetesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetesUITests.swift; sourceTree = "<group>"; };
 		642E61571EC1D06300F91556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64C36D1C1ED075660003780E /* SportViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportViewCell.swift; path = ../SportViewCell.swift; sourceTree = "<group>"; };
+		64C36D1E1ED078E30003780E /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		64C36D201ED079050003780E /* ChosenSport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenSport.swift; sourceTree = "<group>"; };
+		64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsSelectionViewController.swift; sourceTree = "<group>"; };
 		64EC04A11EC4A5170071E81B /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		64EC04A31EC4A52D0071E81B /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		64EC04A91EC4AE430071E81B /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 		642E61321EC1D06200F91556 /* Diabetes */ = {
 			isa = PBXGroup;
 			children = (
+				64C36D1C1ED075660003780E /* SportViewCell.swift */,
 				642E61331EC1D06200F91556 /* AppDelegate.swift */,
 				642E61351EC1D06200F91556 /* HomeViewController.swift */,
 				642E61371EC1D06200F91556 /* SettingsViewController.swift */,
@@ -112,6 +121,9 @@
 				64EC04A11EC4A5170071E81B /* AddViewController.swift */,
 				64EC04A31EC4A52D0071E81B /* InfoViewController.swift */,
 				64EC04A91EC4AE430071E81B /* SplashViewController.swift */,
+				64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */,
+				64C36D1E1ED078E30003780E /* Sport.swift */,
+				64C36D201ED079050003780E /* ChosenSport.swift */,
 			);
 			path = Diabetes;
 			sourceTree = "<group>";
@@ -270,11 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C36D211ED079050003780E /* ChosenSport.swift in Sources */,
 				642E61381EC1D06200F91556 /* SettingsViewController.swift in Sources */,
+				64C36D1F1ED078E30003780E /* Sport.swift in Sources */,
+				64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */,
 				642E61341EC1D06200F91556 /* AppDelegate.swift in Sources */,
 				64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */,
 				64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */,
 				642E61361EC1D06200F91556 /* HomeViewController.swift in Sources */,
+				64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */,
 				64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
