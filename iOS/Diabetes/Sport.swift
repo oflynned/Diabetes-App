@@ -11,7 +11,7 @@ import Foundation
 class Sport {
     enum Exercise {
         case aerobic
-        case anerobic
+        case anaerobic
         case mixed
     }
     
