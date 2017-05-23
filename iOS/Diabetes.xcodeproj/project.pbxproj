@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6411EF321ED450D10075889A /* UserExerciseMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */; };
 		642E61341EC1D06200F91556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61331EC1D06200F91556 /* AppDelegate.swift */; };
 		642E61361EC1D06200F91556 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61351EC1D06200F91556 /* HomeViewController.swift */; };
 		642E61381EC1D06200F91556 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61371EC1D06200F91556 /* SettingsViewController.swift */; };
@@ -16,7 +17,7 @@
 		642E61561EC1D06300F91556 /* DiabetesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61551EC1D06300F91556 /* DiabetesUITests.swift */; };
 		64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1C1ED075660003780E /* SportViewCell.swift */; };
 		64C36D1F1ED078E30003780E /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1E1ED078E30003780E /* Sport.swift */; };
-		64C36D211ED079050003780E /* ChosenSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenSport.swift */; };
+		64C36D211ED079050003780E /* ChosenExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenExercise.swift */; };
 		64C36D231ED0ACC70003780E /* ExerciseLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */; };
 		64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */; };
 		64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseMetaInfo.swift; sourceTree = "<group>"; };
 		642E61301EC1D06200F91556 /* Diabetes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diabetes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642E61331EC1D06200F91556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		642E61351EC1D06200F91556 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		642E61571EC1D06300F91556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64C36D1C1ED075660003780E /* SportViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportViewCell.swift; path = ../SportViewCell.swift; sourceTree = "<group>"; };
 		64C36D1E1ED078E30003780E /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
-		64C36D201ED079050003780E /* ChosenSport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenSport.swift; sourceTree = "<group>"; };
+		64C36D201ED079050003780E /* ChosenExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenExercise.swift; sourceTree = "<group>"; };
 		64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLengthViewController.swift; sourceTree = "<group>"; };
 		64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseIntensityViewController.swift; sourceTree = "<group>"; };
 		64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +134,8 @@
 				64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */,
 				64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */,
 				64C36D1E1ED078E30003780E /* Sport.swift */,
-				64C36D201ED079050003780E /* ChosenSport.swift */,
+				64C36D201ED079050003780E /* ChosenExercise.swift */,
+				6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */,
 			);
 			path = Diabetes;
 			sourceTree = "<group>";
@@ -291,7 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C36D211ED079050003780E /* ChosenSport.swift in Sources */,
+				64C36D211ED079050003780E /* ChosenExercise.swift in Sources */,
+				6411EF321ED450D10075889A /* UserExerciseMetaInfo.swift in Sources */,
 				642E61381EC1D06200F91556 /* SettingsViewController.swift in Sources */,
 				64C36D1F1ED078E30003780E /* Sport.swift in Sources */,
 				64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */,

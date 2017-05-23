@@ -9,9 +9,24 @@
 import UIKit
 
 class ExerciseDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
+    @IBOutlet weak var isUnplannedExerciseSwitch: UISwitch!
+    
+    @IBOutlet weak var isBeforeMealSwitch: UISwitch!
+    @IBOutlet weak var isAfterMealSwitch: UISwitch!
+    
+    @IBOutlet weak var bloodGlucoseTextField: UITextField!
+    @IBOutlet weak var bloogGlucoseUnitsLabel: UILabel!
+    
+    @IBOutlet weak var addExerciseButton: UIButton!
+    
+    var chosenExerciseDetails: ChosenExercise!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(chosenExerciseDetails)
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +36,26 @@ class ExerciseDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPlannedExerciseClick(_ sender: Any) {
+        let state = isUnplannedExerciseSwitch.isOn
+        isUnplannedExerciseSwitch.setOn(!state, animated: true)
+    }
 
+    @IBAction func onUnplannedExerciseClick(_ sender: Any) {
+        let state = isPlannedExerciseSwitch.isOn
+        isPlannedExerciseSwitch.setOn(!state, animated: true)
+    }
+    
+    @IBAction func isBeforeMealClick(_ sender: Any) {
+        let state = isAfterMealSwitch.isOn
+        isAfterMealSwitch.setOn(!state, animated: true)
+    }
+    
+    @IBAction func isAfterMealClick(_ sender: Any) {
+        let state = isBeforeMealSwitch.isOn
+        isBeforeMealSwitch.setOn(!state, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

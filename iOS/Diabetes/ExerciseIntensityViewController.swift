@@ -9,6 +9,9 @@
 import UIKit
 
 class ExerciseIntensityViewController: UIViewController {
+    
+    @IBOutlet weak var addIntensityButton: UIButton!
+    var chosenExerciseIntensity: ChosenExercise!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,20 @@ class ExerciseIntensityViewController: UIViewController {
     }
     
 
+    @IBAction func addIntensityAction(_ sender: Any) {
+        // TODO poll duration from bar
+        chosenExerciseIntensity.intensity = 0
+        performSegue(withIdentifier: "goToExerciseDetails", sender: chosenExerciseIntensity)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToExerciseDetails" {
+            if let destination = segue.destination as? ExerciseDetailsViewController {
+                destination.chosenExerciseDetails = sender as? ChosenExercise
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
