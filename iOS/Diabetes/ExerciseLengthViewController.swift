@@ -10,15 +10,16 @@ import UIKit
 
 class ExerciseLengthViewController: UIViewController {
     
+    @IBOutlet weak var countStepper: UIStepper!
+    @IBOutlet weak var durationCountLabel: UILabel!
     @IBOutlet weak var addDurationButton: UIButton!
     var sport: Sport!
+    var duration: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        print(sport.name + " was selected")
+        countStepper.value = 0
+        durationCountLabel.text = Int(countStepper.value).description
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +31,7 @@ class ExerciseLengthViewController: UIViewController {
         let nullMetaInfo = UserExerciseMetaInfo(isPlanned: false, isBeforeMeal: false, bloodGlucoseLevel: -1)
         
         // TODO poll duration from bar
-        let chosenExercise = ChosenExercise(sport: sport, duration: 0, intensity: -1, userMetaInfo: nullMetaInfo)
+        let chosenExercise = ChosenExercise(sport: sport, duration: duration, intensity: -1, userMetaInfo: nullMetaInfo)
         performSegue(withIdentifier: "goToExerciseIntensity", sender: chosenExercise)
     }
     
@@ -42,4 +43,8 @@ class ExerciseLengthViewController: UIViewController {
         }
     }
 
+    @IBAction func onStepperClick(_ sender: UIStepper) {
+        durationCountLabel.text = Int(sender.value).description
+        duration = Int(sender.value)
+    }
 }
