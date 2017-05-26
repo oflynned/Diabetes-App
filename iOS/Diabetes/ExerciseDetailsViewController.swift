@@ -58,8 +58,15 @@ class ExerciseDetailsViewController: UIViewController {
         chosenExerciseDetails.userMetaInfo.isPlanned = isPlannedExerciseSwitch.isOn
         chosenExerciseDetails.userMetaInfo.isBeforeMeal = isBeforeMealSwitch.isOn
         chosenExerciseDetails.userMetaInfo.bloodGlucoseLevel = Float(bloodGlucoseTextField.text!)
-        
         print(chosenExerciseDetails)
     }
-
+    
+    
+    func createAlert(title: String, message: String) {
+        let submitAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(submitAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
