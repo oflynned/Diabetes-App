@@ -29,8 +29,6 @@ class ExerciseLengthViewController: UIViewController {
     
     @IBAction func addDurationAction(_ sender: Any) {
         let nullMetaInfo = UserExerciseMetaInfo(isPlanned: false, isBeforeMeal: false, bloodGlucoseLevel: -1)
-        
-        // TODO poll duration from bar
         let chosenExercise = ChosenExercise(sport: sport, duration: duration, intensity: -1, userMetaInfo: nullMetaInfo)
         performSegue(withIdentifier: "goToExerciseIntensity", sender: chosenExercise)
     }

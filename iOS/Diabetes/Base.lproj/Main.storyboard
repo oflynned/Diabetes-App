@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Diary View Controller-->
+        <!--Diary-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DiaryViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,22 +24,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2RS-Z1-wTJ">
-                                <rect key="frame" x="16" y="88" width="382" height="83"/>
+                                <rect key="frame" x="16" y="88" width="382" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Diary" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="23"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QL-ss-D5C">
-                                        <rect key="frame" x="0.0" y="23" width="382" height="30"/>
-                                        <state key="normal" title="Dev POST Req"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbU-qH-f4G">
-                                        <rect key="frame" x="0.0" y="53" width="382" height="30"/>
-                                        <state key="normal" title="Dev GET Req"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <state key="normal" title="POST Request"/>
                                         <connections>
                                             <action selector="forceGetRequest:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Q8e-gA-Vsq"/>
                                         </connections>
@@ -54,7 +43,7 @@
                             <constraint firstItem="2RS-Z1-wTJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="16" id="tIa-7A-uQY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lwt-CP-A3P"/>
+                    <navigationItem key="navigationItem" title="Diary" id="Lwt-CP-A3P"/>
                     <connections>
                         <outlet property="getRequestButton" destination="LbU-qH-f4G" id="4vq-4j-pnP"/>
                     </connections>
@@ -449,7 +438,7 @@
             </objects>
             <point key="canvasLocation" x="-983" y="882"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Information-->
         <scene sceneID="JJ6-g8-Y0Y">
             <objects>
                 <viewController id="utw-VB-b8p" customClass="InfoViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
@@ -519,7 +508,7 @@
                             <constraint firstItem="03f-8O-9hf" firstAttribute="leading" secondItem="BPS-pv-fr9" secondAttribute="leadingMargin" id="wGg-J2-Dvi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xJq-Ml-EcC"/>
+                    <navigationItem key="navigationItem" title="Information" id="xJq-Ml-EcC"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fq-qm-WrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -720,7 +709,7 @@
                             <outlet property="delegate" destination="Ymh-EN-2kg" id="CG8-O3-ZGg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pr4-9f-Kit"/>
+                    <navigationItem key="navigationItem" title="Settings" id="pr4-9f-Kit"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQh-1n-Pig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -885,7 +874,7 @@
             </objects>
             <point key="canvasLocation" x="3057.971014492754" y="1153.5326086956522"/>
         </scene>
-        <!--Length-->
+        <!--Duration-->
         <scene sceneID="Hfs-Q2-cZL">
             <objects>
                 <viewController id="zsA-mY-otg" customClass="ExerciseLengthViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
@@ -926,7 +915,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e7M-b2-c0E">
                                         <rect key="frame" x="0.0" y="100" width="394" height="30"/>
                                         <subviews>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="120" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="T4N-UN-q2d">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="5" maximumValue="120" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="T4N-UN-q2d">
                                                 <rect key="frame" x="150" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="onStepperClick:" destination="zsA-mY-otg" eventType="valueChanged" id="XJe-2T-qRV"/>
@@ -952,7 +941,7 @@
                             <constraint firstAttribute="trailing" secondItem="D77-1s-8Ek" secondAttribute="trailing" constant="10" id="wUq-Rb-mEy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Length" id="otG-7j-cd6"/>
+                    <navigationItem key="navigationItem" title="Duration" id="otG-7j-cd6"/>
                     <connections>
                         <outlet property="addDurationButton" destination="Dcb-uC-AJf" id="SSq-0f-1gE"/>
                         <outlet property="countStepper" destination="T4N-UN-q2d" id="ILh-Xd-XgC"/>
@@ -977,19 +966,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-gt-PHz">
-                                <rect key="frame" x="10" y="313" width="394" height="110"/>
+                                <rect key="frame" x="10" y="276.66666666666674" width="394" height="183.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How hard is your exercise on a scale of 1-10?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J95-UQ-9cx">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="38.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="RlF-Op-7tT">
-                                        <rect key="frame" x="-2" y="40" width="398" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C47-zz-43Y">
+                                        <rect key="frame" x="0.0" y="48.333333333333314" width="394" height="38.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-qf-dNw">
+                                        <rect key="frame" x="-2" y="96.666666666666629" width="398" height="39.333333333333371"/>
+                                        <connections>
+                                            <action selector="onSliderValueChanged:" destination="Z0O-oy-uLx" eventType="valueChanged" id="lPc-uz-Ydn"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTq-CG-N9Y">
-                                        <rect key="frame" x="0.0" y="80" width="394" height="30"/>
+                                        <rect key="frame" x="0.0" y="145" width="394" height="38.333333333333314"/>
                                         <state key="normal" title="Add Intensity"/>
                                         <connections>
                                             <action selector="addIntensityAction:" destination="Z0O-oy-uLx" eventType="touchUpInside" id="QvC-TN-jGr"/>
@@ -1009,6 +1007,8 @@
                     <navigationItem key="navigationItem" title="Intensity" id="AAn-tW-RLJ"/>
                     <connections>
                         <outlet property="addIntensityButton" destination="gTq-CG-N9Y" id="1RG-YN-Dw1"/>
+                        <outlet property="intensityLabel" destination="C47-zz-43Y" id="FS2-El-Cua"/>
+                        <outlet property="intensitySlider" destination="c4Q-qf-dNw" id="tH7-pa-cDM"/>
                         <segue destination="cpT-lO-T33" kind="show" identifier="goToExerciseDetails" id="wuR-jF-256"/>
                     </connections>
                 </viewController>
@@ -1162,6 +1162,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-n3-BOF">
                                         <rect key="frame" x="0.0" y="395" width="374" height="30"/>
                                         <state key="normal" title="Add Exercise"/>
+                                        <connections>
+                                            <action selector="onAddExerciseClick:" destination="cpT-lO-T33" eventType="touchUpInside" id="GpW-IS-f7Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
