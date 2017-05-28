@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271B5E9D053A73F7442582E4 /* Pods_Diabetes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFFF2012F9EF0B5698293FD /* Pods_Diabetes.framework */; };
+		6411EF321ED450D10075889A /* UserExerciseMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */; };
 		642E61341EC1D06200F91556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61331EC1D06200F91556 /* AppDelegate.swift */; };
-		642E61361EC1D06200F91556 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61351EC1D06200F91556 /* HomeViewController.swift */; };
 		642E61381EC1D06200F91556 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61371EC1D06200F91556 /* SettingsViewController.swift */; };
 		642E613B1EC1D06200F91556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 642E61391EC1D06200F91556 /* Main.storyboard */; };
 		642E613D1EC1D06200F91556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642E613C1EC1D06200F91556 /* Assets.xcassets */; };
 		642E614B1EC1D06200F91556 /* DiabetesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E614A1EC1D06200F91556 /* DiabetesTests.swift */; };
 		642E61561EC1D06300F91556 /* DiabetesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E61551EC1D06300F91556 /* DiabetesUITests.swift */; };
+		64B6EA911ED724D3008AE630 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6EA901ED724D3008AE630 /* DiaryViewController.swift */; };
 		64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1C1ED075660003780E /* SportViewCell.swift */; };
 		64C36D1F1ED078E30003780E /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D1E1ED078E30003780E /* Sport.swift */; };
-		64C36D211ED079050003780E /* ChosenSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenSport.swift */; };
+		64C36D211ED079050003780E /* ChosenExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D201ED079050003780E /* ChosenExercise.swift */; };
 		64C36D231ED0ACC70003780E /* ExerciseLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */; };
 		64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */; };
 		64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */; };
+		64C6EEAB1ED63393007EE7A6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C6EEAA1ED63393007EE7A6 /* SwiftyJSON.framework */; };
+		64C6EEAD1ED72239007EE7A6 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6EEAC1ED72239007EE7A6 /* Recommendation.swift */; };
 		64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */; };
 		64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A11EC4A5170071E81B /* AddViewController.swift */; };
 		64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A31EC4A52D0071E81B /* InfoViewController.swift */; };
 		64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC04A91EC4AE430071E81B /* SplashViewController.swift */; };
+		B8BEC66B3036A6428D09A118 /* Pods_DiabetesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750821DFC0AB85E6EC2984DC /* Pods_DiabetesUITests.framework */; };
+		F92B285F6F57C807D0650AAC /* Pods_DiabetesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF5B5A52427DD287C14DF2F /* Pods_DiabetesTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AFFF2012F9EF0B5698293FD /* Pods_Diabetes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diabetes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AF5B5A52427DD287C14DF2F /* Pods_DiabetesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiabetesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExerciseMetaInfo.swift; sourceTree = "<group>"; };
 		642E61301EC1D06200F91556 /* Diabetes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diabetes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642E61331EC1D06200F91556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		642E61351EC1D06200F91556 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		642E61371EC1D06200F91556 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		642E613A1EC1D06200F91556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		642E613C1EC1D06200F91556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,16 +65,26 @@
 		642E61511EC1D06200F91556 /* DiabetesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiabetesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		642E61551EC1D06300F91556 /* DiabetesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetesUITests.swift; sourceTree = "<group>"; };
 		642E61571EC1D06300F91556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64B6EA901ED724D3008AE630 /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		64C36D1C1ED075660003780E /* SportViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportViewCell.swift; path = ../SportViewCell.swift; sourceTree = "<group>"; };
 		64C36D1E1ED078E30003780E /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
-		64C36D201ED079050003780E /* ChosenSport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenSport.swift; sourceTree = "<group>"; };
+		64C36D201ED079050003780E /* ChosenExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenExercise.swift; sourceTree = "<group>"; };
 		64C36D221ED0ACC70003780E /* ExerciseLengthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLengthViewController.swift; sourceTree = "<group>"; };
 		64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseIntensityViewController.swift; sourceTree = "<group>"; };
 		64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailsViewController.swift; sourceTree = "<group>"; };
+		64C6EEAA1ED63393007EE7A6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Diabetes-ddguostemarmliertyrauhrlshan/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		64C6EEAC1ED72239007EE7A6 /* Recommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		64C708F41ECDDFDF00D90FE4 /* SportsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsSelectionViewController.swift; sourceTree = "<group>"; };
 		64EC04A11EC4A5170071E81B /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		64EC04A31EC4A52D0071E81B /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		64EC04A91EC4AE430071E81B /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		750821DFC0AB85E6EC2984DC /* Pods_DiabetesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiabetesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9077FF90BF495114CCE7FB9B /* Pods-DiabetesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB51979E161C1967F37406AB /* Pods-Diabetes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diabetes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes.debug.xcconfig"; sourceTree = "<group>"; };
+		BEB664674BFD49CD82181C26 /* Pods-DiabetesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesUITests/Pods-DiabetesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB7DCF8A67ED16F6EAB36BD6 /* Pods-DiabetesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesUITests/Pods-DiabetesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diabetes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes.release.xcconfig"; sourceTree = "<group>"; };
+		FE3038216726979B0182C569 /* Pods-DiabetesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C6EEAB1ED63393007EE7A6 /* SwiftyJSON.framework in Frameworks */,
+				271B5E9D053A73F7442582E4 /* Pods_Diabetes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92B285F6F57C807D0650AAC /* Pods_DiabetesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +109,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BEC66B3036A6428D09A118 /* Pods_DiabetesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171B6B3D4AA31C88DD71EC97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB51979E161C1967F37406AB /* Pods-Diabetes.debug.xcconfig */,
+				EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */,
+				9077FF90BF495114CCE7FB9B /* Pods-DiabetesTests.debug.xcconfig */,
+				FE3038216726979B0182C569 /* Pods-DiabetesTests.release.xcconfig */,
+				BEB664674BFD49CD82181C26 /* Pods-DiabetesUITests.debug.xcconfig */,
+				EB7DCF8A67ED16F6EAB36BD6 /* Pods-DiabetesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		467040B09A7F5CE9B389DEE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64C6EEAA1ED63393007EE7A6 /* SwiftyJSON.framework */,
+				2AFFF2012F9EF0B5698293FD /* Pods_Diabetes.framework */,
+				5AF5B5A52427DD287C14DF2F /* Pods_DiabetesTests.framework */,
+				750821DFC0AB85E6EC2984DC /* Pods_DiabetesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		642E61271EC1D06200F91556 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +147,8 @@
 				642E61491EC1D06200F91556 /* DiabetesTests */,
 				642E61541EC1D06300F91556 /* DiabetesUITests */,
 				642E61311EC1D06200F91556 /* Products */,
+				171B6B3D4AA31C88DD71EC97 /* Pods */,
+				467040B09A7F5CE9B389DEE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +167,6 @@
 			children = (
 				64C36D1C1ED075660003780E /* SportViewCell.swift */,
 				642E61331EC1D06200F91556 /* AppDelegate.swift */,
-				642E61351EC1D06200F91556 /* HomeViewController.swift */,
 				642E61371EC1D06200F91556 /* SettingsViewController.swift */,
 				642E61391EC1D06200F91556 /* Main.storyboard */,
 				642E613C1EC1D06200F91556 /* Assets.xcassets */,
@@ -132,7 +179,10 @@
 				64C36D241ED0ACDB0003780E /* ExerciseIntensityViewController.swift */,
 				64C36D261ED0ACEB0003780E /* ExerciseDetailsViewController.swift */,
 				64C36D1E1ED078E30003780E /* Sport.swift */,
-				64C36D201ED079050003780E /* ChosenSport.swift */,
+				64C36D201ED079050003780E /* ChosenExercise.swift */,
+				6411EF311ED450D10075889A /* UserExerciseMetaInfo.swift */,
+				64C6EEAC1ED72239007EE7A6 /* Recommendation.swift */,
+				64B6EA901ED724D3008AE630 /* DiaryViewController.swift */,
 			);
 			path = Diabetes;
 			sourceTree = "<group>";
@@ -162,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642E615A1EC1D06300F91556 /* Build configuration list for PBXNativeTarget "Diabetes" */;
 			buildPhases = (
+				F718AB9B843863FB197C9BDC /* [CP] Check Pods Manifest.lock */,
 				642E612C1EC1D06200F91556 /* Sources */,
 				642E612D1EC1D06200F91556 /* Frameworks */,
 				642E612E1EC1D06200F91556 /* Resources */,
+				6BBD999CF07794089CAB4541 /* [CP] Embed Pods Frameworks */,
+				BA333AE06599B00BDAEBE4B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642E615D1EC1D06300F91556 /* Build configuration list for PBXNativeTarget "DiabetesTests" */;
 			buildPhases = (
+				35E21D91DBFB0CA0B5DD257F /* [CP] Check Pods Manifest.lock */,
 				642E61421EC1D06200F91556 /* Sources */,
 				642E61431EC1D06200F91556 /* Frameworks */,
 				642E61441EC1D06200F91556 /* Resources */,
+				BE071D96E2B53637F1D76C50 /* [CP] Embed Pods Frameworks */,
+				206AAE33229105BB069D87C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642E61601EC1D06300F91556 /* Build configuration list for PBXNativeTarget "DiabetesUITests" */;
 			buildPhases = (
+				92E05E20C9A054089CEF28F2 /* [CP] Check Pods Manifest.lock */,
 				642E614D1EC1D06200F91556 /* Sources */,
 				642E614E1EC1D06200F91556 /* Frameworks */,
 				642E614F1EC1D06200F91556 /* Resources */,
+				64141199E16C683552DA1A51 /* [CP] Embed Pods Frameworks */,
+				3ED31205FC848FDD06F6B1EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,22 +345,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		206AAE33229105BB069D87C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35E21D91DBFB0CA0B5DD257F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3ED31205FC848FDD06F6B1EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiabetesUITests/Pods-DiabetesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64141199E16C683552DA1A51 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiabetesUITests/Pods-DiabetesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BBD999CF07794089CAB4541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92E05E20C9A054089CEF28F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA333AE06599B00BDAEBE4B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE071D96E2B53637F1D76C50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F718AB9B843863FB197C9BDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		642E612C1EC1D06200F91556 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C36D211ED079050003780E /* ChosenSport.swift in Sources */,
+				64C36D211ED079050003780E /* ChosenExercise.swift in Sources */,
+				6411EF321ED450D10075889A /* UserExerciseMetaInfo.swift in Sources */,
 				642E61381EC1D06200F91556 /* SettingsViewController.swift in Sources */,
 				64C36D1F1ED078E30003780E /* Sport.swift in Sources */,
+				64C6EEAD1ED72239007EE7A6 /* Recommendation.swift in Sources */,
 				64C36D1D1ED075660003780E /* SportViewCell.swift in Sources */,
 				642E61341EC1D06200F91556 /* AppDelegate.swift in Sources */,
 				64C36D231ED0ACC70003780E /* ExerciseLengthViewController.swift in Sources */,
 				64EC04A21EC4A5170071E81B /* AddViewController.swift in Sources */,
 				64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */,
-				642E61361EC1D06200F91556 /* HomeViewController.swift in Sources */,
 				64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */,
 				64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */,
+				64B6EA911ED724D3008AE630 /* DiaryViewController.swift in Sources */,
 				64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */,
 				64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */,
 			);
@@ -447,6 +646,7 @@
 		};
 		642E615B1EC1D06300F91556 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB51979E161C1967F37406AB /* Pods-Diabetes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
@@ -460,6 +660,7 @@
 		};
 		642E615C1EC1D06300F91556 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
@@ -473,6 +674,7 @@
 		};
 		642E615E1EC1D06300F91556 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9077FF90BF495114CCE7FB9B /* Pods-DiabetesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +690,7 @@
 		};
 		642E615F1EC1D06300F91556 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3038216726979B0182C569 /* Pods-DiabetesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +706,7 @@
 		};
 		642E61611EC1D06300F91556 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB664674BFD49CD82181C26 /* Pods-DiabetesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
@@ -517,6 +721,7 @@
 		};
 		642E61621EC1D06300F91556 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB7DCF8A67ED16F6EAB36BD6 /* Pods-DiabetesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;

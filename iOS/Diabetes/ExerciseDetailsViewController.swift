@@ -9,27 +9,64 @@
 import UIKit
 
 class ExerciseDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
+    @IBOutlet weak var isUnplannedExerciseSwitch: UISwitch!
+    
+    @IBOutlet weak var isBeforeMealSwitch: UISwitch!
+    @IBOutlet weak var isAfterMealSwitch: UISwitch!
+    
+    @IBOutlet weak var bloodGlucoseTextField: UITextField!
+    @IBOutlet weak var bloogGlucoseUnitsLabel: UILabel!
+    
+    @IBOutlet weak var addExerciseButton: UIButton!
+    
+    var chosenExerciseDetails: ChosenExercise!
+    var bloodGlucoseLevel: Float!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        print(chosenExerciseDetails)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onPlannedExerciseClick(_ sender: Any) {
+        let state = isUnplannedExerciseSwitch.isOn
+        isUnplannedExerciseSwitch.setOn(!state, animated: true)
     }
-    */
 
+    @IBAction func onUnplannedExerciseClick(_ sender: Any) {
+        let state = isPlannedExerciseSwitch.isOn
+        isPlannedExerciseSwitch.setOn(!state, animated: true)
+    }
+    
+    @IBAction func isBeforeMealClick(_ sender: Any) {
+        let state = isAfterMealSwitch.isOn
+        isAfterMealSwitch.setOn(!state, animated: true)
+    }
+    
+    @IBAction func isAfterMealClick(_ sender: Any) {
+        let state = isBeforeMealSwitch.isOn
+        isBeforeMealSwitch.setOn(!state, animated: true)
+    }
+    
+    @IBAction func onAddExerciseClick(_ sender: Any) {
+        chosenExerciseDetails.userMetaInfo.isPlanned = isPlannedExerciseSwitch.isOn
+        chosenExerciseDetails.userMetaInfo.isBeforeMeal = isBeforeMealSwitch.isOn
+        chosenExerciseDetails.userMetaInfo.bloodGlucoseLevel = Float(bloodGlucoseTextField.text!)
+        print(chosenExerciseDetails)
+    }
+    
+    
+    func createAlert(title: String, message: String) {
+        let submitAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(submitAction)
+        present(alert, animated: true, completion: nil)
+    }
 }

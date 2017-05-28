@@ -9,11 +9,18 @@
 import UIKit
 
 class ExerciseIntensityViewController: UIViewController {
+    
+    @IBOutlet weak var intensitySlider: UISlider!
+    @IBOutlet weak var intensityLabel: UILabel!
+    @IBOutlet weak var addIntensityButton: UIButton!
+    var chosenExerciseIntensity: ChosenExercise!
+    var intensity: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        intensityLabel.text = Int(intensitySlider.value).description
+        intensity = Int(intensitySlider.value)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +29,20 @@ class ExerciseIntensityViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addIntensityAction(_ sender: Any) {
+        chosenExerciseIntensity.intensity = intensity
+        performSegue(withIdentifier: "goToExerciseDetails", sender: chosenExerciseIntensity)
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToExerciseDetails" {
+            if let destination = segue.destination as? ExerciseDetailsViewController {
+                destination.chosenExerciseDetails = sender as? ChosenExercise
+            }
+        }
+    }
+    @IBAction func onSliderValueChanged(_ sender: UISlider) {
+        intensityLabel.text = Int(intensitySlider.value).description
+        intensity = Int(intensitySlider.value)
+    }
 }
