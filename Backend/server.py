@@ -1,12 +1,26 @@
 import os
-from flask import Flask, jsonify, render_template
+from flask import Flask,flash, jsonify, render_template
 from flask import send_from_directory,request, redirect, url_for
 from flask_pymongo import PyMongo
-
+from flask import Response
+import json
 from werkzeug.utils import secure_filename
+from pymongo import MongoClient
+from bson import ObjectId
+from bson import json_util
+from bson import Binary, Code
+from bson.json_util import dumps
+from bson.json_util import loads
+import flask_excel as excel
 
 
+
+import requests
+from flask import Flask, request, jsonify
+
+#uploads folder
 UPLOAD_FOLDER = 'uploads'
+#currently allowed extensions
 ALLOWED_EXTENSIONS = set(['xls', 'xlsx', 'csv'])
 
 app = Flask(__name__)
@@ -16,56 +30,56 @@ app.debug = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 mongo = PyMongo(app)
 
+client = MongoClient()
+db = client.Diabetes
+from datetime import datetime
+
+
 @app.route('/', methods=['GET', 'POST'])
-def root():
+def upload_file():
+    if request.method == 'POST':
+        rez = request.get_array(field_name='file')
+        result = db.exercise.insert_one({"result":rez})
+        return render_template('index.html')
+
     return render_template('index.html')
+
+@app.route('/api', methods = ['GET'])
+def api_hello():
+    online_users = db.exercise.find()
+    online_users = dumps(online_users)
+    return  online_users
+
 
 @app.route('/index')
 def hello(name=None):
     return render_template('index.html', name=name)
 
 
-
+#function to check for allowed file names
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-
-@app.route('/upload', methods = ['POST'])
+#post function called to upload file
+@app.route('/upload', methods = ['POST', 'GET'])
 def upload():
-    if 'inputFile' not in request.files:
-        flash('No file part')
-        return redirect(request.url)
-    file = request.files['inputFile']
-    if file.filename == '':
-        flash('No selected file')
-        return redirect(request.url)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('uploaded_file',filename=filename))
+    if request.method == 'POST':
+        if 'inputFile' not in request.files:
+            return redirect(request.url)
+        file = request.files['inputFile']
+        if file.filename == '':
+            return redirect(request.url)
 
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <p><input type=file name=inputFile>
-         <input type=submit value=Upload>
-    </form>
-    '''
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return jsonify({"result": filename, "path":UPLOAD_FOLDER})
+        return render_template('index.html')
+    return render_template('index.html')
 
-from werkzeug import SharedDataMiddleware
-app.add_url_rule('/uploads/<filename>', 'uploaded_file',
-                 build_only=True)
-app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
-    '/uploads':  app.config['UPLOAD_FOLDER']
-})
+
 
 @app.route('/api/v1/', methods=["GET"])
 def hello_world():
@@ -73,5 +87,8 @@ def hello_world():
 
 
 if __name__ == '__main__':
+    app.secret_key = 'super secret key'
+
     app.run(host='127.0.0.1', port=3000,debug=True)
+
 
