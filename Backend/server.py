@@ -38,13 +38,19 @@ from datetime import datetime
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        rez = request.get_array(field_name='file')
-        result = db.exercise.insert_one({"result":rez})
-        return render_template('index.html')
+        if 'exercise' not in request.files:
+            return redirect(request.url)
+        file = request.files['exercise']
+        if file.filename == '':
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            rez = request.get_array(field_name='exercise')
+            result = db.exercise.insert_one({"result":rez})
+            return render_template('index.html')
 
     return render_template('index.html')
 
-@app.route('/api', methods = ['GET'])
+@app.route('/api/exercise', methods = ['GET'])
 def api_hello():
     online_users = db.exercise.find()
     online_users = dumps(online_users)
