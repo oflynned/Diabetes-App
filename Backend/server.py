@@ -38,23 +38,40 @@ from datetime import datetime
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        if 'exercise' not in request.files:
+        if ('exercise') not in request.files:
+            print "HERE1"
             return redirect(request.url)
-        file = request.files['exercise']
-        if file.filename == '':
+        exer = request.files['exercise']
+        sugg = request.files['suggestion']
+        if (sugg.filename == '') and (exer.filename == ''):
+            print "HERE3"
             return redirect(request.url)
-        if file and allowed_file(file.filename):
-            rez = request.get_array(field_name='exercise')
-            result = db.exercise.insert_one({"result":rez})
-            return render_template('index.html')
+        if (exer and allowed_file(exer.filename)) or (sugg and allowed_file(sugg.filename)):
+            print "HERE4"
+            if exer and allowed_file(exer.filename):
+                rez_e = request.get_array(field_name='exercise')
+                db.exercise.drop()
+                result_e = db.exercise.insert_one({"result": rez_e})
 
+            if sugg and allowed_file(sugg.filename):
+                rez_s = request.get_array(field_name='suggestion')
+                db.suggestion.drop()
+                result_s = db.suggestion.insert_one({"result": rez_s})
+            return render_template('index.html')
+        return render_template('index.html')
     return render_template('index.html')
 
 @app.route('/api/exercise', methods = ['GET'])
-def api_hello():
-    online_users = db.exercise.find()
-    online_users = dumps(online_users)
-    return  online_users
+def api_exercise():
+    online_api = db.exercise.find()
+    online_api = dumps(online_api)
+    return  online_api
+
+@app.route('/api/suggestion', methods = ['GET'])
+def api_suggestion():
+    online_api = db.suggestion.find()
+    online_api = dumps(online_api)
+    return  online_api
 
 
 @app.route('/index')
