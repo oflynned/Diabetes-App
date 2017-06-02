@@ -10,17 +10,17 @@ import UIKit
 
 class ExerciseIntensityViewController: UIViewController {
     
-    @IBOutlet weak var intensitySlider: UISlider!
-    @IBOutlet weak var intensityLabel: UILabel!
+    @IBOutlet weak var intensityDetailsLabel: UILabel!
+    @IBOutlet weak var intensitySelectionSegment: UISegmentedControl!
     @IBOutlet weak var addIntensityButton: UIButton!
+    
     var chosenExerciseIntensity: ChosenExercise!
-    var intensity: Int = 1
+    var intensity: Int = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        intensityLabel.text = Int(intensitySlider.value).description
-        intensity = Int(intensitySlider.value)
+        intensityDetailsLabel.text = "Mild"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +30,8 @@ class ExerciseIntensityViewController: UIViewController {
     
 
     @IBAction func addIntensityAction(_ sender: Any) {
-        chosenExerciseIntensity.intensity = intensity
+        // need to tier this, only 4 segments, but is out of 10
+        chosenExerciseIntensity.intensity = intensitySelectionSegment.selectedSegmentIndex
         performSegue(withIdentifier: "goToExerciseDetails", sender: chosenExerciseIntensity)
     }
     
@@ -41,8 +42,24 @@ class ExerciseIntensityViewController: UIViewController {
             }
         }
     }
-    @IBAction func onSliderValueChanged(_ sender: UISlider) {
-        intensityLabel.text = Int(intensitySlider.value).description
-        intensity = Int(intensitySlider.value)
+    
+    @IBAction func onSegmentedControlClick(_ sender: UISegmentedControl) {
+        
+        switch intensitySelectionSegment.selectedSegmentIndex {
+        case 0:
+            intensityDetailsLabel.text = "Mild"
+            break
+        case 1:
+            intensityDetailsLabel.text = "Moderate"
+            break
+        case 2:
+            intensityDetailsLabel.text = "Intense"
+            break
+        case 3:
+            intensityDetailsLabel.text = "Extremely intense"
+            break
+        default:
+            break
+        }
     }
 }

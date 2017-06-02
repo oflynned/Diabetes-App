@@ -966,28 +966,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ZV-gt-PHz">
-                                <rect key="frame" x="10" y="276.66666666666674" width="394" height="183.33333333333331"/>
+                                <rect key="frame" x="10" y="294" width="394" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How hard is your exercise on a scale of 1-10?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J95-UQ-9cx">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="38.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C47-zz-43Y">
-                                        <rect key="frame" x="0.0" y="48.333333333333314" width="394" height="38.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kye-L6-MUv">
+                                        <rect key="frame" x="0.0" y="40" width="394" height="31"/>
+                                        <segments>
+                                            <segment title="1-3"/>
+                                            <segment title="4-6"/>
+                                            <segment title="7-8"/>
+                                            <segment title="9-10"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onSegmentedControlClick:" destination="Z0O-oy-uLx" eventType="valueChanged" id="Rqe-gc-xZL"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM7-kW-biX">
+                                        <rect key="frame" x="0.0" y="80" width="394" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-qf-dNw">
-                                        <rect key="frame" x="-2" y="96.666666666666629" width="398" height="39.333333333333371"/>
-                                        <connections>
-                                            <action selector="onSliderValueChanged:" destination="Z0O-oy-uLx" eventType="valueChanged" id="lPc-uz-Ydn"/>
-                                        </connections>
-                                    </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTq-CG-N9Y">
-                                        <rect key="frame" x="0.0" y="145" width="394" height="38.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="120" width="394" height="30"/>
                                         <state key="normal" title="Add Intensity"/>
                                         <connections>
                                             <action selector="addIntensityAction:" destination="Z0O-oy-uLx" eventType="touchUpInside" id="QvC-TN-jGr"/>
@@ -1007,8 +1013,8 @@
                     <navigationItem key="navigationItem" title="Intensity" id="AAn-tW-RLJ"/>
                     <connections>
                         <outlet property="addIntensityButton" destination="gTq-CG-N9Y" id="1RG-YN-Dw1"/>
-                        <outlet property="intensityLabel" destination="C47-zz-43Y" id="FS2-El-Cua"/>
-                        <outlet property="intensitySlider" destination="c4Q-qf-dNw" id="tH7-pa-cDM"/>
+                        <outlet property="intensityDetailsLabel" destination="KM7-kW-biX" id="F83-dD-Rcm"/>
+                        <outlet property="intensitySelectionSegment" destination="kye-L6-MUv" id="m6W-Jt-a6o"/>
                         <segue destination="cpT-lO-T33" kind="show" identifier="goToExerciseDetails" id="wuR-jF-256"/>
                     </connections>
                 </viewController>
