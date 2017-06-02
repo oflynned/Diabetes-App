@@ -16,7 +16,7 @@ final class SportsSelectionViewController: UIViewController, UICollectionViewDel
         cycling, mountain biking, golf, walking, jogging, running, swimming, triathlon, rowing, spinning
      
      anaerobic:
-        sprint swimming, weight lifting, body building, track (long jump, javelin, shotput, high jump, pole vault, sprinting), archery, gymnastics (bars, beams, floor, rings, vault, horse), fencing
+        sprint swimming, weight lifting, body building, sprinting, archery, gymnastics, fencing
      
      mixed:
         football, rugby, basketball, baseball, hockey, tennis, squash, badminton, dancing, HIIT, water polo
@@ -43,7 +43,7 @@ final class SportsSelectionViewController: UIViewController, UICollectionViewDel
         sports.append(Sport(name: "Sprint Swimming", exercise: Sport.Exercise.anaerobic, image: "swimming"))
         sports.append(Sport(name: "Weight Lifting", exercise: Sport.Exercise.anaerobic, image: "weight_lifting"))
         sports.append(Sport(name: "Body Building", exercise: Sport.Exercise.anaerobic, image: "weight_lifting"))
-        sports.append(Sport(name: "Track", exercise: Sport.Exercise.anaerobic, image: "javelin"))
+        sports.append(Sport(name: "Sprinting", exercise: Sport.Exercise.anaerobic, image: "running"))
         sports.append(Sport(name: "Archery", exercise: Sport.Exercise.anaerobic, image: "archery"))
         sports.append(Sport(name: "Gymnastics", exercise: Sport.Exercise.anaerobic, image: "gymnastics"))
         sports.append(Sport(name: "Fencing", exercise: Sport.Exercise.anaerobic, image: "fencing"))
