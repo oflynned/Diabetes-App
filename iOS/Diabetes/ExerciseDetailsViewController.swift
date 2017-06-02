@@ -21,6 +21,10 @@ class ExerciseDetailsViewController: UIViewController {
     
     @IBOutlet weak var addExerciseButton: UIButton!
     
+    @IBOutlet weak var approxExerciseTime: UIDatePicker!
+    
+    @IBOutlet weak var lastEatenLayout: UIStackView!
+    
     var chosenExerciseDetails: ChosenExercise!
     var bloodGlucoseLevel: Float!
 
@@ -37,11 +41,19 @@ class ExerciseDetailsViewController: UIViewController {
     @IBAction func onPlannedExerciseClick(_ sender: Any) {
         let state = isUnplannedExerciseSwitch.isOn
         isUnplannedExerciseSwitch.setOn(!state, animated: true)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.lastEatenLayout.isHidden = !state
+        }
     }
 
     @IBAction func onUnplannedExerciseClick(_ sender: Any) {
         let state = isPlannedExerciseSwitch.isOn
         isPlannedExerciseSwitch.setOn(!state, animated: true)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.lastEatenLayout.isHidden = state
+        }
     }
     
     @IBAction func isBeforeMealClick(_ sender: Any) {
@@ -57,10 +69,10 @@ class ExerciseDetailsViewController: UIViewController {
     @IBAction func onAddExerciseClick(_ sender: Any) {
         chosenExerciseDetails.userMetaInfo.isPlanned = isPlannedExerciseSwitch.isOn
         chosenExerciseDetails.userMetaInfo.isBeforeMeal = isBeforeMealSwitch.isOn
+        chosenExerciseDetails.userMetaInfo.approxTime = approxExerciseTime.date
         chosenExerciseDetails.userMetaInfo.bloodGlucoseLevel = Float(bloodGlucoseTextField.text!)
         print(chosenExerciseDetails)
     }
-    
     
     func createAlert(title: String, message: String) {
         let submitAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
