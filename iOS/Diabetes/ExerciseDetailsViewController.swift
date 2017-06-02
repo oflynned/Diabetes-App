@@ -71,6 +71,7 @@ class ExerciseDetailsViewController: UIViewController {
         chosenExerciseDetails.userMetaInfo.isBeforeMeal = isBeforeMealSwitch.isOn
         chosenExerciseDetails.userMetaInfo.approxTime = approxExerciseTime.date
         chosenExerciseDetails.userMetaInfo.bloodGlucoseLevel = Float(bloodGlucoseTextField.text!)
+        
         print(chosenExerciseDetails)
     }
     
