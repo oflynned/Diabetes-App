@@ -58,7 +58,7 @@ extension SwiftyJSONError: CustomNSError {
     public var errorUserInfo: [String : Any] {
         switch self {
         case .unsupportedType:
-            return [NSLocalizedDescriptionKey: "It is a unsupported type."]
+            return [NSLocalizedDescriptionKey: "It is an unsupported type."]
         case .indexOutOfBounds:
             return [NSLocalizedDescriptionKey: "Array Index is out of bounds."]
         case .wrongType:
@@ -217,10 +217,12 @@ public struct JSON {
     fileprivate var rawNumber: NSNumber = 0
     fileprivate var rawNull: NSNull = NSNull()
     fileprivate var rawBool: Bool = false
-    /// Private type
-    fileprivate var _type: Type = .null
-    /// Private error
-    fileprivate var _error: SwiftyJSONError?
+
+    /// JSON type, fileprivate setter
+    public fileprivate(set) var type: Type = .null
+
+    /// Error in JSON, fileprivate setter
+    public fileprivate(set) var error: SwiftyJSONError?
 
     /// Object in JSON
     public var object: Any {
@@ -241,41 +243,35 @@ public struct JSON {
             }
         }
         set {
-            _error = nil
+            error = nil
             switch unwrap(newValue) {
             case let number as NSNumber:
                 if number.isBool {
-                    _type = .bool
+                    type = .bool
                     self.rawBool = number.boolValue
                 } else {
-                    _type = .number
+                    type = .number
                     self.rawNumber = number
                 }
             case let string as String:
-                _type = .string
+                type = .string
                 self.rawString = string
             case _ as NSNull:
-                _type = .null
+                type = .null
             case nil:
-                _type = .null
+                type = .null
             case let array as [Any]:
-                _type = .array
+                type = .array
                 self.rawArray = array
             case let dictionary as [String : Any]:
-                _type = .dictionary
+                type = .dictionary
                 self.rawDictionary = dictionary
             default:
-                _type = .unknown
-                _error = SwiftyJSONError.unsupportedType
+                type = .unknown
+                error = SwiftyJSONError.unsupportedType
             }
         }
     }
-
-    /// JSON type
-    public var type: Type { return _type }
-
-    /// Error in JSON
-    public var error: SwiftyJSONError? { return _error }
 
     /// The static null JSON
     @available(*, unavailable, renamed:"null")
@@ -411,31 +407,31 @@ extension String: JSONSubscriptType {
 
 extension JSON {
 
-    /// If `type` is `.Array`, return json whose object is `array[index]`, otherwise return null json with error.
+    /// If `type` is `.array`, return json whose object is `array[index]`, otherwise return null json with error.
     fileprivate subscript(index index: Int) -> JSON {
         get {
             if self.type != .array {
                 var r = JSON.null
-                r._error = self._error ?? SwiftyJSONError.wrongType
+                r.error = self.error ?? SwiftyJSONError.wrongType
                 return r
-            } else if index >= 0 && index < self.rawArray.count {
+            } else if self.rawArray.indices.contains(index) {
                 return JSON(self.rawArray[index])
             } else {
                 var r = JSON.null
-                r._error = SwiftyJSONError.indexOutOfBounds
+                r.error = SwiftyJSONError.indexOutOfBounds
                 return r
             }
         }
         set {
-            if self.type == .array {
-                if self.rawArray.count > index && newValue.error == nil {
-                    self.rawArray[index] = newValue.object
-                }
+            if self.type == .array &&
+                self.rawArray.indices.contains(index) &&
+                newValue.error == nil {
+                self.rawArray[index] = newValue.object
             }
         }
     }
 
-    /// If `type` is `.Dictionary`, return json whose object is `dictionary[key]` , otherwise return null json with error.
+    /// If `type` is `.dictionary`, return json whose object is `dictionary[key]` , otherwise return null json with error.
     fileprivate subscript(key key: String) -> JSON {
         get {
             var r = JSON.null
@@ -443,10 +439,10 @@ extension JSON {
                 if let o = self.rawDictionary[key] {
                     r = JSON(o)
                 } else {
-                    r._error = SwiftyJSONError.notExist
+                    r.error = SwiftyJSONError.notExist
                 }
             } else {
-                r._error = self._error ?? SwiftyJSONError.wrongType
+                r.error = self.error ?? SwiftyJSONError.wrongType
             }
             return r
         }

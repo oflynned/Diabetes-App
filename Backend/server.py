@@ -6,12 +6,16 @@ from flask import Response
 import json
 from werkzeug.utils import secure_filename
 from pymongo import MongoClient
-from bson import ObjectId
-from bson import json_util
-from bson import Binary, Code
 from bson.json_util import dumps
 from bson.json_util import loads
 import flask_excel as excel
+import xlrd
+import pandas as pd
+import xlsxwriter
+import pyexcel as pe
+from pyexcel_xlsx import get_data
+from pyexcel_xlsx import save_data
+import ast
 
 
 
@@ -19,9 +23,12 @@ import requests
 from flask import Flask, request, jsonify
 
 #uploads folder
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = "./uploads/"
 #currently allowed extensions
 ALLOWED_EXTENSIONS = set(['xls', 'xlsx', 'csv'])
+
+
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "diabetes"
@@ -39,23 +46,46 @@ from datetime import datetime
 def upload_file():
     if request.method == 'POST':
         if ('exercise') not in request.files:
-            print "HERE1"
             return redirect(request.url)
         exer = request.files['exercise']
         sugg = request.files['suggestion']
         if (sugg.filename == '') and (exer.filename == ''):
-            print "HERE3"
             return redirect(request.url)
         if (exer and allowed_file(exer.filename)) or (sugg and allowed_file(sugg.filename)):
-            print "HERE4"
             if exer and allowed_file(exer.filename):
                 rez_e = request.get_array(field_name='exercise')
+
+
                 db.exercise.drop()
                 result_e = db.exercise.insert_one({"result": rez_e})
 
             if sugg and allowed_file(sugg.filename):
+                filename = secure_filename(sugg.filename)
                 rez_s = request.get_array(field_name='suggestion')
+                book = xlrd.open_workbook(UPLOAD_FOLDER + sugg.filename)
+                print "The number of worksheets are ", book.nsheets
+                sheet = book.sheet_by_index(0)
+                for j in range(0, 20):
+                    for i in range(0, 20):
+                        print "%s" % sheet.cell_value(i, j)
+
+
+
+                str1 = ''.join(str(e) for e in rez_s)
+                #save_data(UPLOAD_FOLDER + sugg.filename, str1)
                 db.suggestion.drop()
+
+
+
+
+
+                print "+++"
+                print type(rez_s)
+                print type(str1)
+                #print str1
+                print "+++"
+
+
                 result_s = db.suggestion.insert_one({"result": rez_s})
             return render_template('index.html')
         return render_template('index.html')
@@ -71,7 +101,28 @@ def api_exercise():
 def api_suggestion():
     online_api = db.suggestion.find()
     online_api = dumps(online_api)
-    return  online_api
+
+    wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
+    oldValue = 0
+    newValue = 0
+    result = []
+    meh = 0
+
+
+    for x in range(0,wb.nsheets):
+        sheet = wb.sheet_by_index(x)
+        str_list = filter(None, sheet.row_values(1))
+        oldValue =json.dumps(str_list)
+        result.append(oldValue)
+        print result
+        print type(result)
+
+    #print type(str(result))
+    #print result
+    str(result)
+    print type(result)
+    return result[0]
+
 
 
 @app.route('/index')

@@ -7,9 +7,23 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ExerciseDetailsViewController: UIViewController {
     
+    @IBAction func getNotBut(_ sender: Any) {
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Test Notification - Pre workout "
+        content.subtitle = "Test Subtitle - Overall text here"
+        content.body = "insulin recommendation here"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
+        let request = UNNotificationRequest(identifier: "timeDone", content:content, trigger:trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
     @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
     @IBOutlet weak var isUnplannedExerciseSwitch: UISwitch!
     
@@ -30,6 +44,7 @@ class ExerciseDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in })
         
         print(chosenExerciseDetails)
     }
