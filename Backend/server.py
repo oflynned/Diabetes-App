@@ -74,18 +74,6 @@ def upload_file():
                 str1 = ''.join(str(e) for e in rez_s)
                 #save_data(UPLOAD_FOLDER + sugg.filename, str1)
                 db.suggestion.drop()
-
-
-
-
-
-                print "+++"
-                print type(rez_s)
-                print type(str1)
-                #print str1
-                print "+++"
-
-
                 result_s = db.suggestion.insert_one({"result": rez_s})
             return render_template('index.html')
         return render_template('index.html')
@@ -103,25 +91,41 @@ def api_suggestion():
     online_api = dumps(online_api)
 
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
-    oldValue = 0
-    newValue = 0
     result = []
-    meh = 0
 
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
         str_list = filter(None, sheet.row_values(1))
+
+       # print sheet.row_values(1)
         oldValue =json.dumps(str_list)
         result.append(oldValue)
-        print result
-        print type(result)
 
-    #print type(str(result))
-    #print result
-    str(result)
-    print type(result)
-    return result[0]
+    workbook = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
+    for sheet in workbook.sheets():
+        for row in range(sheet.nrows):
+            for column in range(sheet.ncols):
+                print "row::::: ", row
+                print "column:: ", column
+                print "value::: ", sheet.cell(row, column).value
+
+    result2 = [json.loads(y) for y in result]
+    #print result2[2][0]
+
+
+
+    data= {}
+
+    for x in range(0,len(result2[0])-1):
+        data ['data'] = { result2[0][0]:result2[0][0],
+                          result2[0][1]:result2[0][1],
+                          result2[0][2]:result2[0][2],
+                          result2[0][3]:result2[0][3],
+                          result2[0][4]:result2[0][4]}
+    s =json.dumps(data)
+
+    return s
 
 
 
