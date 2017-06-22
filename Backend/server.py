@@ -96,8 +96,8 @@ def api_suggestion():
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
-        str_list = filter(None, sheet.row_values(1))
-
+        str_list = filter(None, sheet.row_values(x))
+        print str_list
        # print sheet.row_values(1)
         oldValue =json.dumps(str_list)
         result.append(oldValue)
@@ -106,9 +106,8 @@ def api_suggestion():
     for sheet in workbook.sheets():
         for row in range(sheet.nrows):
             for column in range(sheet.ncols):
-                print "row::::: ", row
-                print "column:: ", column
-                print "value::: ", sheet.cell(row, column).value
+                #print "row: ", row ," column: ", column, "value: ", sheet.cell(row, column).value
+                1+1
 
     result2 = [json.loads(y) for y in result]
     #print result2[2][0]

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lae-Ut-77z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="587-Wl-87o">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,54 +50,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4717" y="-1336"/>
-        </scene>
-        <!--Splash-->
-        <scene sceneID="wVr-Oi-uYk">
-            <objects>
-                <viewController title="Splash" id="0WJ-PZ-tSE" customClass="SplashViewController" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7kN-s2-nG4"/>
-                        <viewControllerLayoutGuide type="bottom" id="XU6-nQ-R82"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KDu-Em-UGR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="63q-La-GCw">
-                                <rect key="frame" x="79" y="225" width="256" height="286"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="izN-0m-mdU">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="ezZ-td-aBk"/>
-                                            <constraint firstAttribute="width" constant="256" id="wXb-5S-a9c"/>
-                                            <constraint firstAttribute="width" secondItem="izN-0m-mdU" secondAttribute="height" multiplier="1:1" id="yv9-HP-VFx"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-Ko-9jm">
-                                        <rect key="frame" x="86" y="256" width="84" height="30"/>
-                                        <state key="normal" title="Next Screen"/>
-                                        <connections>
-                                            <segue destination="587-Wl-87o" kind="show" id="g2r-ae-71j"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="63q-La-GCw" firstAttribute="centerX" secondItem="KDu-Em-UGR" secondAttribute="centerX" id="7Xb-dl-1vl"/>
-                            <constraint firstItem="63q-La-GCw" firstAttribute="centerY" secondItem="KDu-Em-UGR" secondAttribute="centerY" id="BiQ-jd-l7U"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="6v7-Kx-3ij"/>
-                    <connections>
-                        <outlet property="SplashNextButton" destination="hsH-Ko-9jm" id="hXp-Fp-UVg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SJi-Y1-1Am" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1953" y="-58"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="l3i-lb-9Hs">
@@ -263,7 +214,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Units in Limits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X32-10-byZ">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -280,7 +231,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Insulin Therapy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="REL-Ku-d3j">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -297,7 +248,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Goals for Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zyN-pS-eLR">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -314,7 +265,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="BG Targets before Exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U26-B9-Qix">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -331,7 +282,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wBh-51-sQG">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -536,24 +487,6 @@
             </objects>
             <point key="canvasLocation" x="2300" y="-58.695652173913047"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wtH-xu-Eva">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lae-Ut-77z" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjx-xs-L1G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0WJ-PZ-tSE" kind="relationship" relationship="rootViewController" id="UBh-ie-aCi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xgL-uX-Q5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2798" y="-58"/>
-        </scene>
         <!--First Time Setup-->
         <scene sceneID="pJu-2i-dPh">
             <objects>
@@ -573,7 +506,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Blood Glucose Units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zaz-ie-5nx">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -590,7 +523,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Insulin Therapy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GHD-Ae-yEC">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -607,7 +540,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Blood Glucose Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Bx-nI-EWt">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -624,7 +557,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="smq-mY-SY9">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -641,7 +574,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vv9-ld-iXf">
-                                                    <rect key="frame" x="20" y="0.0" width="379" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1447,11 +1380,10 @@
     <resources>
         <image name="add" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
-        <image name="icon" width="64" height="64"/>
         <image name="info" width="30" height="30"/>
         <image name="settings" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g2r-ae-71j"/>
+        <segue reference="xBy-Mf-lPa"/>
     </inferredMetricsTieBreakers>
 </document>
