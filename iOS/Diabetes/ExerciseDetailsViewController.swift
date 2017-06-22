@@ -9,15 +9,19 @@
 import UIKit
 import UserNotifications
 
-class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource{
+class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource,  UNUserNotificationCenterDelegate{
 
     
     @IBAction func add_exercise(_ sender: Any) {
         
+        
+        
+        
+        
         let content = UNMutableNotificationContent()
-        content.title = "Diabetes App Notification"
+        content.title = NSString.localizedUserNotificationString(forKey: "Diabetes App Notification", arguments: nil)
         content.subtitle = "Server not found"
-        content.body = "Please wait while server comes back online"
+        content.body = NSString.localizedUserNotificationString(forKey: "Please wait while server comes back online",arguments: nil)
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
@@ -28,6 +32,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     }
     
 
+    
     @IBOutlet weak var picker1: UIPickerView!
     
     @IBOutlet weak var picker2: UIPickerView!
@@ -58,7 +63,15 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+    
         
        
         picker1.delegate = self
@@ -72,6 +85,15 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         
         print(chosenExerciseDetails)
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        //
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
