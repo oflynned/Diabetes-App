@@ -12,7 +12,22 @@ import UserNotifications
 class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource{
 
     
+    @IBAction func add_exercise(_ sender: Any) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Diabetes App Notification"
+        content.subtitle = "Server not found"
+        content.body = "Please wait while server comes back online"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
+        let request = UNNotificationRequest(identifier:"timeDone", content:content, trigger:trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
     
+
     @IBOutlet weak var picker1: UIPickerView!
     
     @IBOutlet weak var picker2: UIPickerView!
@@ -22,19 +37,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
     
     
-    @IBAction func getNotBut(_ sender: Any) {
-        let content = UNMutableNotificationContent()
-        
-        content.title = "Test Notification - Pre workout "
-        content.subtitle = "Test Subtitle - Overall text here"
-        content.body = "insulin recommendation here"
-        content.badge = 1
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
-        let request = UNNotificationRequest(identifier: "timeDone", content:content, trigger:trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
-    }
+   
     @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
     @IBOutlet weak var isUnplannedExerciseSwitch: UISwitch!
     
@@ -55,7 +58,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in })
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
         
        
         picker1.delegate = self
@@ -129,5 +132,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
     return 1
     }
+    
+   
     
 }
