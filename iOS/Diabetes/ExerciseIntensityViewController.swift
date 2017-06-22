@@ -20,7 +20,7 @@ class ExerciseIntensityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        intensityDetailsLabel.text = "Mild"
+        intensityDetailsLabel.text = "Mild\n Very light to light activity: Easy to breath and carry out a conversation. Feels like you can maintain for hours."
     }
 
     override func didReceiveMemoryWarning() {
