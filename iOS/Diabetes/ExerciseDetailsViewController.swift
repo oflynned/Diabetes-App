@@ -9,7 +9,18 @@
 import UIKit
 import UserNotifications
 
-class ExerciseDetailsViewController: UIViewController {
+class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource{
+
+    
+    
+    @IBOutlet weak var picker1: UIPickerView!
+    
+    @IBOutlet weak var picker2: UIPickerView!
+    
+    @IBOutlet weak var picker3: UIPickerView!
+    
+    var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
+    
     
     @IBAction func getNotBut(_ sender: Any) {
         let content = UNMutableNotificationContent()
@@ -45,6 +56,16 @@ class ExerciseDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in })
+        
+       
+        picker1.delegate = self
+        picker1.dataSource = self
+        
+        picker2.delegate = self
+        picker2.dataSource = self
+        
+        picker3.delegate = self
+        picker3.dataSource = self
         
         print(chosenExerciseDetails)
     }
@@ -97,4 +118,16 @@ class ExerciseDetailsViewController: UIViewController {
         alert.addAction(submitAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Array[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Array.count
+    }
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+    return 1
+    }
+    
 }

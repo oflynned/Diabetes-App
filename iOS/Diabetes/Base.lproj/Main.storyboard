@@ -1123,7 +1123,7 @@
                                         <rect key="frame" x="20" y="84" width="414" height="576"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DBl-d9-vgG">
-                                                <rect key="frame" x="28" y="-103.33333333333331" width="358" height="783"/>
+                                                <rect key="frame" x="28" y="-103" width="358" height="783"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-YQ-WhG">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="133"/>
@@ -1135,19 +1135,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-sh-7Qm">
-                                                                <rect key="frame" x="0.0" y="20.333333333333329" width="358" height="112.66666666666667"/>
+                                                                <rect key="frame" x="0.0" y="20.333333333333321" width="358" height="112.66666666666669"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWW-rC-wkn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="31.000000000000014"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW1-ZU-zVZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="31"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="31.000000000000014"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-Mh-GYK">
-                                                                                <rect key="frame" x="309" y="0.0" width="51" height="31"/>
+                                                                                <rect key="frame" x="309" y="0.0" width="51" height="31.000000000000014"/>
                                                                                 <connections>
                                                                                     <action selector="onPlannedExerciseClick:" destination="cpT-lO-T33" eventType="valueChanged" id="4PX-ye-oR2"/>
                                                                                 </connections>
@@ -1155,13 +1155,13 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can plan changes to your insulin doses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-9g-pjd">
-                                                                        <rect key="frame" x="0.0" y="31" width="358" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="31.000000000000014" width="358" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ang-4O-YPA">
-                                                                        <rect key="frame" x="0.0" y="48" width="358" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="48.000000000000014" width="358" height="31"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unplanned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-Ja-OD5">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="31"/>
@@ -1178,7 +1178,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have not had time to plan your exercise and are starting exercise straight away click here " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbZ-WJ-JGd">
-                                                                        <rect key="frame" x="0.0" y="79" width="358" height="33.666666666666657"/>
+                                                                        <rect key="frame" x="0.0" y="79.000000000000014" width="358" height="33.666666666666657"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -1188,16 +1188,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-Dl-Zp3">
-                                                        <rect key="frame" x="0.0" y="148" width="358" height="87.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="148" width="358" height="87.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your exercise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoH-sk-RYP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333343"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333314"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KBP-6F-XU8">
-                                                                <rect key="frame" x="0.0" y="20.333333333333343" width="358" height="67"/>
+                                                                <rect key="frame" x="0.0" y="20.333333333333314" width="358" height="67"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-3t-EQ0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="31"/>
@@ -1238,16 +1238,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="adK-XK-wNm">
-                                                        <rect key="frame" x="0.0" y="250.33333333333331" width="358" height="236.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="250.33333333333334" width="358" height="236.33333333333329"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approximate time of exercise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a50-uY-Ze5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333314"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333371"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="B8h-za-5gz">
-                                                                <rect key="frame" x="0.0" y="20.333333333333314" width="358" height="216.00000000000006"/>
+                                                                <rect key="frame" x="0.0" y="20.333333333333371" width="358" height="215.99999999999994"/>
                                                                 <date key="date" timeIntervalSinceReferenceDate="518091316.62088001">
                                                                     <!--2017-06-02 10:15:16 +0000-->
                                                                 </date>
@@ -1255,31 +1255,35 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-xP-QCm">
-                                                        <rect key="frame" x="0.0" y="501.66666666666663" width="358" height="236.33333333333326"/>
+                                                        <rect key="frame" x="0.0" y="501.66666666666657" width="358" height="236.33333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood glucose before exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-bU-kSj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333258"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="20.333333333333371"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-Mt-SpS">
-                                                                <rect key="frame" x="0.0" y="20.333333333333258" width="358" height="216"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="niH-0W-hbK">
+                                                                <rect key="frame" x="0.0" y="20.333333333333371" width="358" height="216"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="32y-N4-wxA">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="216"/>
-                                                                        <subviews>
-                                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-3X-4Fh">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="119.33333333333334" height="216"/>
-                                                                            </pickerView>
-                                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBu-7a-vRe">
-                                                                                <rect key="frame" x="119.33333333333333" y="0.0" width="119.33333333333336" height="216"/>
-                                                                            </pickerView>
-                                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AK-3q-u9X">
-                                                                                <rect key="frame" x="238.66666666666671" y="0.0" width="119.33333333333329" height="216"/>
-                                                                            </pickerView>
-                                                                        </subviews>
-                                                                    </stackView>
+                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H06-jd-YcR">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="119.33333333333334" height="216"/>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="cpT-lO-T33" id="ABX-2B-Hj3"/>
+                                                                        </connections>
+                                                                    </pickerView>
+                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-B9-oow">
+                                                                        <rect key="frame" x="119.33333333333333" y="0.0" width="119.33333333333336" height="216"/>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="cpT-lO-T33" id="wd2-IG-h4F"/>
+                                                                        </connections>
+                                                                    </pickerView>
+                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWS-rf-AMU">
+                                                                        <rect key="frame" x="238.66666666666671" y="0.0" width="119.33333333333329" height="216"/>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="cpT-lO-T33" id="gqb-Sk-nQO"/>
+                                                                        </connections>
+                                                                    </pickerView>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -1334,6 +1338,9 @@
                         <outlet property="isPlannedExerciseSwitch" destination="Rbf-Mh-GYK" id="11J-8w-8bF"/>
                         <outlet property="isUnplannedExerciseSwitch" destination="sI8-tN-fkE" id="JGd-xz-7ES"/>
                         <outlet property="lastEatenLayout" destination="0k9-Dl-Zp3" id="rgN-Qx-gWb"/>
+                        <outlet property="picker1" destination="H06-jd-YcR" id="f24-6y-Gls"/>
+                        <outlet property="picker2" destination="xg5-B9-oow" id="Kh7-GJ-WAP"/>
+                        <outlet property="picker3" destination="VWS-rf-AMU" id="LNN-jl-csw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lI-Jn-yEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
