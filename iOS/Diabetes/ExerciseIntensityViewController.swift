@@ -47,16 +47,16 @@ class ExerciseIntensityViewController: UIViewController {
         
         switch intensitySelectionSegment.selectedSegmentIndex {
         case 0:
-            intensityDetailsLabel.text = "Mild"
+            intensityDetailsLabel.text = "Mild\n Very light to light activity: Easy to breath and carry out a conversation. Feels like you can maintain for hours."
             break
         case 1:
-            intensityDetailsLabel.text = "Moderate"
+            intensityDetailsLabel.text = "Moderate\n Moderate activity: Breathing heavily, can hold short conversation. Somewhat comfortable but becoming noticeably more challenging."
             break
         case 2:
-            intensityDetailsLabel.text = "Intense"
+            intensityDetailsLabel.text = "Intense\n Vigorous activity: Short of breath, can speak a sentence. Borderline uncomfortable."
             break
         case 3:
-            intensityDetailsLabel.text = "Extremely intense"
+            intensityDetailsLabel.text = "Extremely intense\n very hard to max effort activity: Completely out of breath, barely or unable to talk. Can only maintain for very short time."
             break
         default:
             break
