@@ -94,12 +94,11 @@ def api_suggestion():
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
     sheetNames= wb.sheet_names()
 
-    #print type(sheetNames)
-    #print sheetNames[0]
-    #print len(sheetNames)
 
     result = []
     result22 = []
+    resultnew= []
+    resultnewnew= []
     datanew = {}
 
     for x in range(0,wb.nsheets):
@@ -107,11 +106,6 @@ def api_suggestion():
         str_list = filter(None, sheet.row_values(1))
         str_list2 = filter(None, sheet.row_values(2))
 
-        #print sheet.nrows
-        #print "x",x
-        #print sheetNames[x]
-        str_list4 = filter(None, sheet.row_values(sheet.nrows-2))
-        #print "SHEET-",x," at line-", sheet.nrows ,"  row content-",str_list4
 
         oldValue2 = json.dumps(str_list2)
 
@@ -123,19 +117,40 @@ def api_suggestion():
 
         for y in range(0,sheet.nrows):
             str_list3 = filter(None,sheet.row_values(y))
-            print "X-", x," Y-",y , "content-", str_list3
+            #print "Worksheet:X-", x," Row:Y-",y , "content-", str_list3
+            resultnew.append(json.dumps(str_list3))
+            print "Worksheet:X-", x," Row:Y-",y , "resultnew-", str_list3 #data in list form
 
-        #datanew[sheetNames[x]] = {result[0][0]: result22[0][0],
-        # result[0][1]: result22[0][1],result[0][2]: result22[0][2],
-        # result[0][3]: result22[0][3],result[0][4]: result22[0][4]}
+
+
+        resultnewnew.append(resultnew)
+        #print type(resultnewnew)
+        #print x
+
+
+
+    #print type(resultnew)
+    #print type(resultnewnew)
+
 
 
     #print "result ", result
     result2 = [json.loads(y) for y in result]
-    #print "result2", result2
-    #print "result2", result2
-
     result32 = [json.loads(y) for y in result22]
+    #print result2
+
+    resultnew2 = [json.loads(y) for y in resultnew]
+
+
+    #print result2
+
+
+    #print result2
+
+   #print resultnew2[1][0]
+    #print result2[0][0]
+
+
 
     data= {}
     #print result2[0]
