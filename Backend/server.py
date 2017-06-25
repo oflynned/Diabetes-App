@@ -10,6 +10,7 @@ from bson.json_util import dumps
 from bson.json_util import loads
 import flask_excel as excel
 import xlrd
+import xlrd as xl
 import pandas as pd
 import xlsxwriter
 import pyexcel as pe
@@ -91,46 +92,66 @@ def api_suggestion():
     online_api = dumps(online_api)
 
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
+    sheetNames= wb.sheet_names()
+
+    #print type(sheetNames)
+    #print sheetNames[0]
+    #print len(sheetNames)
+
     result = []
     result22 = []
-
+    datanew = {}
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
         str_list = filter(None, sheet.row_values(1))
         str_list2 = filter(None, sheet.row_values(2))
 
-        oldValue = json.dumps(str_list)
+        #print sheet.nrows
+        #print "x",x
+        #print sheetNames[x]
+        str_list4 = filter(None, sheet.row_values(sheet.nrows-2))
+        #print "SHEET-",x," at line-", sheet.nrows ,"  row content-",str_list4
+
         oldValue2 = json.dumps(str_list2)
 
-        result.append(oldValue)
+        result.append(json.dumps(str_list))
+        #print "result", result
+
+
         result22.append(oldValue2)
 
-    workbook = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
-    for sheet in workbook.sheets():
-        for row in range(sheet.nrows):
-            for column in range(sheet.ncols):
-                print "row: ", row ," column: ", column, "value: ", sheet.cell(row, column).value
-                1+1
+        for y in range(0,sheet.nrows):
+            str_list3 = filter(None,sheet.row_values(y))
+            print "X-", x," Y-",y , "content-", str_list3
 
+        #datanew[sheetNames[x]] = {result[0][0]: result22[0][0],
+        # result[0][1]: result22[0][1],result[0][2]: result22[0][2],
+        # result[0][3]: result22[0][3],result[0][4]: result22[0][4]}
+
+
+    #print "result ", result
     result2 = [json.loads(y) for y in result]
+    #print "result2", result2
+    #print "result2", result2
 
     result32 = [json.loads(y) for y in result22]
 
     data= {}
-    print result2[0]
-    print result32[0]
+    #print result2[0]
+    #print result32[0]
 
     for x in range(0,len(result2[0])-1):
-        data ['data'] = { result2[0][0]:result32[0][0],
-                          result2[0][1]:result32[0][1],
-                          result2[0][2]:result32[0][2],
-                          result2[0][3]:result32[0][3],
-                          result2[0][4]:result32[0][4]}
+        data [sheetNames[0]] = { result2[0][0]:result32[0][0],
+                              result2[0][1]:result32[0][1],
+                              result2[0][2]:result32[0][2],
+                              result2[0][3]:result32[0][3],
+                              result2[0][4]:result32[0][4]}
     s =json.dumps(data)
 
-    return s
+    z = json.dumps(datanew)
 
+    return s
 
 
 @app.route('/index')
