@@ -87,9 +87,6 @@ def api_exercise():
 
 @app.route('/api/suggestion', methods = ['GET'])
 def api_suggestion():
-    online_api = db.suggestion.find()
-    online_api = dumps(online_api)
-
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
     sheetNames= wb.sheet_names()
 
@@ -100,23 +97,14 @@ def api_suggestion():
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
-        str_list = filter(None, sheet.row_values(1))
-        str_list2 = filter(None, sheet.row_values(2))
-
-        oldValue2 = json.dumps(str_list2)
-        result.append(json.dumps(str_list))
-        result22.append(oldValue2)
+        result.append(json.dumps(filter(None, sheet.row_values(1))))
+        result22.append(json.dumps(filter(None, sheet.row_values(2))))
 
         for y in range(0,sheet.nrows):
-            str_list3 = filter(None,sheet.row_values(y))
-            resultnew.append(json.dumps(str_list3))
-            #print "Worksheet:X-", x," Row:Y-",y , "content-", str_list3
-            #print "Worksheet:X-", x," Row:Y-",y , "resultnew-", str_list3 #data in list form
-
+            resultnew.append(json.dumps(filter(None,sheet.row_values(y))))
 
         resulttemp = [json.loads(i) for i in resultnew]
         resultnewnew.append(resulttemp)
-        resulttemp = []
         resultnew = []
 
     print "\nsheet2-", resultnewnew[8]
@@ -124,6 +112,19 @@ def api_suggestion():
     result2 = [json.loads(y) for y in result]
     result32 = [json.loads(y) for y in result22]
     data= {}
+
+
+
+
+    for x in range(0,len(resultnewnew)):
+        print sheetNames[x]
+        print range(0,len(resultnewnew[x]))
+        for y in range(0,len(resultnewnew[x])):
+            print resultnewnew[x][y]
+            for z in range(0, len(resultnewnew[x][y])):
+                print resultnewnew[x][y][z]
+
+
 
     for x in range(0,len(result2[0])-1):
         data [sheetNames[0]] = { result2[0][0]:result32[0][0],
