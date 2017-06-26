@@ -7,20 +7,19 @@ import json
 from werkzeug.utils import secure_filename
 from pymongo import MongoClient
 from bson.json_util import dumps
-from bson.json_util import loads
-import flask_excel as excel
 import xlrd
+import numpy as np
 import xlrd as xl
 import pandas as pd
 import xlsxwriter
 import pyexcel as pe
+import ast
+import requests
+
+
+
 from pyexcel_xlsx import get_data
 from pyexcel_xlsx import save_data
-import ast
-
-
-
-import requests
 from flask import Flask, request, jsonify
 
 #uploads folder
@@ -100,12 +99,22 @@ def api_suggestion():
     resultnew= []
     resultnewnew= []
     datanew = {}
+    testvar= []
+    testvar2 =[]
+
+    print "sheet names",wb.sheet_names()
+    print "sheet names", wb.sheet_names()[0]
+    test1 =wb.sheet_by_index(0)
+    #print "sheet values", test.row(0)
+
+    testlist = ['one ','two','three']
+    testlist2 = []
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
         str_list = filter(None, sheet.row_values(1))
         str_list2 = filter(None, sheet.row_values(2))
-
+        print sheet
 
         oldValue2 = json.dumps(str_list2)
 
@@ -119,36 +128,34 @@ def api_suggestion():
             str_list3 = filter(None,sheet.row_values(y))
             #print "Worksheet:X-", x," Row:Y-",y , "content-", str_list3
             resultnew.append(json.dumps(str_list3))
-            print "Worksheet:X-", x," Row:Y-",y , "resultnew-", str_list3 #data in list form
+            #print "Worksheet:X-", x," Row:Y-",y , "resultnew-", str_list3 #data in list form
+            #print "row values",sheet.row_values(y)
 
 
-
-        resultnewnew.append(resultnew)
-        #print type(resultnewnew)
-        #print x
-
-
-
-    #print type(resultnew)
-    #print type(resultnewnew)
+        resulttemp = [json.loads(i) for i in resultnew]
+        resultnewnew.append(resulttemp)
+        resulttemp = []
+        resultnew = []
 
 
-
+    #print "testvar1",testvar[8][0]
+    #print "testvar2",testvar2
     #print "result ", result
+    #print resultnewnew
+    #print "\nsheet1-",resultnewnew
+    print "\nsheet2-", resultnewnew[8]
+    #print "\nrow-",resultnewnew[8]
+    #print "\nrow-", resultnewnew[1][1]
+    #print "\nrow- ", resultnewnew[1][1][0]
+
+    #print "\ncolumn-",resultnewnew[0][0][0]
+
     result2 = [json.loads(y) for y in result]
     result32 = [json.loads(y) for y in result22]
     #print result2
 
-    resultnew2 = [json.loads(y) for y in resultnew]
+    #print resultnewnew
 
-
-    #print result2
-
-
-    #print result2
-
-   #print resultnew2[1][0]
-    #print result2[0][0]
 
 
 
@@ -163,9 +170,6 @@ def api_suggestion():
                               result2[0][3]:result32[0][3],
                               result2[0][4]:result32[0][4]}
     s =json.dumps(data)
-
-    z = json.dumps(datanew)
-
     return s
 
 
