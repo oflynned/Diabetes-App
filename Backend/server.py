@@ -93,43 +93,25 @@ def api_suggestion():
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
     sheetNames= wb.sheet_names()
 
-
     result = []
     result22 = []
     resultnew= []
     resultnewnew= []
-    datanew = {}
-    testvar= []
-    testvar2 =[]
-
-    print "sheet names",wb.sheet_names()
-    print "sheet names", wb.sheet_names()[0]
-    test1 =wb.sheet_by_index(0)
-    #print "sheet values", test.row(0)
-
-    testlist = ['one ','two','three']
-    testlist2 = []
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
         str_list = filter(None, sheet.row_values(1))
         str_list2 = filter(None, sheet.row_values(2))
-        print sheet
 
         oldValue2 = json.dumps(str_list2)
-
         result.append(json.dumps(str_list))
-        #print "result", result
-
-
         result22.append(oldValue2)
 
         for y in range(0,sheet.nrows):
             str_list3 = filter(None,sheet.row_values(y))
-            #print "Worksheet:X-", x," Row:Y-",y , "content-", str_list3
             resultnew.append(json.dumps(str_list3))
+            #print "Worksheet:X-", x," Row:Y-",y , "content-", str_list3
             #print "Worksheet:X-", x," Row:Y-",y , "resultnew-", str_list3 #data in list form
-            #print "row values",sheet.row_values(y)
 
 
         resulttemp = [json.loads(i) for i in resultnew]
@@ -137,31 +119,11 @@ def api_suggestion():
         resulttemp = []
         resultnew = []
 
-
-    #print "testvar1",testvar[8][0]
-    #print "testvar2",testvar2
-    #print "result ", result
-    #print resultnewnew
-    #print "\nsheet1-",resultnewnew
     print "\nsheet2-", resultnewnew[8]
-    #print "\nrow-",resultnewnew[8]
-    #print "\nrow-", resultnewnew[1][1]
-    #print "\nrow- ", resultnewnew[1][1][0]
-
-    #print "\ncolumn-",resultnewnew[0][0][0]
 
     result2 = [json.loads(y) for y in result]
     result32 = [json.loads(y) for y in result22]
-    #print result2
-
-    #print resultnewnew
-
-
-
-
     data= {}
-    #print result2[0]
-    #print result32[0]
 
     for x in range(0,len(result2[0])-1):
         data [sheetNames[0]] = { result2[0][0]:result32[0][0],
