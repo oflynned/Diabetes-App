@@ -113,6 +113,8 @@ def api_suggestion():
     result32 = [json.loads(y) for y in result22]
     data= {}
 
+    data2 = {}
+
 
 
 
@@ -123,7 +125,7 @@ def api_suggestion():
             print resultnewnew[x][y]
             for z in range(0, len(resultnewnew[x][y])):
                 print resultnewnew[x][y][z]
-
+                data2[sheetNames[x]] = {"something ":"everything"}
 
 
     for x in range(0,len(result2[0])-1):
@@ -133,7 +135,8 @@ def api_suggestion():
                               result2[0][3]:result32[0][3],
                               result2[0][4]:result32[0][4]}
     s =json.dumps(data)
-    return s
+    z = json.dumps(data2)
+    return z
 
 
 @app.route('/index')
