@@ -116,16 +116,18 @@ def api_suggestion():
     data2 = {}
 
 
-
+    count =0
 
     for x in range(0,len(resultnewnew)):
-        print sheetNames[x]
-        print range(0,len(resultnewnew[x]))
         for y in range(0,len(resultnewnew[x])):
-            print resultnewnew[x][y]
             for z in range(0, len(resultnewnew[x][y])):
-                print resultnewnew[x][y][z]
-                data2[sheetNames[x]] = {"something ":"everything"}
+                if(resultnewnew[x][y][z] == 'Exercise type '):
+                    count = count +1
+                    print count
+                    data2[sheetNames[x]] = {resultnewnew[x][y][z]:resultnewnew[x][y+1][z],
+                                            resultnewnew[x][y][z+1]: resultnewnew[x][y+1][z+1],
+                                            resultnewnew[x][y][z+2]: resultnewnew[x][y+1][z+2],
+                                            resultnewnew[x][y][z+3]: resultnewnew[x][y+1][z+3]}
 
 
     for x in range(0,len(result2[0])-1):
