@@ -90,16 +90,11 @@ def api_suggestion():
     wb = xlrd.open_workbook(UPLOAD_FOLDER + 'app_sug_2.xlsx')
     sheetNames= wb.sheet_names()
 
-    result = []
-    result22 = []
     resultnew= []
     resultnewnew= []
 
     for x in range(0,wb.nsheets):
         sheet = wb.sheet_by_index(x)
-        result.append(json.dumps(filter(None, sheet.row_values(1))))
-        result22.append(json.dumps(filter(None, sheet.row_values(2))))
-
         for y in range(0,sheet.nrows):
             resultnew.append(json.dumps(filter(None,sheet.row_values(y))))
 
@@ -107,37 +102,23 @@ def api_suggestion():
         resultnewnew.append(resulttemp)
         resultnew = []
 
-    print "\nsheet2-", resultnewnew[8]
-
-    result2 = [json.loads(y) for y in result]
-    result32 = [json.loads(y) for y in result22]
     data= {}
-
-    data2 = {}
-
-
-    count =0
-
     for x in range(0,len(resultnewnew)):
         for y in range(0,len(resultnewnew[x])):
+            print "row" ,len(resultnewnew[x][y])
             for z in range(0, len(resultnewnew[x][y])):
+                print "value",resultnewnew[x][y][z]
                 if(resultnewnew[x][y][z] == 'Exercise type '):
-                    count = count +1
-                    print count
-                    data2[sheetNames[x]] = {resultnewnew[x][y][z]:resultnewnew[x][y+1][z],
+                    data[sheetNames[x]] = {resultnewnew[x][y][z]:resultnewnew[x][y+1][z],
                                             resultnewnew[x][y][z+1]: resultnewnew[x][y+1][z+1],
                                             resultnewnew[x][y][z+2]: resultnewnew[x][y+1][z+2],
                                             resultnewnew[x][y][z+3]: resultnewnew[x][y+1][z+3]}
 
+                
 
-    for x in range(0,len(result2[0])-1):
-        data [sheetNames[0]] = { result2[0][0]:result32[0][0],
-                              result2[0][1]:result32[0][1],
-                              result2[0][2]:result32[0][2],
-                              result2[0][3]:result32[0][3],
-                              result2[0][4]:result32[0][4]}
-    s =json.dumps(data)
-    z = json.dumps(data2)
+
+
+    z = json.dumps(data)
     return z
 
 
