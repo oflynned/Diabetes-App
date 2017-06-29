@@ -103,27 +103,31 @@ def api_suggestion():
         resultnew = []
 
     data= {}
-    data2 ={}
+    data2 =[]
     data3 = {}
     for x in range(0,len(resultnewnew)):
         for y in range(0,len(resultnewnew[x])):
             #print "row" ,len(resultnewnew[x][y])
             for z in range(0, len(resultnewnew[x][y])):
                 #print "value",resultnewnew[x][y][z]
-                if(resultnewnew[x][y][z] == 'Exercise type '):
-                    data[sheetNames[x]] = {resultnewnew[x][y][z]:resultnewnew[x][y+1][z],
-                                            resultnewnew[x][y][z+1]: resultnewnew[x][y+1][z+1],
-                                            resultnewnew[x][y][z+2]: resultnewnew[x][y+1][z+2],
-                                            resultnewnew[x][y][z+3]: resultnewnew[x][y+1][z+3]}
+                if(resultnewnew[x][y][z] == resultnewnew[0][1][0]):
+                    if(resultnewnew[x][y][z] == ('Aerobic ') or ('Mixed ') or ('Anaerobic ')):
+                        data[sheetNames[x]] = {resultnewnew[x][y][z]: resultnewnew[x][y + 1][z],
+                                               resultnewnew[x][y][z + 1]: resultnewnew[x][y + 1][z + 1],
+                                               resultnewnew[x][y][z + 2]: resultnewnew[x][y + 1][z + 2],
+                                               resultnewnew[x][y][z + 3]: resultnewnew[x][y + 1][z + 3]}
+
+                data2.append(data)
+                #data = []
+
+    print data2
+    print type(data)
 
 
-                data2.update(data)
-                    #print data2
-            data3.update(data2)
-
-    print data3
     z = json.dumps(data2)
     return z
+
+
 
 
 @app.route('/index')
