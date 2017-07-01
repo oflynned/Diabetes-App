@@ -58,11 +58,11 @@ def upload_file():
                 filename = secure_filename(sugg.filename)
                 rez_s = request.get_array(field_name='suggestion')
                 book = xlrd.open_workbook(UPLOAD_FOLDER + sugg.filename)
-                print "The number of worksheets are ", book.nsheets
+                print("The number of worksheets are ", book.nsheets)
                 sheet = book.sheet_by_index(0)
                 for j in range(0, 20):
                     for i in range(0, 20):
-                        print "%s" % sheet.cell_value(i, j)
+                        print("%s" % sheet.cell_value(i, j))
 
                 str1 = ''.join(str(e) for e in rez_s)
                 # save_data(UPLOAD_FOLDER + sugg.filename, str1)
@@ -162,7 +162,9 @@ def api_suggestion():
                                                resultnewnew[x][y][z + 2]: resultnewnew[x][y + 1][z + 2],
                                                resultnewnew[x][y][z + 3]: resultnewnew[x][y + 1][z + 3]}
 
-                        #print data[sheetNames[x]]
+                data2.append(data)
+                #data = []
+
 
                 # data2.append(data)
                 data3.update(data)
