@@ -66,16 +66,32 @@ class Excel:
                 # 4 cols indicates the sheet is normal, 5 cols indicate an extra parameter in col 4
                 # where the suggestion is then given in col 5
 
-                for i in range(0, sheet.nrows):
-                    for j in range(min_row, max_row):
-                        if len(headings) == 4:
-                            # normal suggestion
-                            pass
-                        else:
-                            # extra parameter in col 4
-                            pass
+                groomed = []
 
-            return data_ranges
+                if len(headings) == 4:
+                    # normal suggestion
+                    pass
+                else:
+                    # extra parameter in col 4
+                    data = sheet.row_values(min_row, 0)
+                    for index, row_value in enumerate(data):
+                        if index == 3 and row_value == '':
+                            row_value = "*"
+
+                        if row_value is not '':
+                            row_value = row_value.strip()
+                            groomed.append(row_value)
+
+                data_object = {}
+                data_object["exercise_type"] = groomed[0]
+                data_object["exercise_intensity"] = groomed[1]
+                data_object["exercise_duration"] = groomed[2]
+                data_object["exercise_meal_timing"] = groomed[3]
+                data_object["exercise_meal_suggestion"] = groomed[4]
+
+                raw_data.append(data_object)
+            return raw_data
+
 
     @staticmethod
     def groom_content():
