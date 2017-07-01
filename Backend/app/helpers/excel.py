@@ -107,13 +107,17 @@ class Excel:
                             suggestions.append(suggestion_object)
 
                 data_object = {}
-                data_object["exercise_type"] = groomed[0]
-                data_object["exercise_intensity"] = groomed[1]
+                data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
+                data_object["exercise_intensity"] = Excel.__groom_titles(groomed[1])
                 data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
                 data_object["exercise_meal_suggestions"] = suggestions
 
                 raw_data.append(data_object)
             return raw_data
+
+    @staticmethod
+    def __groom_info_page(data):
+        pass
 
     @staticmethod
     def __groom_duration_timings(timing):
@@ -139,8 +143,11 @@ class Excel:
 
             formatted_timings.append(timing)
 
-        print(timings)
         return formatted_timings
+
+    @staticmethod
+    def __groom_titles(intensity):
+        return str(intensity).replace(" ", "_").lower()
 
     @staticmethod
     def groom_content():
