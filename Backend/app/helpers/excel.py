@@ -88,17 +88,20 @@ class Excel:
                                 row_value = row_value.strip()
                                 groomed.append(row_value)
 
-                        timing_content = data[3].strip()
+                        parameter_content = data[3].strip()
                         suggestion_content = data[4].strip()
 
                         if suggestion_content not in heading_exclusions:
                             suggestion_object = {}
 
                             # if there is an astrix, append a warning
-                            if timing_content == "*":
+                            if parameter_content == "*":
                                 suggestion_object["warning"] = warning_note
 
-                            suggestion_object["exercise_meal_timing"] = timing_content
+                            parameter_name = str(headings[3]).replace("/"," ")
+                            parameter_name = Excel.__groom_titles(parameter_name)
+
+                            suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
 
                             if suggestion_content == "*":
                                 suggestion_content = "always"
@@ -108,7 +111,7 @@ class Excel:
 
                 data_object = {}
                 data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
-                data_object["exercise_intensity"] = Excel.__groom_titles(groomed[1])
+                data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
                 data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
                 data_object["exercise_meal_suggestions"] = suggestions
 
@@ -122,11 +125,11 @@ class Excel:
     @staticmethod
     def __groom_duration_timings(timing):
         EPOCH_0_30 = 0
-        EPOCH_30_60 = 30
-        EPOCH_60_150 = 60
-        EPOCH_GR_150 = 150
+        EPOCH_30_60 = 1
+        EPOCH_60_150 = 2
+        EPOCH_GR_150 = 3
 
-        timings = timing.split("/")
+        timings = Excel.__split_tags(timing)
         formatted_timings = []
 
         for i in range(len(timings)):
@@ -146,8 +149,12 @@ class Excel:
         return formatted_timings
 
     @staticmethod
-    def __groom_titles(intensity):
-        return str(intensity).replace(" ", "_").lower()
+    def __groom_titles(title):
+        return str(title).replace(" ", "_").lower()
+
+    @staticmethod
+    def __split_tags(tags):
+        return str(tags).split("/")
 
     @staticmethod
     def groom_content():
