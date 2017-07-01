@@ -51,7 +51,6 @@ class Excel:
                 i += 1
 
             warning_note = data_ranges[len(data_ranges) - 1][0]
-            warning_note = {"warning_note": warning_note}
 
             # don't need the warning anymore so we pop it
             data_ranges.pop()
@@ -79,10 +78,11 @@ class Excel:
                     for data_row in range(min_row, max_row):
                         data = sheet.row_values(data_row, 0, 5)
                         for index, row_value in enumerate(data):
-                            # before meal, after meal, *
-                            # blank row indicates don't care
+                            # before meal, after meal, don't care
+                            # * indicates showing a warning with the suggestion
+
                             if index == 3 and row_value == '':
-                                data[index] = "*"
+                                data[index] = "always"
 
                             if row_value is not '':
                                 row_value = row_value.strip()
@@ -92,25 +92,56 @@ class Excel:
                         suggestion_content = data[4].strip()
 
                         if suggestion_content not in heading_exclusions:
-                            suggestions.append({
-                                "exercise_meal_timing": timing_content,
-                                "exercise_suggestion": suggestion_content
-                            })
+                            suggestion_object = {}
+
+                            # if there is an astrix, append a warning
+                            if timing_content == "*":
+                                suggestion_object["warning"] = warning_note
+
+                            suggestion_object["exercise_meal_timing"] = timing_content
+
+                            if suggestion_content == "*":
+                                suggestion_content = "always"
+                            suggestion_object["exercise_suggestion"] = suggestion_content
+
+                            suggestions.append(suggestion_object)
 
                 data_object = {}
                 data_object["exercise_type"] = groomed[0]
                 data_object["exercise_intensity"] = groomed[1]
-                data_object["exercise_duration"] = groomed[2]
+                data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
                 data_object["exercise_meal_suggestions"] = suggestions
 
                 raw_data.append(data_object)
             return raw_data
 
     @staticmethod
-    def groom_content():
-        epoch_0_30 = 0
-        epoch_30_60 = 30
-        epoch_60_150 = 60
-        epoch_gr_150 = 150
+    def __groom_duration_timings(timing):
+        EPOCH_0_30 = 0
+        EPOCH_30_60 = 30
+        EPOCH_60_150 = 60
+        EPOCH_GR_150 = 150
 
+        timings = timing.split("/")
+        formatted_timings = []
+
+        for i in range(len(timings)):
+            timing = timings[i].strip()
+
+            if timing == "0-30mins":
+                timing = EPOCH_0_30
+            elif timing == "30-60mins":
+                timing = EPOCH_30_60
+            elif timing == "60-150mins":
+                timing = EPOCH_60_150
+            elif timing == ">150mins":
+                timing = EPOCH_GR_150
+
+            formatted_timings.append(timing)
+
+        print(timings)
+        return formatted_timings
+
+    @staticmethod
+    def groom_content():
         return Excel.__retrieve_data_sheets()
