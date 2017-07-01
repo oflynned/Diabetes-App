@@ -69,28 +69,33 @@ class Excel:
 
                 groomed = []
                 suggestions = []
+                heading_exclusions = ['', 'Suggestions']
 
                 if len(headings) == 4:
                     # normal suggestion
                     pass
                 else:
                     # extra parameter in col 4
-                    data = sheet.row_values(min_row, 0, 5)
-                    for index, row_value in enumerate(data):
-                        # before meal, after meal, *
-                        # blank row indicates don't care
-                        if index == 3 and row_value == '':
-                            data[index] = "*"
+                    for data_row in range(min_row, max_row):
+                        data = sheet.row_values(data_row, 0, 5)
+                        for index, row_value in enumerate(data):
+                            # before meal, after meal, *
+                            # blank row indicates don't care
+                            if index == 3 and row_value == '':
+                                data[index] = "*"
 
-                        if row_value is not '':
-                            row_value = row_value.strip()
-                            groomed.append(row_value)
+                            if row_value is not '':
+                                row_value = row_value.strip()
+                                groomed.append(row_value)
 
-                    for suggestion_row in range(min_row, max_row):
-                        suggestions.append({
-                            "exercise_meal_timing": data[3].strip(),
-                            "exercise_suggestion": data[4].strip()
-                        })
+                        timing_content = data[3].strip()
+                        suggestion_content = data[4].strip()
+
+                        if suggestion_content not in heading_exclusions:
+                            suggestions.append({
+                                "exercise_meal_timing": timing_content,
+                                "exercise_suggestion": suggestion_content
+                            })
 
                 data_object = {}
                 data_object["exercise_type"] = groomed[0]
