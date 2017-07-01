@@ -30,14 +30,52 @@ class Excel:
 
             # iterate along the 0th col per row to get displacement
             # of how many suggestions there are by differencing
+            exclusion_factors = ['', 'Exercise type']
+            data_ranges = []
+
             i = 2
             for r in range(2, sheet.nrows):
                 row_value = sheet.row_values(r)
-                if row_value[0] is not '':
-                    print(row_value[0], i)
+                row_value = row_value[0].strip()
+                if row_value not in exclusion_factors:
+                    data_ranges.append([row_value, i])
+
+                # iterate to give max as only min exists
+                # [exercise type, min row, max row]
+
+                for index, item in enumerate(data_ranges):
+                    if index < len(data_ranges) - 1:
+                        data_ranges[index].append(data_ranges[index + 1][1])
+                        data_ranges[index] = data_ranges[index][:3]
+
                 i += 1
 
-        return headings
+            warning_note = data_ranges[len(data_ranges) - 1][0]
+            warning_note = {"warning_note": warning_note}
+
+            # don't need the warning anymore so we pop it
+            data_ranges.pop()
+
+            # now we've the ranges and the data to link
+            for exercise in data_ranges:
+                min_row = exercise[1]
+                max_row = exercise[2]
+
+                # iterate two-dimensionally over the x and y axes
+                # type, intensity, duration and suggestion are common
+                # 4 cols indicates the sheet is normal, 5 cols indicate an extra parameter in col 4
+                # where the suggestion is then given in col 5
+
+                for i in range(0, sheet.nrows):
+                    for j in range(min_row, max_row):
+                        if len(headings) == 4:
+                            # normal suggestion
+                            pass
+                        else:
+                            # extra parameter in col 4
+                            pass
+
+            return data_ranges
 
     @staticmethod
     def groom_content():
