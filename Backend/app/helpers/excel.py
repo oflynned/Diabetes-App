@@ -65,33 +65,41 @@ class Excel:
                 # type, intensity, duration and suggestion are common
                 # 4 cols indicates the sheet is normal, 5 cols indicate an extra parameter in col 4
                 # where the suggestion is then given in col 5
+                # the 4th and 5th cols together should form the suggestion object
 
                 groomed = []
+                suggestions = []
 
                 if len(headings) == 4:
                     # normal suggestion
                     pass
                 else:
                     # extra parameter in col 4
-                    data = sheet.row_values(min_row, 0)
+                    data = sheet.row_values(min_row, 0, 5)
                     for index, row_value in enumerate(data):
+                        # before meal, after meal, *
+                        # blank row indicates don't care
                         if index == 3 and row_value == '':
-                            row_value = "*"
+                            data[index] = "*"
 
                         if row_value is not '':
                             row_value = row_value.strip()
                             groomed.append(row_value)
 
+                    for suggestion_row in range(min_row, max_row):
+                        suggestions.append({
+                            "exercise_meal_timing": data[3].strip(),
+                            "exercise_suggestion": data[4].strip()
+                        })
+
                 data_object = {}
                 data_object["exercise_type"] = groomed[0]
                 data_object["exercise_intensity"] = groomed[1]
                 data_object["exercise_duration"] = groomed[2]
-                data_object["exercise_meal_timing"] = groomed[3]
-                data_object["exercise_meal_suggestion"] = groomed[4]
+                data_object["exercise_meal_suggestions"] = suggestions
 
                 raw_data.append(data_object)
             return raw_data
-
 
     @staticmethod
     def groom_content():
