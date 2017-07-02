@@ -34,11 +34,11 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     @IBOutlet weak var picker3: UIPickerView!
     
-    @IBOutlet weak var picker4: UIPickerView!
+    
     
     var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
     
-    var Array2 = ["mmol/L", "mg/dL"]
+    
     
     
    
@@ -78,8 +78,6 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         picker3.delegate = self
         picker3.dataSource = self
         
-        picker4.delegate = self
-        picker4.dataSource = self
 
     }
 
@@ -143,19 +141,6 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
-    
-    func pickerView2(_ pickerView2: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array2[row]
-    }
-    
-    func pickerView2(_ pickerView2: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Array2.count
-    }
-    
-    public func numberOfComponents2(in pickerView2: UIPickerView) -> Int{
-    return 1
-    }
-    
    
     
 }

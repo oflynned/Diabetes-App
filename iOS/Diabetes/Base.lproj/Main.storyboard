@@ -2158,35 +2158,35 @@ Main email: This is your primary email you use that you would like your data his
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G13-HA-lIb">
                                 <rect key="frame" x="0.0" y="108" width="414" height="880"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-OK-Ive">
-                                        <rect key="frame" x="20" y="84" width="414" height="576"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-OK-Ive">
+                                        <rect key="frame" x="16" y="-38" width="386" height="686"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DBl-d9-vgG">
-                                                <rect key="frame" x="28" y="0.0" width="358" height="576"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DBl-d9-vgG">
+                                                <rect key="frame" x="28" y="0.0" width="358" height="632"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-YQ-WhG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="74"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-YQ-WhG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="152"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your exercise planned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piX-lO-RnW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="80"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-sh-7Qm">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="74"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAj-sh-7Qm">
+                                                                <rect key="frame" x="0.0" y="72" width="358" height="80"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWW-rC-wkn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW1-ZU-zVZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="20.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-Mh-GYK">
-                                                                                <rect key="frame" x="309" y="0.0" width="51" height="20.5"/>
+                                                                                <rect key="frame" x="309" y="0.0" width="51" height="20"/>
                                                                                 <connections>
                                                                                     <action selector="onPlannedExerciseClick:" destination="cpT-lO-T33" eventType="valueChanged" id="4PX-ye-oR2"/>
                                                                                 </connections>
@@ -2194,22 +2194,22 @@ Main email: This is your primary email you use that you would like your data his
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can plan changes to your insulin doses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2z-9g-pjd">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="358" height="0.0"/>
+                                                                        <rect key="frame" x="0.0" y="20" width="358" height="20"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ang-4O-YPA">
-                                                                        <rect key="frame" x="0.0" y="20.5" width="358" height="20.5"/>
+                                                                        <rect key="frame" x="0.0" y="40" width="358" height="20"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unplanned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW7-Ja-OD5">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="20.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="20"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sI8-tN-fkE">
-                                                                                <rect key="frame" x="309" y="0.0" width="51" height="20.5"/>
+                                                                                <rect key="frame" x="309" y="0.0" width="51" height="20"/>
                                                                                 <connections>
                                                                                     <action selector="onUnplannedExerciseClick:" destination="cpT-lO-T33" eventType="valueChanged" id="pov-8L-hGg"/>
                                                                                 </connections>
@@ -2217,32 +2217,29 @@ Main email: This is your primary email you use that you would like your data his
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have not had time to plan your exercise and are starting exercise straight away click here " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbZ-WJ-JGd">
-                                                                        <rect key="frame" x="0.0" y="41" width="358" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="60" width="358" height="20"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="Ang-4O-YPA" firstAttribute="top" secondItem="M2z-9g-pjd" secondAttribute="top" id="3Ur-mp-PjU"/>
+                                                                    <constraint firstItem="ZbZ-WJ-JGd" firstAttribute="top" secondItem="M2z-9g-pjd" secondAttribute="bottom" constant="20" id="5mX-9Z-HxP"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="gAj-sh-7Qm" firstAttribute="top" secondItem="piX-lO-RnW" secondAttribute="top" id="cEH-Md-k1h"/>
-                                                        </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-Dl-Zp3">
-                                                        <rect key="frame" x="0.0" y="89" width="358" height="46"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-Dl-Zp3">
+                                                        <rect key="frame" x="0.0" y="160" width="358" height="152"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your exercise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoH-sk-RYP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="73.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KBP-6F-XU8">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="46"/>
+                                                                <rect key="frame" x="0.0" y="78.5" width="358" height="73.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-3t-EQ0">
                                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
@@ -2261,17 +2258,17 @@ Main email: This is your primary email you use that you would like your data his
                                                                             </switch>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9n-0I-8tn">
-                                                                        <rect key="frame" x="0.0" y="25" width="358" height="21"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="L9n-0I-8tn">
+                                                                        <rect key="frame" x="0.0" y="25" width="358" height="48.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More than 3 hours after your meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxP-i7-4cF">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="21"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="48.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IGk-lM-tWc">
-                                                                                <rect key="frame" x="309" y="0.0" width="51" height="21"/>
+                                                                                <rect key="frame" x="301" y="0.0" width="59" height="48.5"/>
                                                                                 <connections>
                                                                                     <action selector="isAfterMealClick:" destination="cpT-lO-T33" eventType="valueChanged" id="UQv-6k-lFh"/>
                                                                                 </connections>
@@ -2284,12 +2281,9 @@ Main email: This is your primary email you use that you would like your data his
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="KBP-6F-XU8" firstAttribute="top" secondItem="xoH-sk-RYP" secondAttribute="top" id="Bc1-85-a81"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="adK-XK-wNm">
-                                                        <rect key="frame" x="0.0" y="150" width="358" height="145"/>
+                                                        <rect key="frame" x="0.0" y="320" width="358" height="152"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approximate time of exercise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a50-uY-Ze5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="0.0"/>
@@ -2298,7 +2292,7 @@ Main email: This is your primary email you use that you would like your data his
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="B8h-za-5gz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="145"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="358" height="152"/>
                                                                 <date key="date" timeIntervalSinceReferenceDate="518091316.62088001">
                                                                     <!--2017-06-02 10:15:16 +0000-->
                                                                 </date>
@@ -2309,7 +2303,7 @@ Main email: This is your primary email you use that you would like your data his
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-xP-QCm">
-                                                        <rect key="frame" x="0.0" y="310" width="358" height="266"/>
+                                                        <rect key="frame" x="0.0" y="480" width="358" height="152"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood glucose before exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-bU-kSj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
@@ -2318,33 +2312,30 @@ Main email: This is your primary email you use that you would like your data his
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="niH-0W-hbK">
-                                                                <rect key="frame" x="0.0" y="20" width="358" height="216"/>
+                                                                <rect key="frame" x="0.0" y="20" width="358" height="132"/>
                                                                 <subviews>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H06-jd-YcR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="216"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="132"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="ABX-2B-Hj3"/>
                                                                         </connections>
                                                                     </pickerView>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-B9-oow">
-                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="216"/>
+                                                                        <rect key="frame" x="119.5" y="0.0" width="119" height="132"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="wd2-IG-h4F"/>
                                                                         </connections>
                                                                     </pickerView>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWS-rf-AMU">
-                                                                        <rect key="frame" x="179" y="0.0" width="89.5" height="216"/>
+                                                                        <rect key="frame" x="238.5" y="0.0" width="119.5" height="132"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="gqb-Sk-nQO"/>
                                                                         </connections>
                                                                     </pickerView>
-                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-Qc-pQE">
-                                                                        <rect key="frame" x="268.5" y="0.0" width="89.5" height="216"/>
-                                                                    </pickerView>
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JU-77-Ilz">
-                                                                <rect key="frame" x="0.0" y="236" width="358" height="30"/>
+                                                                <rect key="frame" x="0.0" y="152" width="358" height="0.0"/>
                                                                 <state key="normal" title="Add Exercise"/>
                                                                 <connections>
                                                                     <action selector="add_exercise:" destination="cpT-lO-T33" eventType="touchUpInside" id="0os-cc-uQb"/>
@@ -2356,30 +2347,23 @@ Main email: This is your primary email you use that you would like your data his
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="adK-XK-wNm" firstAttribute="top" secondItem="DBl-d9-vgG" secondAttribute="top" constant="150" id="IoB-Gn-PK4"/>
-                                                    <constraint firstItem="0k9-Dl-Zp3" firstAttribute="top" secondItem="DBl-d9-vgG" secondAttribute="top" constant="89" id="NUB-Q7-832"/>
-                                                    <constraint firstItem="lBG-xP-QCm" firstAttribute="top" secondItem="DBl-d9-vgG" secondAttribute="top" constant="310" id="eF5-Np-e4p"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="DBl-d9-vgG" secondAttribute="trailing" constant="20" id="DE7-nX-C98"/>
-                                            <constraint firstItem="DBl-d9-vgG" firstAttribute="height" secondItem="kZe-OK-Ive" secondAttribute="height" id="Qij-xg-iU2"/>
-                                            <constraint firstAttribute="height" constant="576" id="azn-Md-1jh"/>
-                                            <constraint firstItem="DBl-d9-vgG" firstAttribute="centerY" secondItem="kZe-OK-Ive" secondAttribute="centerY" id="l59-no-Tk8"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="DBl-d9-vgG" secondAttribute="trailing" constant="-8" id="DE7-nX-C98"/>
+                                            <constraint firstItem="DBl-d9-vgG" firstAttribute="height" secondItem="kZe-OK-Ive" secondAttribute="height" constant="-54" id="Qij-xg-iU2"/>
+                                            <constraint firstItem="DBl-d9-vgG" firstAttribute="centerY" secondItem="kZe-OK-Ive" secondAttribute="centerY" constant="-27" id="l59-no-Tk8"/>
                                             <constraint firstItem="DBl-d9-vgG" firstAttribute="leading" secondItem="kZe-OK-Ive" secondAttribute="leadingMargin" constant="20" id="zs1-Rb-Kjm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kZe-OK-Ive" secondAttribute="trailing" constant="20" id="9rM-jv-FMq"/>
-                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="top" secondItem="G13-HA-lIb" secondAttribute="top" constant="84" id="CyG-da-iX3"/>
-                                    <constraint firstAttribute="bottom" secondItem="kZe-OK-Ive" secondAttribute="bottom" constant="20" id="TPd-72-gCA"/>
-                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="leading" secondItem="G13-HA-lIb" secondAttribute="leading" constant="20" id="Trw-cU-y0x"/>
-                                    <constraint firstAttribute="trailing" secondItem="kZe-OK-Ive" secondAttribute="trailing" constant="20" id="efd-Ji-ELt"/>
-                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="leading" secondItem="G13-HA-lIb" secondAttribute="leading" constant="20" id="emo-rJ-H9W"/>
+                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="leading" secondItem="G13-HA-lIb" secondAttribute="leading" constant="16" id="1ZI-rK-RU9"/>
+                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="top" secondItem="G13-HA-lIb" secondAttribute="top" constant="26" id="4tX-RK-HcR"/>
+                                    <constraint firstAttribute="bottom" secondItem="kZe-OK-Ive" secondAttribute="bottom" constant="168" id="TPd-72-gCA"/>
+                                    <constraint firstAttribute="trailing" secondItem="kZe-OK-Ive" secondAttribute="trailing" constant="12" id="joM-Ly-iMo"/>
+                                    <constraint firstItem="kZe-OK-Ive" firstAttribute="leading" secondItem="G13-HA-lIb" secondAttribute="leading" constant="16" id="ta3-02-KAo"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -2389,7 +2373,7 @@ Main email: This is your primary email you use that you would like your data his
                             <constraint firstAttribute="trailing" secondItem="G13-HA-lIb" secondAttribute="trailing" id="IYf-wJ-ciI"/>
                             <constraint firstItem="G13-HA-lIb" firstAttribute="leading" secondItem="nRG-Ee-G0O" secondAttribute="leading" id="vwQ-w1-Nru"/>
                             <constraint firstAttribute="bottomMargin" secondItem="G13-HA-lIb" secondAttribute="bottom" constant="12" id="z7C-x3-BOf"/>
-                            <constraint firstItem="kZe-OK-Ive" firstAttribute="width" secondItem="nRG-Ee-G0O" secondAttribute="width" id="zz8-lc-Nkd"/>
+                            <constraint firstItem="kZe-OK-Ive" firstAttribute="width" secondItem="nRG-Ee-G0O" secondAttribute="width" constant="-28" id="zz8-lc-Nkd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Exercise Details" id="S5B-AF-B2B"/>
@@ -2405,12 +2389,11 @@ Main email: This is your primary email you use that you would like your data his
                         <outlet property="picker1" destination="H06-jd-YcR" id="f24-6y-Gls"/>
                         <outlet property="picker2" destination="xg5-B9-oow" id="Kh7-GJ-WAP"/>
                         <outlet property="picker3" destination="VWS-rf-AMU" id="LNN-jl-csw"/>
-                        <outlet property="picker4" destination="Y3d-Qc-pQE" id="k6j-fJ-DwF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lI-Jn-yEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4716" y="2106"/>
+            <point key="canvasLocation" x="4715.625" y="2105.2816901408451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k5B-89-PGV">
