@@ -105,7 +105,7 @@ class Excel:
 
                         if suggestion_content == "*":
                             suggestion_content = "always"
-                        suggestion_object["exercise_suggestion"] = suggestion_content.replace("  "," ")
+                        suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
 
                         suggestions.append(suggestion_object)
 
@@ -241,15 +241,13 @@ class Excel:
 
     @staticmethod
     def get_json_files_for_filter():
-        dir = Excel.__get_groomed_sets_dir() + "advice/"
-        json_files = []
+        advice_dir = Excel.__get_groomed_sets_dir() + "advice/"
         output_names = []
 
-        for (dir_path, dir_name, file_names) in os.walk(dir):
-            json_files = file_names
-
-        for file in json_files:
-            output_names.append(str(file).replace(".json", "").split("_"))
+        for (dir_path, dir_name, file_names) in os.walk(advice_dir):
+            for i, file in enumerate(file_names):
+                sanitised_name = str(file).replace(".json", "")
+                name_tags = sanitised_name.split("_")
+                output_names.append({"file_name": file_names[i], "tags": name_tags})
 
         return output_names
-
