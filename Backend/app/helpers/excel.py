@@ -1,5 +1,6 @@
 import xlrd
 import json
+import os
 
 
 class Excel:
@@ -8,119 +9,115 @@ class Excel:
         return "app/datasets/" + file_name
 
     @staticmethod
-    def __retrieve_data_sheets():
-        dataset_file_name = "app_sug_2.xlsx"
-        dataset_location = Excel.__get_working_dir(dataset_file_name)
+    def __retrieve_data_sheets(workbook):
 
-        workbook = xlrd.open_workbook(dataset_location)
-        raw_data = []
+        jsonified_output_data = []
 
-        # iterate over the sheets to save each to its own json representation
-        for sheet_index in range(1):
-            sheet = workbook.sheet_by_index(7)
+        sheet = workbook.sheet_by_index(7)
 
-            # let's get the heading names first so we know
-            # sheet details for later on
-            headings = []
-            for r in range(1, 2):  # sheet.nrows):
-                row_value = sheet.row_values(r)
-                for index, item in enumerate(row_value):
-                    if item is not '':
-                        headings.append(item.strip())
+        # let's get the heading names first so we know
+        # sheet details for later on
+        headings = []
+        for r in range(1, 2):  # sheet.nrows):
+            row_value = sheet.row_values(r)
+            for index, item in enumerate(row_value):
+                if item is not '':
+                    headings.append(item.strip())
 
-            # iterate along the 0th col per row to get displacement
-            # of how many suggestions there are by differencing
-            exclusion_factors = ['', 'Exercise type']
-            data_ranges = []
+        # iterate along the 0th col per row to get displacement
+        # of how many suggestions there are by differencing
+        exclusion_factors = ['', 'Exercise type']
+        data_ranges = []
 
-            i = 2
-            for r in range(2, sheet.nrows):
-                row_value = sheet.row_values(r)
-                row_value = row_value[0].strip()
-                if row_value not in exclusion_factors:
-                    data_ranges.append([row_value, i])
+        i = 2
+        for r in range(2, sheet.nrows):
+            row_value = sheet.row_values(r)
+            row_value = row_value[0].strip()
+            if row_value not in exclusion_factors:
+                data_ranges.append([row_value, i])
 
-                # iterate to give max as only min exists
-                # [exercise type, min row, max row]
+            # iterate to give max as only min exists
+            # [exercise type, min row, max row]
 
-                for index, item in enumerate(data_ranges):
-                    if index < len(data_ranges) - 1:
-                        data_ranges[index].append(data_ranges[index + 1][1])
-                        data_ranges[index] = data_ranges[index][:3]
+            for index, item in enumerate(data_ranges):
+                if index < len(data_ranges) - 1:
+                    data_ranges[index].append(data_ranges[index + 1][1])
+                    data_ranges[index] = data_ranges[index][:3]
 
-                i += 1
+            i += 1
 
-            warning_note = data_ranges[len(data_ranges) - 1][0]
+        warning_note = data_ranges[len(data_ranges) - 1][0]
 
-            # don't need the warning anymore so we pop it
-            data_ranges.pop()
+        # don't need the warning anymore so we pop it
+        data_ranges.pop()
 
-            # now we've the ranges and the data to link
-            for exercise in data_ranges:
-                min_row = exercise[1]
-                max_row = exercise[2]
+        # now we've the ranges and the data to link
+        for exercise in data_ranges:
+            min_row = exercise[1]
+            max_row = exercise[2]
 
-                # iterate two-dimensionally over the x and y axes
-                # type, intensity, duration and suggestion are common
-                # 4 cols indicates the sheet is normal, 5 cols indicate an extra parameter in col 4
-                # where the suggestion is then given in col 5
-                # the 4th and 5th cols together should form the suggestion object
+            # iterate two-dimensionally over the x and y axes
+            # type, intensity, duration and suggestion are common
+            # 4 cols indicates the sheet is normal, 5 cols indicate an extra parameter in col 4
+            # where the suggestion is then given in col 5
+            # the 4th and 5th cols together should form the suggestion object
 
-                data_object = {}
-                groomed = []
-                suggestions = []
-                heading_exclusions = ['', 'Suggestions']
+            data_object = {}
+            groomed = []
+            suggestions = []
+            heading_exclusions = ['', 'Suggestions']
 
-                is_parametrised = (len(headings) > 4)
+            is_parametrised = (len(headings) > 4)
 
-                # extra parameter in col 4
-                for data_row in range(min_row, max_row):
-                    data = sheet.row_values(data_row, 0, 5)
-                    for index, row_value in enumerate(data):
-                        # before meal, after meal, don't care
-                        # * indicates showing a warning with the suggestion
+            # extra parameter in col 4
+            for data_row in range(min_row, max_row):
+                data = sheet.row_values(data_row, 0, 5)
+                for index, row_value in enumerate(data):
+                    # before meal, after meal, don't care
+                    # * indicates showing a warning with the suggestion
 
-                        if index == 3 and row_value == '':
-                            data[index] = "always"
+                    if index == 3 and row_value == '':
+                        data[index] = "always"
 
-                        if row_value is not '':
-                            row_value = row_value.strip()
-                            groomed.append(row_value)
-
-                    if is_parametrised:
-                        parameter_content = data[3].strip()
-                        suggestion_content = data[4].strip()
-
-                        if suggestion_content not in heading_exclusions:
-                            suggestion_object = {}
-
-                            # if there is an astrix, append a warning
-                            if parameter_content == "*":
-                                suggestion_object["warning"] = warning_note
-
-                            parameter_name = str(headings[3]).replace("/", " ")
-                            parameter_name = Excel.__groom_titles(parameter_name)
-
-                            suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
-
-                            if suggestion_content == "*":
-                                suggestion_content = "always"
-                            suggestion_object["exercise_suggestion"] = suggestion_content
-
-                            suggestions.append(suggestion_object)
+                    if row_value is not '':
+                        row_value = row_value.strip()
+                        groomed.append(row_value)
 
                 if is_parametrised:
-                    data_object["exercise_meal_suggestions"] = suggestions
+                    parameter_content = data[3].strip()
+                    suggestion_content = data[4].strip()
 
-                data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
-                data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
-                data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
+                    if suggestion_content not in heading_exclusions:
+                        suggestion_object = {}
 
-                raw_data.append(data_object)
-            return raw_data
+                        # if there is an astrix, append a warning
+                        if parameter_content == "*":
+                            suggestion_object["warning"] = warning_note
+
+                        parameter_name = str(headings[3]).replace("/", " ")
+                        parameter_name = Excel.__groom_titles(parameter_name)
+
+                        suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
+
+                        if suggestion_content == "*":
+                            suggestion_content = "always"
+                        suggestion_object["exercise_suggestion"] = suggestion_content
+
+                        suggestions.append(suggestion_object)
+
+            if is_parametrised:
+                data_object["exercise_meal_suggestions"] = suggestions
+
+            data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
+            data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
+            data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
+
+            jsonified_output_data.append(data_object)
+
+        return jsonified_output_data
 
     @staticmethod
-    def __groom_info_page(data):
+    def __groom_info_page(raw_data):
         pass
 
     @staticmethod
@@ -158,5 +155,25 @@ class Excel:
         return str(tags).split("/")
 
     @staticmethod
+    def __save_json_to_file(output_name, data):
+        OUTPUT_DIR = os.getcwd() + "/app/groomed_datasets/"
+        output_name = Excel.__groom_titles(output_name)
+
+        if not os.path.exists(OUTPUT_DIR):
+            os.makedirs(OUTPUT_DIR)
+
+        with open(OUTPUT_DIR + output_name + ".json", "w") as output_json_file:
+            json.dump(data, output_json_file, indent=4)
+
+    @staticmethod
     def groom_content():
-        return Excel.__retrieve_data_sheets()
+        dataset_file_name = "app_sug_2.xlsx"
+        dataset_location = Excel.__get_working_dir(dataset_file_name)
+
+        workbook = xlrd.open_workbook(dataset_location)
+
+        # iterate over the sheets to save each to its own json representation
+        # the final sheet is of a different format for info and should be done separately
+        for i in range(workbook.nsheets - 1):
+            groomed_jsonified_data = Excel.__retrieve_data_sheets(workbook)
+            Excel.__save_json_to_file(workbook.sheet_by_index(i).name, groomed_jsonified_data)

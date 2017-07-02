@@ -1,4 +1,5 @@
 data/
+groomed_datasets/
 
 .DS_Store
 *.pyc
