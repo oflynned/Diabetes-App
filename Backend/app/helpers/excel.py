@@ -15,9 +15,9 @@ class Excel:
         workbook = xlrd.open_workbook(dataset_location)
         raw_data = []
 
-        # let's start off with working with just the first sheet
+        # iterate over the sheets to save each to its own json representation
         for sheet_index in range(1):
-            sheet = workbook.sheet_by_index(sheet_index)
+            sheet = workbook.sheet_by_index(7)
 
             # let's get the heading names first so we know
             # sheet details for later on
@@ -66,28 +66,28 @@ class Excel:
                 # where the suggestion is then given in col 5
                 # the 4th and 5th cols together should form the suggestion object
 
+                data_object = {}
                 groomed = []
                 suggestions = []
                 heading_exclusions = ['', 'Suggestions']
 
-                if len(headings) == 4:
-                    # normal suggestion
-                    pass
-                else:
-                    # extra parameter in col 4
-                    for data_row in range(min_row, max_row):
-                        data = sheet.row_values(data_row, 0, 5)
-                        for index, row_value in enumerate(data):
-                            # before meal, after meal, don't care
-                            # * indicates showing a warning with the suggestion
+                is_parametrised = (len(headings) > 4)
 
-                            if index == 3 and row_value == '':
-                                data[index] = "always"
+                # extra parameter in col 4
+                for data_row in range(min_row, max_row):
+                    data = sheet.row_values(data_row, 0, 5)
+                    for index, row_value in enumerate(data):
+                        # before meal, after meal, don't care
+                        # * indicates showing a warning with the suggestion
 
-                            if row_value is not '':
-                                row_value = row_value.strip()
-                                groomed.append(row_value)
+                        if index == 3 and row_value == '':
+                            data[index] = "always"
 
+                        if row_value is not '':
+                            row_value = row_value.strip()
+                            groomed.append(row_value)
+
+                    if is_parametrised:
                         parameter_content = data[3].strip()
                         suggestion_content = data[4].strip()
 
@@ -98,7 +98,7 @@ class Excel:
                             if parameter_content == "*":
                                 suggestion_object["warning"] = warning_note
 
-                            parameter_name = str(headings[3]).replace("/"," ")
+                            parameter_name = str(headings[3]).replace("/", " ")
                             parameter_name = Excel.__groom_titles(parameter_name)
 
                             suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
@@ -109,11 +109,12 @@ class Excel:
 
                             suggestions.append(suggestion_object)
 
-                data_object = {}
+                if is_parametrised:
+                    data_object["exercise_meal_suggestions"] = suggestions
+
                 data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
                 data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
                 data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
-                data_object["exercise_meal_suggestions"] = suggestions
 
                 raw_data.append(data_object)
             return raw_data
