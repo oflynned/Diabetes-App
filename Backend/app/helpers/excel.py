@@ -9,14 +9,14 @@ class Excel:
         return os.getcwd() + "/app/datasets/" + file_name
 
     @staticmethod
-    def __retrieve_data_sheets(workbook):
+    def __retrieve_data_sheets(workbook, sheet_index):
         jsonified_output_data = []
-        sheet = workbook.sheet_by_index(7)
+        sheet = workbook.sheet_by_index(sheet_index)
 
         # let's get the heading names first so we know
         # sheet details for later on
         headings = []
-        for r in range(1, 2):  # sheet.nrows):
+        for r in range(1, 2):
             row_value = sheet.row_values(r)
             for index, item in enumerate(row_value):
                 if item is not '':
@@ -105,7 +105,7 @@ class Excel:
 
                         if suggestion_content == "*":
                             suggestion_content = "always"
-                        suggestion_object["exercise_suggestion"] = suggestion_content
+                        suggestion_object["exercise_suggestion"] = suggestion_content.replace("  "," ")
 
                         suggestions.append(suggestion_object)
 
@@ -163,10 +163,10 @@ class Excel:
 
     @staticmethod
     def __groom_duration_timings(timing):
-        EPOCH_0_30 = 0
-        EPOCH_30_60 = 1
-        EPOCH_60_150 = 2
-        EPOCH_GR_150 = 3
+        epoch_0_30 = 0
+        epoch_30_60 = 1
+        epoch_60_150 = 2
+        epoch_gr_150 = 3
 
         timings = Excel.__split_tags(timing)
         formatted_timings = []
@@ -175,35 +175,46 @@ class Excel:
             timing = timings[i].strip()
 
             if timing == "0-30mins":
-                timing = EPOCH_0_30
+                timing = epoch_0_30
             elif timing == "30-60mins":
-                timing = EPOCH_30_60
+                timing = epoch_30_60
             elif timing == "60-150mins":
-                timing = EPOCH_60_150
+                timing = epoch_60_150
             elif timing == ">150mins":
-                timing = EPOCH_GR_150
+                timing = epoch_gr_150
 
             formatted_timings.append(timing)
 
         return formatted_timings
 
     @staticmethod
+    def __groom_output_json_file_title(name):
+        return str(name).replace("_advice", "").replace("_ex", "")
+
+    @staticmethod
     def __groom_titles(title):
-        return str(title).replace(" ", "_").lower()
+        return str(title).replace(" ", "_").replace("__", "_").lower()
 
     @staticmethod
     def __split_tags(tags):
         return str(tags).split("/")
 
     @staticmethod
-    def __save_json_to_file(output_name, data):
-        OUTPUT_DIR = os.getcwd() + "/app/groomed_datasets/"
+    def __get_groomed_sets_dir():
+        return os.getcwd() + "/app/groomed_datasets/"
+
+    @staticmethod
+    def __save_json_to_file(output_name, data, is_advice):
+        output_dir = Excel.__get_groomed_sets_dir()
+        if is_advice:
+            output_dir += "/advice/"
+
         output_name = Excel.__groom_titles(output_name)
 
-        if not os.path.exists(OUTPUT_DIR):
-            os.makedirs(OUTPUT_DIR)
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
-        with open(OUTPUT_DIR + output_name + ".json", "w") as output_json_file:
+        with open(output_dir + output_name + ".json", "w") as output_json_file:
             json.dump(data, output_json_file, indent=4)
 
     @staticmethod
@@ -216,13 +227,29 @@ class Excel:
         # the final sheet is of a different format for info and should be done separately
         for i in range(workbook.nsheets - 1):
             sheet_title = Excel.__groom_titles(workbook.sheet_by_index(i).name.strip())
-            groomed_jsonified_data = Excel.__retrieve_data_sheets(workbook)
-            Excel.__save_json_to_file(sheet_title, groomed_jsonified_data)
+            sheet_title = Excel.__groom_output_json_file_title(sheet_title)
+            groomed_jsonified_data = Excel.__retrieve_data_sheets(workbook, i)
+            Excel.__save_json_to_file(sheet_title, groomed_jsonified_data, True)
 
         # handle the info page now and generate its own representation
         info_page_name = Excel.__groom_titles(workbook.sheet_by_index(8).name.strip())
         info_page_raw_data = workbook.sheet_by_index(8)
         info_page_jsonified_data = Excel.__groom_info_page(info_page_raw_data)
-        Excel.__save_json_to_file(info_page_name, info_page_jsonified_data)
+        Excel.__save_json_to_file(info_page_name, info_page_jsonified_data, False)
 
-        return {"success": True}
+        return {"success": Excel.get_json_files_for_filter()}
+
+    @staticmethod
+    def get_json_files_for_filter():
+        dir = Excel.__get_groomed_sets_dir() + "advice/"
+        json_files = []
+        output_names = []
+
+        for (dir_path, dir_name, file_names) in os.walk(dir):
+            json_files = file_names
+
+        for file in json_files:
+            output_names.append(str(file).replace(".json", "").split("_"))
+
+        return output_names
+
