@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pRd-C1-cWJ">
-                                <rect key="frame" x="55" y="-3414" width="210" height="7396"/>
+                                <rect key="frame" x="55" y="176.5" width="210" height="215.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgotten Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMU-Vx-6oj">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="24"/>
@@ -73,19 +73,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have forgotten your details, enter your email and a reset email will be sent to the registered account." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-vK-BAt">
-                                        <rect key="frame" x="0.0" y="34" width="210" height="7282"/>
+                                        <rect key="frame" x="0.0" y="34" width="210" height="101.5"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-0x-Uua">
-                                        <rect key="frame" x="0.0" y="7326" width="210" height="30"/>
+                                        <rect key="frame" x="0.0" y="145.5" width="210" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-1j-wnb">
-                                        <rect key="frame" x="0.0" y="7366" width="210" height="30"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="210" height="30"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <segue destination="587-Wl-87o" kind="show" id="xBy-Mf-lPa"/>
@@ -530,7 +530,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-x0-apj">
                                                 <rect key="frame" x="0.0" y="499.5" width="280" height="304.5"/>
-                                                <mutableString key="text">Before T1Exercise can give you advice for your exercise you must firstly customise it with your personal settings (see information below). This includes information on your blood glucose measure, your insulin therapy and setting blood glucose reminders. You should only use values here agreed with your diabetes team. Inputting information in the personal settings is only done once. The only reason you will need to go back into the settings is if any changes have occurred e.g. your insulin therapy has changes. </mutableString>
+                                                <string key="text">Before T1Exercise can give you advice for your exercise you must firstly customise it with your personal settings (see information below). This includes information on your blood glucose measure, your insulin therapy and setting blood glucose reminders. You should only use values here agreed with your diabetes team. Inputting information in the personal settings is only done once. The only reason you will need to go back into the settings is if any changes have occurred e.g. your insulin therapy has changes. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1255,7 +1255,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="f6I-6E-Gjm"/>
                                                 </constraints>
-                                                <string key="text">Exercise is important for everyone, not just for people with diabetes. It helps keep you fit, look good, feel better and importantly it can be fun! Exercise can help improve your:</string>
+                                                <string key="text">Exercise is important for everyone, not just for people with diabetes. It helps keep you fit, look good, feel better and importantly it can be fun! 
+Exercise can help improve your:</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1265,7 +1266,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="143" id="HIv-Vw-t0u"/>
                                                 </constraints>
-                                                <string key="text">•	Weight•	Fitness•	Blood glucose control•	Wellbeing and self esteem•	Muscle tone and the working of your heart and lungs•	Social life </string>
+                                                <string key="text">•	Weight
+•	Fitness
+•	Blood glucose control
+•	Wellbeing and self esteem
+•	Muscle tone and the working of your heart and lungs
+•	Social life 
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1293,7 +1300,10 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlW-bG-Xap">
                                                 <rect key="frame" x="0.0" y="305" width="320" height="81"/>
-                                                <mutableString key="text">If you are starting a physical activity or exercise programme and you are new to managing your diabetes during physical activity, get help from your diabetes team before you start. Your diabetes team can help you plan how you adjust your insulin doses and food intake for physical activity.When you are starting out with a physical activity routine, start small and build up your fitness gradually. If you have been doing no physical activity, start with 5-10 minutes of moderate physical activity daily (like brisk walking), and build this up by 5 minutes every 3-4 days until you are doing 30 minutes daily. Always conduct physical activity within your comfort zone. If you are out of breathe its best to slow down until you are comfortable again.If you have any complications of diabetes, including heart disease, retinopathy, neuropathy or kidney problems, see your diabetes team before planning a physical activity routine. Some forms of physical activity are safer than others when you have complications.</mutableString>
+                                                <string key="text">If you are starting a physical activity or exercise programme and you are new to managing your diabetes during physical activity, get help from your diabetes team before you start. Your diabetes team can help you plan how you adjust your insulin doses and food intake for physical activity.
+When you are starting out with a physical activity routine, start small and build up your fitness gradually. If you have been doing no physical activity, start with 5-10 minutes of moderate physical activity daily (like brisk walking), and build this up by 5 minutes every 3-4 days until you are doing 30 minutes daily. Always conduct physical activity within your comfort zone. If you are out of breathe its best to slow down until you are comfortable again.
+If you have any complications of diabetes, including heart disease, retinopathy, neuropathy or kidney problems, see your diabetes team before planning a physical activity routine. Some forms of physical activity are safer than others when you have complications.
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1310,7 +1320,16 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="203" id="d4I-p2-Zd0"/>
                                                 </constraints>
-                                                <mutableString key="text">➢	Always wear/carry Diabetes ID (you can use medical ID apps on your phone to do this)➢	Always have a blood glucose meter and hypo treatment with you➢	Use the abdomen to inject insulin as insulin absorption in increased if injected into an active limb (leg / arm) ➢	If blood glucose is below 5mmol/L have 10-20g carbohydrate before starting exercise➢	Check blood glucose before, during and regularly after exercise➢	Drink plenty of fluids➢	During exercise the amount of carbohydrate you need will depend on how much insulin you have on board➢	Always eat something containing both carbohydrate and protein after exercise. This may be your next meal or a bedtime snack➢	Always check blood glucose levels before going to bed.</mutableString>
+                                                <string key="text">➢	Always wear/carry Diabetes ID (you can use medical ID apps on your phone to do this)
+➢	Always have a blood glucose meter and hypo treatment with you
+➢	Use the abdomen to inject insulin as insulin absorption in increased if injected into an active limb (leg / arm) 
+➢	If blood glucose is below 5mmol/L have 10-20g carbohydrate before starting exercise
+➢	Check blood glucose before, during and regularly after exercise
+➢	Drink plenty of fluids
+➢	During exercise the amount of carbohydrate you need will depend on how much insulin you have on board
+➢	Always eat something containing both carbohydrate and protein after exercise. This may be your next meal or a bedtime snack
+➢	Always check blood glucose levels before going to bed.
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1334,7 +1353,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="143" id="y0b-GW-DcC"/>
                                                 </constraints>
-                                                <string key="text">➢	Type of exercise➢	When you exercise➢	How long and how hard you exercise➢	Carbohydrate intake before, during and after exercise➢	Blood glucose levels before, during and after exercise➢	Insulin doses</string>
+                                                <string key="text">➢	Type of exercise
+➢	When you exercise
+➢	How long and how hard you exercise
+➢	Carbohydrate intake before, during and after exercise
+➢	Blood glucose levels before, during and after exercise
+➢	Insulin doses
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1390,7 +1415,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWI-zr-ooI">
                                                 <rect key="frame" x="0.0" y="932" width="320" height="20"/>
-                                                <mutableString key="text">If your blood glucose is &gt;15mmol/L before exercise and the hyperglycaemia is unexplained (not associated with a recent meal) you must check for ketones. If blood ketones are modestly elevated (up to 1.4mmol/L) – restrict exercise to light intensity for a brief duration (&lt;30mins) and a small corrective dose of insulin might be needed before you start exercising. If blood ketones are elevated (≥1.5 mmol/L), exercise is contraindicated and blood glucose management must be initiated rapidly as per the advice of your diabetes team. Blood ketones of 3.0mmol/L or more should be managed immediately by a qualified health care professional. </mutableString>
+                                                <string key="text">If your blood glucose is &gt;15mmol/L before exercise and the hyperglycaemia is unexplained (not associated with a recent meal) you must check for ketones. If blood ketones are modestly elevated (up to 1.4mmol/L) – restrict exercise to light intensity for a brief duration (&lt;30mins) and a small corrective dose of insulin might be needed before you start exercising. If blood ketones are elevated (≥1.5 mmol/L), exercise is contraindicated and blood glucose management must be initiated rapidly as per the advice of your diabetes team. Blood ketones of 3.0mmol/L or more should be managed immediately by a qualified health care professional. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1411,7 +1436,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wic-ot-pgJ">
                                                 <rect key="frame" x="0.0" y="992" width="320" height="60"/>
-                                                <mutableString key="text">Whether you are on an insulin pump or multiple daily injections this app will guide you on how to avoid hypoglycaemia during exercise based on the type, intensity and duration of exercise you are doing. It is important to remember that these suggestions are starting points based on the available evidence and that you will likely need to tweak these over time to come up with your own individual strategy for your exercise. Planning your exercise in advance will allow you to make necessary adjustments to insulin to avoid hypoglycaemia during exercise. During sustained aerobic exercise of &gt;30mins your blood glucose will generally fall. Therefore managing your blood glucose will require frequent blood glucose monitoring, adjustments to bolus and / or basal insulin and consumption of carbohydrate. Strategies to avoid hypoglycaemia include:  </mutableString>
+                                                <string key="text">Whether you are on an insulin pump or multiple daily injections this app will guide you on how to avoid hypoglycaemia during exercise based on the type, intensity and duration of exercise you are doing. It is important to remember that these suggestions are starting points based on the available evidence and that you will likely need to tweak these over time to come up with your own individual strategy for your exercise. Planning your exercise in advance will allow you to make necessary adjustments to insulin to avoid hypoglycaemia during exercise. 
+During sustained aerobic exercise of &gt;30mins your blood glucose will generally fall. Therefore managing your blood glucose will require frequent blood glucose monitoring, adjustments to bolus and / or basal insulin and consumption of carbohydrate. Strategies to avoid hypoglycaemia include:  
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1453,7 +1480,8 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="a1a-Oy-tpy"/>
                                                 </constraints>
-                                                <mutableString key="text">For those on an insulin pump a temporary basal rate reduction of 50-80% can be set 60-90 mins before the exercise starts until the end of exercise. Where possible avoid pump suspension, however if this is to be done suspend insulin for no longer than 60 mins. For those on multiple daily insulin injections reducing your long acting insulin before exercise is not routinely recommended as it can cause hyperglycaemia. However in situations where you are taking part in considerable more planned exercise than usual (e.g. long distance running, prolonged hike, camps or tournaments) it may be necessary. </mutableString>
+                                                <string key="text">For those on an insulin pump a temporary basal rate reduction of 50-80% can be set 60-90 mins before the exercise starts until the end of exercise. Where possible avoid pump suspension, however if this is to be done suspend insulin for no longer than 60 mins. 
+For those on multiple daily insulin injections reducing your long acting insulin before exercise is not routinely recommended as it can cause hyperglycaemia. However in situations where you are taking part in considerable more planned exercise than usual (e.g. long distance running, prolonged hike, camps or tournaments) it may be necessary. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1467,7 +1495,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHf-iY-SOU">
                                                 <rect key="frame" x="0.0" y="1213" width="320" height="20"/>
-                                                <mutableString key="text">There is a risk of hypoglycaemia several hours after exercise due to an increase in insulin sensitivity. Therefore if you are doing afternoon or evening exercise this could lead to hypoglycaemia overnight. To avoid this happening it is advised to reduce your insulin bolus with your meal/ snack after exercise by approximately 50%. Also reducing overnight basal insulin by 20% (if you are on an insulin pump set a temporary basal rate reduction of about 20% at bedtime for 6 hours) and / or take a low glycaemic index bedtime snack without insulin (see glycaemic index of carbohydrates section). Following exercise it is important to test your blood glucose regularly and before bed. If you are at increased risk or are concerned about hypoglycaemia overnight set your alarm to do a 02:00am or 03:00am blood glucose check. Remember alcohol will increase your risk of overnight hypoglycaemia following afternoon / evening exercise so avoid or limit alcohol intake and take extra precautions if having alcohol. </mutableString>
+                                                <string key="text">There is a risk of hypoglycaemia several hours after exercise due to an increase in insulin sensitivity. Therefore if you are doing afternoon or evening exercise this could lead to hypoglycaemia overnight. To avoid this happening it is advised to reduce your insulin bolus with your meal/ snack after exercise by approximately 50%. Also reducing overnight basal insulin by 20% (if you are on an insulin pump set a temporary basal rate reduction of about 20% at bedtime for 6 hours) and / or take a low glycaemic index bedtime snack without insulin (see glycaemic index of carbohydrates section). Following exercise it is important to test your blood glucose regularly and before bed. If you are at increased risk or are concerned about hypoglycaemia overnight set your alarm to do a 02:00am or 03:00am blood glucose check. Remember alcohol will increase your risk of overnight hypoglycaemia following afternoon / evening exercise so avoid or limit alcohol intake and take extra precautions if having alcohol. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1481,7 +1509,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHb-gx-joB">
                                                 <rect key="frame" x="0.0" y="1253" width="320" height="40"/>
-                                                <mutableString key="text">Brief duration high intensity aerobic and anaerobic exercise (e.g. sprinting, weight lifting, competitive swimming etc.) as well as short duration high intensity interval training could cause an increase in your blood glucose that could last for several hours after your exercise. This is caused by an increased production of counter regulatory hormones (e.g. adrenaline, cortisol). These hormones can also cause an increase in blood glucose during competition (e.g. a competitive football match or a 5k race) due to nerves / stress. Therefore very different insulin adjustments and carbohydrate intake are needed for training compared to race / competition day. For safety reasons it is generally advised to wait until after the exercise to correct the rise in blood glucose that may have occurred with exercise. It is advised to use 50% of your usual correction dose. It is extremely important to avoid overcorrecting as this can increase the risk of late onset hypoglycaemia. </mutableString>
+                                                <string key="text">Brief duration high intensity aerobic and anaerobic exercise (e.g. sprinting, weight lifting, competitive swimming etc.) as well as short duration high intensity interval training could cause an increase in your blood glucose that could last for several hours after your exercise. This is caused by an increased production of counter regulatory hormones (e.g. adrenaline, cortisol). These hormones can also cause an increase in blood glucose during competition (e.g. a competitive football match or a 5k race) due to nerves / stress. Therefore very different insulin adjustments and carbohydrate intake are needed for training compared to race / competition day. 
+For safety reasons it is generally advised to wait until after the exercise to correct the rise in blood glucose that may have occurred with exercise. It is advised to use 50% of your usual correction dose. It is extremely important to avoid overcorrecting as this can increase the risk of late onset hypoglycaemia. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1501,7 +1530,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="61" id="eZf-28-tRV"/>
                                                 </constraints>
-                                                <mutableString key="text">The counter-regulatory response or ‘stress response’ increases blood glucose due to a rise in a number of counter-regulatory hormones (i.e. glucagon, noradrenaline, adrenaline and cortisol). Competition stress, exercise in the heat, dehydration, high pre-exercise blood glucose and arm exercises may all cause an increase in counter-regulatory hormones leading to hyperglycaemia. Performing a 10 second maximal sprint before or after prolonged (&gt;30mins) aerobic exercise (e.g. brisk walk, jog) could help to reduce the risk of hypoglycaemia following exercise by causing an increase in counter-regulatory hormones. Also caffeine intake (5-6mg per kg body weight) can help avoid hypoglycaemia during exercise, however it may increase the risk of late onset hypoglycaemia. </mutableString>
+                                                <string key="text">The counter-regulatory response or ‘stress response’ increases blood glucose due to a rise in a number of counter-regulatory hormones (i.e. glucagon, noradrenaline, adrenaline and cortisol). Competition stress, exercise in the heat, dehydration, high pre-exercise blood glucose and arm exercises may all cause an increase in counter-regulatory hormones leading to hyperglycaemia. 
+Performing a 10 second maximal sprint before or after prolonged (&gt;30mins) aerobic exercise (e.g. brisk walk, jog) could help to reduce the risk of hypoglycaemia following exercise by causing an increase in counter-regulatory hormones. 
+Also caffeine intake (5-6mg per kg body weight) can help avoid hypoglycaemia during exercise, however it may increase the risk of late onset hypoglycaemia. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1522,7 +1553,10 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBC-ZV-HPx">
                                                 <rect key="frame" x="0.0" y="1415" width="320" height="81"/>
-                                                <mutableString key="text">In order to prevent hypoglycaemia during prolonged (≥30 mins) predominantly aerobic exercise additional carbohydrate intake and/or a reduction in insulin is generally required. Planning your exercise is necessary in order to be able to reduce your insulin before exercise (see Strategies to reduce the risk of hypoglycaemia during exercise). If exercise is unplanned and for longer duration exercise additional carbohydrate will be needed. The amount of carbohydrate you need will depend on how much active insulin you have on board as well as the duration of the exercise. Exercising under low insulin conditions (i.e. fasting OR &gt; 3 hours after your meal OR where you have reduced your meal bolus within 2-3 hours before exercise) will require less carbohydrate than under high insulin conditions (2-3 hours after you meal having taken your full insulin bolus). Carbohydrate requirements for hypoglycaemia prevention with aerobic exercise under high and low insulin conditions:</mutableString>
+                                                <string key="text">In order to prevent hypoglycaemia during prolonged (≥30 mins) predominantly aerobic exercise additional carbohydrate intake and/or a reduction in insulin is generally required. Planning your exercise is necessary in order to be able to reduce your insulin before exercise (see Strategies to reduce the risk of hypoglycaemia during exercise). If exercise is unplanned and for longer duration exercise additional carbohydrate will be needed. The amount of carbohydrate you need will depend on how much active insulin you have on board as well as the duration of the exercise. Exercising under low insulin conditions (i.e. fasting OR &gt; 3 hours after your meal OR where you have reduced your meal bolus within 2-3 hours before exercise) will require less carbohydrate than under high insulin conditions (2-3 hours after you meal having taken your full insulin bolus). 
+
+Carbohydrate requirements for hypoglycaemia prevention with aerobic exercise under high and low insulin conditions:
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1543,14 +1577,29 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5N-J5-a0a">
                                                 <rect key="frame" x="0.0" y="1536" width="320" height="40"/>
-                                                <mutableString key="text">Recovery is very important after exercise to ensure adequate replenishment of muscle and liver glycogen stores and maximise muscle recovery and protein synthesis. Replacing fluid and electrolytes lost in sweat is also an important part of recovery. Good recovery is essential to help prevent late onset hypoglycaemia. A good recovery meal / snack should contain adequate carbohydrate and protein.The following are ideal recovery meals/ snacks containing 50-75g of carbohydrate and 15-20g protein. Remember to reduce insulin dose by approximately 50% of usual bolus with your recovery meal/ snack. </mutableString>
+                                                <string key="text">Recovery is very important after exercise to ensure adequate replenishment of muscle and liver glycogen stores and maximise muscle recovery and protein synthesis. Replacing fluid and electrolytes lost in sweat is also an important part of recovery. Good recovery is essential to help prevent late onset hypoglycaemia. A good recovery meal / snack should contain adequate carbohydrate and protein.
+The following are ideal recovery meals/ snacks containing 50-75g of carbohydrate and 15-20g protein. Remember to reduce insulin dose by approximately 50% of usual bolus with your recovery meal/ snack. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcZ-Cg-tR1">
                                                 <rect key="frame" x="0.0" y="1576" width="320" height="0.0"/>
-                                                <mutableString key="text">•	500-750ml Low Fat Chocolate Milk•	1-2 sports bars (check labels for carbohydrate and protein content)•	1 large bowl (2 cups) breakfast cereal with low fat milk•	1 large or 2 small cereal bars + 200g fruit-flavoured yogurt•	1 cup baked beans on 2 slices of toast or on a baked potato•	1 bread roll with cheese or peanut butter + large banana•	2 cups fruit salad with 200g fruit flavoured yogurt•	Bagel with thick spread peanut butter + 1-2 cups low fat milk•	300g (large) baked potato + low fat cottage cheese filling + 1-2 cups low•	fat milk•	400 g flavoured yoghurt•	500-750 ml fruit smoothie or liquid meal supplement•	Thick bread sandwich with meat/tuna and salad filling•	2 cups stir--fry with rice or noodles and meat</mutableString>
+                                                <string key="text">•	500-750ml Low Fat Chocolate Milk
+•	1-2 sports bars (check labels for carbohydrate and protein content)
+•	1 large bowl (2 cups) breakfast cereal with low fat milk
+•	1 large or 2 small cereal bars + 200g fruit-flavoured yogurt
+•	1 cup baked beans on 2 slices of toast or on a baked potato
+•	1 bread roll with cheese or peanut butter + large banana
+•	2 cups fruit salad with 200g fruit flavoured yogurt
+•	Bagel with thick spread peanut butter + 1-2 cups low fat milk
+•	300g (large) baked potato + low fat cottage cheese filling + 1-2 cups low
+•	fat milk
+•	400 g flavoured yoghurt
+•	500-750 ml fruit smoothie or liquid meal supplement
+•	Thick bread sandwich with meat/tuna and salad filling
+•	2 cups stir--fry with rice or noodles and meat
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1564,7 +1613,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAo-YD-O2X">
                                                 <rect key="frame" x="0.0" y="1596" width="320" height="40"/>
-                                                <mutableString key="text">Glycaemic Index (GI) is a ranking of how quickly carbohydrate foods raise blood glucose levels (BGLs) in the body following ingestion. High GI foods are rapidly digested and absorbed by the body and raise blood glucose levels quickly. Low GI foods, on the other hand, are much slower to be digested and absorbed and result in more gradual rise in blood glucose levels. For further information see http://www.glycemicindex.com/Consumption of foods with a low GI before exercise could sustain energy availability and maintain better blood glucose control. Consumption of meals / snacks with a high GI after exercise could enhance recovery. Finally a meal and bedtime snack with a low GI following afternoon / evening exercise can help protect against hypoglycaemia during the night. </mutableString>
+                                                <string key="text">Glycaemic Index (GI) is a ranking of how quickly carbohydrate foods raise blood glucose levels (BGLs) in the body following ingestion. High GI foods are rapidly digested and absorbed by the body and raise blood glucose levels quickly. Low GI foods, on the other hand, are much slower to be digested and absorbed and result in more gradual rise in blood glucose levels. For further information see http://www.glycemicindex.com/
+Consumption of foods with a low GI before exercise could sustain energy availability and maintain better blood glucose control. Consumption of meals / snacks with a high GI after exercise could enhance recovery. Finally a meal and bedtime snack with a low GI following afternoon / evening exercise can help protect against hypoglycaemia during the night. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1581,7 +1631,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVD-57-70l">
                                                 <rect key="frame" x="0.0" y="1657" width="320" height="0.0"/>
-                                                <mutableString key="text">Adequate fluids before, during and after exercise is necessary to prevent dehydration and improve performance. For low intensity and short duration (i.e. &lt;45mins) exercise water is the most effective drink (as long as your blood glucose is ≥7mmol/L). For longer duration exercise sports drinks containing carbohydrate (6-8% carbohydrate) and electrolytes are useful for hydrating, replacing carbohydrate and preventing hypoglycaemia during exercise. However it’s important to remember overconsumption of these drinks can lead to hyperglycaemia so monitoring your blood glucose every 30 mins during longer duration exercise is important. After exercise milk drinks (e.g. milk/ flavoured milk/ yoghurt drinks/ low fat milkshakes) can help with recovery after exercise as well as prevent delayed hypoglycaemia.</mutableString>
+                                                <string key="text">Adequate fluids before, during and after exercise is necessary to prevent dehydration and improve performance. For low intensity and short duration (i.e. &lt;45mins) exercise water is the most effective drink (as long as your blood glucose is ≥7mmol/L). For longer duration exercise sports drinks containing carbohydrate (6-8% carbohydrate) and electrolytes are useful for hydrating, replacing carbohydrate and preventing hypoglycaemia during exercise. However it’s important to remember overconsumption of these drinks can lead to hyperglycaemia so monitoring your blood glucose every 30 mins during longer duration exercise is important. After exercise milk drinks (e.g. milk/ flavoured milk/ yoghurt drinks/ low fat milkshakes) can help with recovery after exercise as well as prevent delayed hypoglycaemia.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1726,7 +1776,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-rL-PdS">
                                                 <rect key="frame" x="0.0" y="140.5" width="320" height="20"/>
-                                                <mutableString key="text">Use the clock to input how long your exercise will last. The duration of your exercise will determine the advice that the app gives you. For example if you are doing less than 30mins of moderate intensity aerobic exercise (we will assume this is planned exercise so you have already reduced your insulin) you should not require any carbohydrate to prevent hypoglycaemia versus if you were doing this same planned exercise for 30-60mins you will likely require a small amount of carbohydrate (approx 10-15g per hour) to prevent hypoglycaemia. Someone doing a marathon or long duration cycle (&gt;150mins) will have much higher carbohydrate requirements (approx 60g per hour) to prevent hypoglycaemia and enhance performance.</mutableString>
+                                                <string key="text">Use the clock to input how long your exercise will last. The duration of your exercise will determine the advice that the app gives you. For example if you are doing less than 30mins of moderate intensity aerobic exercise (we will assume this is planned exercise so you have already reduced your insulin) you should not require any carbohydrate to prevent hypoglycaemia versus if you were doing this same planned exercise for 30-60mins you will likely require a small amount of carbohydrate (approx 10-15g per hour) to prevent hypoglycaemia. Someone doing a marathon or long duration cycle (&gt;150mins) will have much higher carbohydrate requirements (approx 60g per hour) to prevent hypoglycaemia and enhance performance.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1740,7 +1790,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-vb-Kq9">
                                                 <rect key="frame" x="0.0" y="180.5" width="320" height="20"/>
-                                                <mutableString key="text">Exercise intensity refers to how much work is being done when exercising. The intensity of the exercise you do effects the fuel your body uses and the training adaptations (i.e. the effect of training). To make it easy for you to determine the intensity of your exercise we use the borg scale (see below) which measures the rate of perceived exertion. You need to select the intensity based on the information given on the screen. For example if you feel that doing this exercise you will be short of breath, can speak a sentence and be borderline uncomfortable, this exercise is considered vigorous activity so you will need to select 7-8 on the scale. </mutableString>
+                                                <string key="text">Exercise intensity refers to how much work is being done when exercising. The intensity of the exercise you do effects the fuel your body uses and the training adaptations (i.e. the effect of training). To make it easy for you to determine the intensity of your exercise we use the borg scale (see below) which measures the rate of perceived exertion. You need to select the intensity based on the information given on the screen. For example if you feel that doing this exercise you will be short of breath, can speak a sentence and be borderline uncomfortable, this exercise is considered vigorous activity so you will need to select 7-8 on the scale. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1786,7 +1836,14 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBD-Ek-Xhw">
                                                 <rect key="frame" x="0.0" y="320.5" width="320" height="20"/>
-                                                <mutableString key="text">Ideally exercise with type 1 diabetes should be planned well in advance of beginning the activity to ensure that your insulin is balanced at an appropriate level to avoid hypoglycemia during the exercise and simultaneously avoid excessively high blood glucose, or hyperglycemia. If your exercise is planned select planned on the screen. The app will then ask you if your exercise is:-	Within 3 hours of your meal-	More than 3 hours after your meal This will then take into account the insulin you have on board and therefore determine the advice the app gives you. If you know when you are going to be active and you know what you will be doing you can plan changes to insulin doses:</mutableString>
+                                                <string key="text">Ideally exercise with type 1 diabetes should be planned well in advance of beginning the activity to ensure that your insulin is balanced at an appropriate level to avoid hypoglycemia during the exercise and simultaneously avoid excessively high blood glucose, or hyperglycemia. 
+If your exercise is planned select planned on the screen. The app will then ask you if your exercise is:
+-	Within 3 hours of your meal
+-	More than 3 hours after your meal 
+This will then take into account the insulin you have on board and therefore determine the advice the app gives you. 
+
+If you know when you are going to be active and you know what you will be doing you can plan changes to insulin doses:
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1833,7 +1890,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQL-pb-HbV">
                                                 <rect key="frame" x="0.0" y="460.5" width="320" height="20"/>
-                                                <string key="text">Sometimes exercise puts your blood glucose levels up – you will learn through experience how you respond to different types of activity and what adjustments you need to make. Remember that every activity may be a bit different and there are lots of different solutions to managing your BG. The key to getting it right is PLANNING. </string>
+                                                <string key="text">Sometimes exercise puts your blood glucose levels up – you will learn through experience how you respond to different types of activity and what adjustments you need to make. 
+Remember that every activity may be a bit different and there are lots of different solutions to managing your BG. The key to getting it right is PLANNING. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1853,7 +1911,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOJ-Pw-drm">
                                                 <rect key="frame" x="0.0" y="520.5" width="320" height="60"/>
-                                                <string key="text">Here are some tips for unplanned activity:Check your blood glucose and if you use an insulin pump/smart blood glucose meter check your ‘active insulin’ or insulin on board (IOB).If you are going to do the types of activity that tend to drop blood glucose levels then here is what to do:</string>
+                                                <string key="text">Here are some tips for unplanned activity:
+Check your blood glucose and if you use an insulin pump/smart blood glucose meter check your ‘active insulin’ or insulin on board (IOB).
+If you are going to do the types of activity that tend to drop blood glucose levels then here is what to do:</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1888,7 +1948,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Qo-PWH">
                                                 <rect key="frame" x="0.0" y="660.5" width="320" height="20"/>
-                                                <mutableString key="text">Entering the approximate time of day you are going to exercise is important. Firstly this will allow the app to remind you to check your blood glucose after the exercise and for you to let it know if you were successful or not. Secondly the time (along with all the other exercise details you entered) will be stored in the app and you can access all of this information in the history view (calendar icon). You can review this information (and send to your diabetes team if you wish to review with your team) and make changes to insulin adjustments / carbohydrate intake / exercise timing as necessary.</mutableString>
+                                                <string key="text">Entering the approximate time of day you are going to exercise is important. Firstly this will allow the app to remind you to check your blood glucose after the exercise and for you to let it know if you were successful or not. Secondly the time (along with all the other exercise details you entered) will be stored in the app and you can access all of this information in the history view (calendar icon). You can review this information (and send to your diabetes team if you wish to review with your team) and make changes to insulin adjustments / carbohydrate intake / exercise timing as necessary.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2020,7 +2080,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="058-pn-lqg">
                                                 <rect key="frame" x="0.5" y="168.5" width="319.5" height="111"/>
-                                                <mutableString key="text">Most people with type 1 diabetes will either be on multiple daily injection (MDI) basal–bolus insulin regimens OR continuous subcutaneous insulin infusion (CSII or insulin pump) therapy. MDI basal-bolus insulin regimens will consist of rapid acting insulin (e.g. Novorapid, Humalog, Apidra etc.) taken at meals / snacks and long acting insulin (e.g. Levemir, Lantus etc.) taken once / twice daily. In settings choose your insulin therapy: MDI or Insulin pump. If your insulin therapy changes at any point make sure to go back into settings to change this. </mutableString>
+                                                <string key="text">Most people with type 1 diabetes will either be on multiple daily injection (MDI) basal–bolus insulin regimens OR continuous subcutaneous insulin infusion (CSII or insulin pump) therapy. MDI basal-bolus insulin regimens will consist of rapid acting insulin (e.g. Novorapid, Humalog, Apidra etc.) taken at meals / snacks and long acting insulin (e.g. Levemir, Lantus etc.) taken once / twice daily. 
+In settings choose your insulin therapy: MDI or Insulin pump. If your insulin therapy changes at any point make sure to go back into settings to change this. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2034,7 +2095,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1f-Jg-bq9">
                                                 <rect key="frame" x="0.0" y="295" width="320" height="140.5"/>
-                                                <mutableString key="text">Checking your blood glucose around your exercise is very important. It is especially important to check your blood glucose before you start and at the end of exercise. Also for exercise in the afternoon / evening a blood glucose check before bed (and possibly also 03:00am) is important as you are at increased risk of hypoglycaemia overnight. Therefore we recommend that you set a blood glucose reminder before exercise, after exercise, before bed and the following morning. Your app will automatically send you are reminder to check your blood glucose after exercise and also to check how you got on with your exercise. If you had any issues during exercise it can offer you advice for this specific issue. </mutableString>
+                                                <string key="text">Checking your blood glucose around your exercise is very important. It is especially important to check your blood glucose before you start and at the end of exercise. Also for exercise in the afternoon / evening a blood glucose check before bed (and possibly also 03:00am) is important as you are at increased risk of hypoglycaemia overnight. Therefore we recommend that you set a blood glucose reminder before exercise, after exercise, before bed and the following morning. Your app will automatically send you are reminder to check your blood glucose after exercise and also to check how you got on with your exercise. If you had any issues during exercise it can offer you advice for this specific issue. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2048,7 +2109,8 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qz-2Z-3ud">
                                                 <rect key="frame" x="0.0" y="451" width="320" height="44"/>
-                                                <string key="text">Settings password: This is an optional password to secure all your details in the settings menu. We recommend that you choose this password protection option. Main email: This is your primary email you use that you would like your data history file sent to. This email will not be used for any other purpose aside from when you request your data file to be sent to you. </string>
+                                                <string key="text">Settings password: This is an optional password to secure all your details in the settings menu. We recommend that you choose this password protection option. 
+Main email: This is your primary email you use that you would like your data history file sent to. This email will not be used for any other purpose aside from when you request your data file to be sent to you. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2259,22 +2321,25 @@
                                                                 <rect key="frame" x="0.0" y="20" width="358" height="216"/>
                                                                 <subviews>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H06-jd-YcR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="216"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="216"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="ABX-2B-Hj3"/>
                                                                         </connections>
                                                                     </pickerView>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-B9-oow">
-                                                                        <rect key="frame" x="119.5" y="0.0" width="119" height="216"/>
+                                                                        <rect key="frame" x="89.5" y="0.0" width="89.5" height="216"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="wd2-IG-h4F"/>
                                                                         </connections>
                                                                     </pickerView>
                                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWS-rf-AMU">
-                                                                        <rect key="frame" x="238.5" y="0.0" width="119.5" height="216"/>
+                                                                        <rect key="frame" x="179" y="0.0" width="89.5" height="216"/>
                                                                         <connections>
                                                                             <outlet property="dataSource" destination="cpT-lO-T33" id="gqb-Sk-nQO"/>
                                                                         </connections>
+                                                                    </pickerView>
+                                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-Qc-pQE">
+                                                                        <rect key="frame" x="268.5" y="0.0" width="89.5" height="216"/>
                                                                     </pickerView>
                                                                 </subviews>
                                                             </stackView>
@@ -2340,6 +2405,7 @@
                         <outlet property="picker1" destination="H06-jd-YcR" id="f24-6y-Gls"/>
                         <outlet property="picker2" destination="xg5-B9-oow" id="Kh7-GJ-WAP"/>
                         <outlet property="picker3" destination="VWS-rf-AMU" id="LNN-jl-csw"/>
+                        <outlet property="picker4" destination="Y3d-Qc-pQE" id="k6j-fJ-DwF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lI-Jn-yEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2395,7 +2461,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azr-N2-q1e">
-                                <rect key="frame" x="0.0" y="72" width="167" height="452"/>
+                                <rect key="frame" x="0.0" y="28" width="167" height="496"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-h2-wpY">
                                         <rect key="frame" x="8" y="8" width="167" height="120"/>
