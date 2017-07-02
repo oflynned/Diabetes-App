@@ -401,102 +401,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="03f-8O-9hf">
-                                <rect key="frame" x="16" y="88" width="272" height="445"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkR-Iu-7S9">
+                                <rect key="frame" x="-4" y="68" width="312" height="485"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IAy-o7-Rhl">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="104.5"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWZ-sa-xLo">
+                                        <rect key="frame" x="0.0" y="-56" width="312" height="533"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information behind T1Exercise " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg8-gh-1de" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="24"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
-                                                </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information on the exercise" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG0-T7-qfo" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="39" width="272" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-5F-bk1">
-                                                <rect key="frame" x="0.0" y="74.5" width="272" height="30"/>
-                                                <state key="normal" title="To visit click here"/>
-                                                <connections>
-                                                    <segue destination="TvV-NV-yA8" kind="show" id="fyh-8A-XJp"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="03f-8O-9hf">
+                                                <rect key="frame" x="28" y="20" width="256" height="373"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IAy-o7-Rhl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="105"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information behind T1Exercise " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg8-gh-1de" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="39"/>
+                                                                <accessibility key="accessibilityConfiguration">
+                                                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                                                </accessibility>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information on the exercise" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG0-T7-qfo" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="54" width="256" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-5F-bk1">
+                                                                <rect key="frame" x="0.0" y="86" width="256" height="19"/>
+                                                                <state key="normal" title="To visit click here"/>
+                                                                <connections>
+                                                                    <segue destination="TvV-NV-yA8" kind="show" id="fyh-8A-XJp"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="w8a-Su-iiS">
+                                                        <rect key="frame" x="0.0" y="120" width="256" height="102.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Settings - Customising the app" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y6-Gk-T7A" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="38"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information on settings" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI9-0N-qi5" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="53" width="256" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="BPs-HU-WQy"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP4-p9-WPi">
+                                                                <rect key="frame" x="0.0" y="89" width="256" height="13.5"/>
+                                                                <state key="normal" title="Click here to visit"/>
+                                                                <connections>
+                                                                    <segue destination="Tva-f7-oCS" kind="show" id="QrC-GB-RP6"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="nP4-p9-WPi" secondAttribute="bottom" id="B0y-x4-e49"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="s7c-OP-B2O">
+                                                        <rect key="frame" x="0.0" y="237.5" width="256" height="61.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCt-Gd-dfV" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="24.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for main screen" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAw-1Z-Xcm" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="39.5" width="256" height="22"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="29G-cR-DQH">
+                                                        <rect key="frame" x="0.0" y="314" width="256" height="59"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Information on exercise management in type 1 diabetes" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVE-PK-6A1" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="23"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for exercise" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uZ-x5-DTq" userLabel="Header">
+                                                                <rect key="frame" x="0.0" y="38" width="256" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="pax-d2-F6Z"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="w8a-Su-iiS" firstAttribute="top" secondItem="03f-8O-9hf" secondAttribute="top" constant="120" id="A7X-uW-63F"/>
+                                                    <constraint firstItem="29G-cR-DQH" firstAttribute="top" secondItem="03f-8O-9hf" secondAttribute="top" constant="314" id="xff-cL-Kip"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="w8a-Su-iiS">
-                                        <rect key="frame" x="0.0" y="119.5" width="272" height="128.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Settings - Customising the app" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7y6-Gk-T7A" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information on settings" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rI9-0N-qi5" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="63" width="272" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP4-p9-WPi">
-                                                <rect key="frame" x="0.0" y="98.5" width="272" height="30"/>
-                                                <state key="normal" title="Click here to visit"/>
-                                                <connections>
-                                                    <segue destination="Tva-f7-oCS" kind="show" id="QrC-GB-RP6"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="s7c-OP-B2O">
-                                        <rect key="frame" x="0.0" y="263" width="272" height="59.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCt-Gd-dfV" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for main screen" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAw-1Z-Xcm" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="39" width="272" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="29G-cR-DQH">
-                                        <rect key="frame" x="0.0" y="337.5" width="272" height="107.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Information on exercise management in type 1 diabetes" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVE-PK-6A1" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="272" height="72"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for exercise" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uZ-x5-DTq" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="87" width="272" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="533" id="8ib-uS-7Cm"/>
+                                            <constraint firstItem="03f-8O-9hf" firstAttribute="leading" secondItem="SWZ-sa-xLo" secondAttribute="leadingMargin" constant="20" id="A22-cd-gJL"/>
+                                            <constraint firstItem="03f-8O-9hf" firstAttribute="top" secondItem="SWZ-sa-xLo" secondAttribute="top" constant="20" id="EwX-ja-Wjx"/>
+                                            <constraint firstItem="03f-8O-9hf" firstAttribute="centerY" secondItem="SWZ-sa-xLo" secondAttribute="centerY" constant="-60" id="aKa-c2-opE"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="03f-8O-9hf" secondAttribute="trailing" constant="20" id="uQS-Tp-HiQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="SWZ-sa-xLo" firstAttribute="top" secondItem="IkR-Iu-7S9" secondAttribute="top" constant="8" id="Dvb-ah-DKC"/>
+                                    <constraint firstItem="SWZ-sa-xLo" firstAttribute="width" secondItem="IkR-Iu-7S9" secondAttribute="width" id="Vst-AN-bdp"/>
+                                    <constraint firstItem="SWZ-sa-xLo" firstAttribute="leading" secondItem="IkR-Iu-7S9" secondAttribute="leading" id="rOj-hO-8I2"/>
+                                    <constraint firstItem="SWZ-sa-xLo" firstAttribute="bottom" secondItem="IkR-Iu-7S9" secondAttribute="bottomMargin" constant="64" id="voJ-or-5pw"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="03f-8O-9hf" secondAttribute="trailing" constant="16" id="jXz-er-rBN"/>
-                            <constraint firstItem="03f-8O-9hf" firstAttribute="top" secondItem="1qL-jb-UgZ" secondAttribute="bottom" constant="24" id="qJt-bq-biw"/>
-                            <constraint firstItem="03f-8O-9hf" firstAttribute="leading" secondItem="BPS-pv-fr9" secondAttribute="leadingMargin" id="wGg-J2-Dvi"/>
+                            <constraint firstItem="IkR-Iu-7S9" firstAttribute="leading" secondItem="BPS-pv-fr9" secondAttribute="leadingMargin" constant="-20" id="1Ld-u3-TOV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IkR-Iu-7S9" secondAttribute="trailing" constant="-4" id="K8z-Ue-RYI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="IkR-Iu-7S9" secondAttribute="bottom" constant="15" id="MEO-Bq-S3I"/>
+                            <constraint firstItem="IkR-Iu-7S9" firstAttribute="top" secondItem="1qL-jb-UgZ" secondAttribute="bottom" constant="4" id="unQ-j7-A8w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Information" id="xJq-Ml-EcC"/>
@@ -504,7 +542,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fq-qm-WrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5036.231884057971" y="340.76086956521743"/>
+            <point key="canvasLocation" x="5034.375" y="340.14084507042253"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gmr-Pu-aM8">
@@ -518,38 +556,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a62-qG-i8P">
-                                <rect key="frame" x="16" y="64" width="367" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="881-82-PHU">
-                                <rect key="frame" x="16" y="101" width="367" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L54-hK-xl9">
-                                <rect key="frame" x="0.0" y="138" width="304" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">(1)	Advice Recommended: To give you advice and support on how to manage your blood glucose around exercise, while avoiding the ‘highs’ and ‘lows’ of exercise. This advice and information is largely based on a recent Exercise management in type 1 diabetes consensus statement by Riddell et al (Lancet Diabetes and Endo) 2016. </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e91-FX-AGC">
-                                <rect key="frame" x="0.0" y="334" width="304" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">(2)	Exercise Log: To be used by you to keep a log of your exercise, blood glucose, carb and insulin amounts. This can be reviewed by you and also in conjunction with your diabetes team to help pinpoint where the issues (if any) arise in order to improve your blood glucose around exercise.  </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-1J-MBr">
+                                <rect key="frame" x="0.0" y="-20" width="320" height="608"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zZO-wu-1b7">
+                                        <rect key="frame" x="20" y="20" width="280" height="1051.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a62-qG-i8P">
+                                                <rect key="frame" x="100" y="0.0" width="80" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="881-82-PHU">
+                                                <rect key="frame" x="93.5" y="24.5" width="93" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L54-hK-xl9">
+                                                <rect key="frame" x="0.0" y="40.5" width="280" height="203"/>
+                                                <string key="text">(1)	Advice Recommended: To give you advice and support on how to manage your blood glucose around exercise, while avoiding the ‘highs’ and ‘lows’ of exercise. This advice and information is largely based on a recent Exercise management in type 1 diabetes consensus statement by Riddell et al (Lancet Diabetes and Endo) 2016. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e91-FX-AGC">
+                                                <rect key="frame" x="0.0" y="247.5" width="280" height="183"/>
+                                                <string key="text">(2)	Exercise Log: To be used by you to keep a log of your exercise, blood glucose, carb and insulin amounts. This can be reviewed by you and also in conjunction with your diabetes team to help pinpoint where the issues (if any) arise in order to improve your blood glucose around exercise.  </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may decide to use the app for one or both of these purposes, this is entirely up to you. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29D-sH-kG9">
+                                                <rect key="frame" x="3.5" y="434.5" width="273" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp6-x0-apj">
+                                                <rect key="frame" x="0.0" y="499.5" width="280" height="304.5"/>
+                                                <mutableString key="text">Before T1Exercise can give you advice for your exercise you must firstly customise it with your personal settings (see information below). This includes information on your blood glucose measure, your insulin therapy and setting blood glucose reminders. You should only use values here agreed with your diabetes team. Inputting information in the personal settings is only done once. The only reason you will need to go back into the settings is if any changes have occurred e.g. your insulin therapy has changes. </mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y9-jg-0ck">
+                                                <rect key="frame" x="0.0" y="808" width="280" height="243.5"/>
+                                                <string key="text">Once you have all the personal settings information complete you can proceed to using the app for your exercise. The information the app needs will be found on the main screen (see details below). This necessary information simply includes the type, intensity, duration, whether the exercise is planned / unplanned, approximate time of exercise and your blood glucose before exercise. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="L54-hK-xl9" firstAttribute="top" secondItem="a62-qG-i8P" secondAttribute="bottom" constant="20" id="qFR-wP-N3A"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zZO-wu-1b7" firstAttribute="width" secondItem="9LZ-1J-MBr" secondAttribute="width" constant="-40" id="YvL-ak-Fu2"/>
+                                    <constraint firstItem="zZO-wu-1b7" firstAttribute="top" secondItem="9LZ-1J-MBr" secondAttribute="top" constant="20" id="ZYO-SK-yUe"/>
+                                    <constraint firstAttribute="bottom" secondItem="zZO-wu-1b7" secondAttribute="bottom" constant="20" id="hg1-aX-d1w"/>
+                                    <constraint firstAttribute="trailing" secondItem="zZO-wu-1b7" secondAttribute="trailing" constant="20" id="hyR-Cl-vkh"/>
+                                    <constraint firstItem="zZO-wu-1b7" firstAttribute="leading" secondItem="9LZ-1J-MBr" secondAttribute="leading" constant="20" id="qcA-kZ-hXV"/>
+                                    <constraint firstItem="zZO-wu-1b7" firstAttribute="width" secondItem="9LZ-1J-MBr" secondAttribute="width" constant="-40" id="raJ-tR-y3v"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9LZ-1J-MBr" firstAttribute="top" secondItem="ECJ-nW-Kwe" secondAttribute="topMargin" constant="-20" id="ICD-Ii-yzt"/>
+                            <constraint firstItem="9LZ-1J-MBr" firstAttribute="leading" secondItem="ECJ-nW-Kwe" secondAttribute="leading" id="XEt-VW-TYH"/>
+                            <constraint firstItem="9LZ-1J-MBr" firstAttribute="centerY" secondItem="ECJ-nW-Kwe" secondAttribute="centerY" id="aWJ-Om-qBh"/>
+                            <constraint firstAttribute="trailing" secondItem="9LZ-1J-MBr" secondAttribute="trailing" id="s6B-5B-owK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B36-bR-bOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
