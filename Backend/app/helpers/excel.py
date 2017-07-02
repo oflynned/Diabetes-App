@@ -141,6 +141,7 @@ class Excel:
 
         # groom over the data to split it by white spaces
         # this allows us to assume that 0th element is the title
+        # note that the final item has to be force flushed to the list
         links = []
         section_name = ""
 
@@ -209,15 +210,19 @@ class Excel:
     def groom_content():
         dataset_file_name = "app_sug_2.xlsx"
         dataset_location = Excel.__get_dataset_working_dir(dataset_file_name)
-
         workbook = xlrd.open_workbook(dataset_location)
 
         # iterate over the sheets to save each to its own json representation
         # the final sheet is of a different format for info and should be done separately
         for i in range(workbook.nsheets - 1):
+            sheet_title = Excel.__groom_titles(workbook.sheet_by_index(i).name.strip())
             groomed_jsonified_data = Excel.__retrieve_data_sheets(workbook)
-            Excel.__save_json_to_file(workbook.sheet_by_index(i).name, groomed_jsonified_data)
+            Excel.__save_json_to_file(sheet_title, groomed_jsonified_data)
 
         # handle the info page now and generate its own representation
-        info_page_data = workbook.sheet_by_index(8)
-        return Excel.__groom_info_page(info_page_data)
+        info_page_name = Excel.__groom_titles(workbook.sheet_by_index(8).name.strip())
+        info_page_raw_data = workbook.sheet_by_index(8)
+        info_page_jsonified_data = Excel.__groom_info_page(info_page_raw_data)
+        Excel.__save_json_to_file(info_page_name, info_page_jsonified_data)
+
+        return {"success": True}
