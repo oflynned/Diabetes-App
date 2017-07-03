@@ -66,6 +66,7 @@ def get_recommendation():
 
     return Content.get_json(groomed_suggestions)
 
+
 def __get_bg_level_tag(reported_bg_level, tag):
     if tag is not "always":
         stripped_tag = str(tag).replace("bg", "")
