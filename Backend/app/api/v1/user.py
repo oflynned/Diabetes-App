@@ -5,6 +5,7 @@ from app.app import mongo
 user_endpoint = Blueprint("user", __name__)
 
 
+@user_endpoint.
 def get_user():
     pass
 
