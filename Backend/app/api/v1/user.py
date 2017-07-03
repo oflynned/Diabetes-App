@@ -16,7 +16,7 @@ def create_user():
 
     new_user = {"email": email, "password": password_hash, "validated": False}
 
-    if not does_user_exist(email):
+    if not __does_user_exist(email):
         mongo.db.users.save(new_user)
         return Content.get_json({"success": True})
     else:
@@ -60,7 +60,7 @@ def reset_password():
     email = data["email"]
     new_password = data["new_password"]
 
-    if does_user_exist(email):
+    if __does_user_exist(email):
         user = list(mongo.db.users.find({"email": email}))[0]
         user["password"] = custom_app_context.hash(new_password)
         mongo.db.users.save(user)
@@ -75,7 +75,7 @@ def validate_user():
     data = request.json
     email = data["email"]
 
-    if does_user_exist(email):
+    if __does_user_exist(email):
         user = list(mongo.db.users.find({"email": email}))[0]
         user["validated"] = True
         mongo.db.users.save(user)
@@ -84,15 +84,15 @@ def validate_user():
         return Content.get_json({"success": False, "reason": "user doesn't exist"})
 
 
-def is_user_validated(email):
+def __is_user_validated(email):
     user = list(mongo.db.users.find({"email": email}))[0]
     return user["validated"]
 
 
-def does_user_exist(email):
+def __does_user_exist(email):
     results = list(mongo.db.users.find({"email": email}))
     return len(results) > 0
 
 
-def has_user_been_below_or_above_target_or_hypo():
+def __has_user_been_below_or_above_target_or_hypo():
     pass
