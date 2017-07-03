@@ -104,8 +104,8 @@ class Excel:
 
                         if suggestion_content == "*":
                             suggestion_content = "always"
-                        suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
 
+                        suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
                         suggestions.append(suggestion_object)
 
                     else:
@@ -119,28 +119,31 @@ class Excel:
 
             # some tags have random _ characters appended at the start or end or both
             intensity_tags = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
-            output_intensity_tags = []
-            for intensity in intensity_tags:
-                is_first_char_underscore = intensity[:1] == "_"
-                is_last_char_underscore = intensity[(len(intensity) - 1):] == "_"
-                tag = intensity
-
-                if is_first_char_underscore and not is_last_char_underscore:
-                    tag = intensity[1:]
-                elif not is_first_char_underscore and is_last_char_underscore:
-                    print(intensity, intensity[:(len(intensity) - 1)])
-                    tag = intensity[:(len(intensity) - 1)]
-                elif is_first_char_underscore and is_last_char_underscore:
-                    print(intensity, intensity[1:(len(intensity) - 1)])
-                    tag = intensity[1:(len(intensity) - 1)]
-
-                output_intensity_tags.append(tag)
-
-            data_object["exercise_intensity"] = output_intensity_tags
-
+            data_object["exercise_intensity"] = Excel.__remove_underscores_from_tags(intensity_tags)
             jsonified_output_data.append(data_object)
 
         return jsonified_output_data
+
+    @staticmethod
+    def __remove_underscores_from_tags(intensity_tags):
+        output_intensity_tags = []
+        for intensity in intensity_tags:
+            is_first_char_underscore = intensity[:1] == "_"
+            is_last_char_underscore = intensity[(len(intensity) - 1):] == "_"
+            tag = intensity
+
+            if is_first_char_underscore and not is_last_char_underscore:
+                tag = intensity[1:]
+            elif not is_first_char_underscore and is_last_char_underscore:
+                print(intensity, intensity[:(len(intensity) - 1)])
+                tag = intensity[:(len(intensity) - 1)]
+            elif is_first_char_underscore and is_last_char_underscore:
+                print(intensity, intensity[1:(len(intensity) - 1)])
+                tag = intensity[1:(len(intensity) - 1)]
+
+            output_intensity_tags.append(tag)
+
+        return output_intensity_tags
 
     @staticmethod
     def __is_link(row):
