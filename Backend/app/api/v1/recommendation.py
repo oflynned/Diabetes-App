@@ -52,6 +52,6 @@ def get_recommendation():
     for suggestion in suggestions:
         meal_timing = suggestion["before_after_meal"]
         if exercise_meal_timing == meal_timing or meal_timing == "always":
-            groomed_suggestions.append(suggestion)
+            groomed_suggestions.append(suggestion["exercise_suggestion"])
 
     return Content.get_json(groomed_suggestions)
