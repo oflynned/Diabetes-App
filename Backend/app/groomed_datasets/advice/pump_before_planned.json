@@ -1,0 +1,434 @@
+[
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "As your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 25% and reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "As your exercise is before your meal reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. No additional carbohydrate should be needed for this duration and intensity of exercise"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start exercise (aim for a starting blood glucose between 7-10mmol/l) and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "As your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 50% and reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "As your exercise is before your meal reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. No additional carbohydrate should be needed for this duration and intensity of exercise"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start exercise (aim for a starting blood glucose between 7-10mmol/l) and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "moderate"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "As your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 75% and reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "As your exercise is before your meal reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. No additional carbohydrate should be needed for this duration and intensity of exercise"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start exercise (aim for a starting blood glucose between 7-10mmol/l) and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "1. Your blood glucose will likely rise with this extremely intense exercise therefore take your usual meal time and basal insulin if your exercise is within 2-3hrs of your meal"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "2. You will unlikely need any carbohydrate to prevent hypoglyaemia during exercise but always carry some with you"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start exercise (aim for a starting blood glucose between 5-7mmol/l) and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "As your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 50% and reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "As your exercise is before your meal reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Consume additional carbohydrates as needed based on your blood glucose monitoring (approx 10-15g/hr). Remember the more insulin you have on board the more carbohydrate you will need."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start (aim for a starting blood glucose between 7-10mmol/l), during exercise and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "As your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 75% and reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "As your exercise is before your meal reduce your basal insulin by approx 65% about 60- 90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Consume additional carbohydrates as needed based on your blood glucose monitoring (approx 10-15g/hr). Remember the more insulin you have on board the more carbohydrate you will need."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start (aim for a starting blood glucose between 7-10mmol/l), during exercise and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "moderate"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
+        "exercise_intensity": [
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "1. If your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 50% and reduce your basal insulin by approx 65% about 60-90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "2. Or if your exercise is before breakfast or >3 hrs after your meal reduce your basal insulin by approx 65% about 60-90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. You will unlikely need any carbohydrate to prevent hypoglyaemia for this duration and intensity of exercise but carry some with you"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start (aim for a starting blood glucose between 7-10mmol/l) and at the end of exercise"
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As your exercise is team sports remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "1. Your blood sugar will likely rise with this extremely intense exercise therefore take your usual meal time insulin and basal insulin if your exercise is within 2-3hrs of your meal"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "2. You will unlikely need any carbohydrate to prevent hypoglyaemia during exercise but carry some with you"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start (aim for a starting blood glucose between 5-7mmol/l) and at the end of exercise"
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As your exercise is team sports remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "after_meal",
+                "exercise_suggestion": "1. If your exercise is within 2-3hrs of your meal reduce your mealtime insulin by approx 50% and reduce your basal insulin by approx 65% about 60-90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "before_meal",
+                "exercise_suggestion": "2. Or if your exercise is before breakfast or >3 hrs after your meal reduce your basal insulin by approx 65% about 60-90mins before the start of exercise until the exercise stops."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Consume additional carbohydrates as needed based on your blood sugar monitoring (approx 10-15g/hr). Remember the more insulin you have on board the more carbohydrate you will need."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start (aim for a starting blood glucose between 7-10mmol/l), during exercise and at the end of exercise."
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
+            },
+            {
+                "warning": "* Only receive this advice if the input team sport / gym (resistance + cardio)",
+                "bg_below_or_above_target_or_hypo_last_24hrs": "*",
+                "exercise_suggestion": "As your exercise is team sports remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
+        "exercise_intensity": [
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "1. As your blood sugar is likely to rise with anaerobic exercise no reduction in mealtime insulin or basal insulin is advised."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "2. You may need to increase your basal rate during to avoid hyperglycaemia - try increasing by 10% 30mins before to 60mins after."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start (aim for a starting blood glucose between 5-7mmol/l) and at the end of exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "1. As your blood sugar may rise or remain stable with anaerobic exercise, therefore no reduction in mealtime insulin or basal insulin is advised."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "2. Carry some carbohydrate with you as you may need it to prevent hypoglycaemia for longer duration anaerobic sessions"
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "3. If your blood sugar tends to rise you may need to increase your basal rate during exercise - try increasing by 10% 30mins before to 60mins after."
+            },
+            {
+                "bg_below_or_above_target_or_hypo_last_24hrs": "always",
+                "exercise_suggestion": "4. Check blood glucose before you start (aim for a starting blood glucose between 5-7mmol/l) and at the end of exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
+        ]
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "section_name": "Managing hypoglycaemia",
+        "links": [
+            "http://www.runsweet.com/starting-sports/avoiding-hypos/",
+            "http://www.excarbs.com/trouble-shooting/",
+            "http://www.diabetes.co.uk/Diabetes-and-Hypoglycaemia.html",
+            "http://diabetes.bm/type1exercisetips.pdf"
+        ]
+    },
+    {
+        "section_name": "Managing hyperglycaemia",
+        "links": [
+            "http://www.runsweet.com/diabetes-and-sport/",
+            "http://www.runsweet.com/children-and-adolescents/high-intensity-exercise/",
+            "http://diabetes.bm/type1exercisetips.pdf"
+        ]
+    },
+    {
+        "section_name": "Carb portion list",
+        "links": [
+            "http://www.runsweet.com/diet-and-nutrition/carb-sources/",
+            "https://www.indi.ie/images/public_docs/25_INDI_Book_(Sport).pdf"
+        ]
+    },
+    {
+        "section_name": "Low glycaemic snacks for before or after exercise",
+        "links": [
+            "http://www.runsweet.com/diet-and-nutrition/glycaemic-index/",
+            "http://www.glycemicindex.com/",
+            "http://www.glycemicindex.com/foodSearch.php",
+            "https://www.indi.ie/images/public_docs/236_GI.pdf"
+        ]
+    },
+    {
+        "section_name": "Recovery post exercise",
+        "links": [
+            "http://www.ausport.gov.au/ais/nutrition/fact_sheets/recovery_nutrition",
+            "https://www.indi.ie/images/public_docs/25_INDI_Book_(Sport).pdf"
+        ]
+    },
+    {
+        "section_name": "T1DM blogs",
+        "links": [
+            "http://www.jdrf.org/blog/2013/02/21/dont-sweat-it-exercise-and-type-1-diabetes/",
+            "https://diatribe.org/get-zone-my-tips-avoiding-hypoglycemia-during-exercise",
+            "https://mysugr.com/skiing-insulin-pump/"
+        ]
+    },
+    {
+        "section_name": "Healthy eating",
+        "links": [
+            "https://www.indi.ie/images/Healthy_Eating_Without_Breaking_the_Bank_2016.pdf",
+            "https://www.indi.ie/images/Weight_management_and_smart_snacking.pdf",
+            "https://www.indi.ie/images/Breakfast_-_A_Great_Start_to_Your_Day.pdf"
+        ]
+    }
+]

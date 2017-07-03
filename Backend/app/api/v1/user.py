@@ -1,8 +1,8 @@
 from flask import Blueprint, request
-from bson.objectid import ObjectId
+from passlib.apps import custom_app_context
 
-from app.helpers.content import Content
 from app.app import mongo
+from app.helpers.content import Content
 
 user_endpoint = Blueprint("user", __name__)
 
@@ -10,13 +10,13 @@ user_endpoint = Blueprint("user", __name__)
 @user_endpoint.route("/create", methods=["POST"])
 def create_user():
     data = request.json
-    user_email = data["email"]
-    user_password = data["password"]
+    email = data["email"]
+    password = data["password"]
+    password_hash = custom_app_context.hash(password)
 
-    # TODO password hash
-    new_user = {"email": user_email, "password": user_password}
+    new_user = {"email": email, "password": password_hash}
 
-    if not does_user_exist(user_email):
+    if not does_user_exist(email):
         mongo.db.users.save(new_user)
         return Content.get_json({"success": True})
     else:
@@ -32,11 +32,26 @@ def get_user():
     return Content.get_json(user_details[0])
 
 
+@user_endpoint.route("/login", methods=["POST"])
+def login():
+    data = request.json
+    email = data["email"]
+    provided_password = data["password"]
+    hash = custom_app_context.hash(provided_password)
+
+    user = list(mongo.db.users.find({"email": email}))[0]
+    if custom_app_context.verify(user["password"], hash):
+        return Content.get_json({"success": True})
+    else:
+        return Content.get_json({"success": False})
+
+
 @user_endpoint.route("/delete", methods=["DELETE"])
 def delete_user():
     data = request.json
     email = data["email"]
-    user = list(mongo.db.users.find({"email": email}))[0]
+    mongo.db.users.remove({"email": email})
+    return Content.get_json({"success": True})
 
 
 @user_endpoint.route("/edit", methods=["POST"])

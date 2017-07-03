@@ -1,0 +1,135 @@
+[
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "2. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "3. Reduce overnight basal insulin by 20% and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink) to help reduce nighttime hypoglycaemia following afternoon/ evening exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Your blood glucose may be high after this high intensity exercise. Try a 20-30mins cool down (light jog & stretching) or take 50% of your normal correction dose post exercise to help reduce blood glucose"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink) to help reduce nighttime hypoglycaemia following afternoon/ evening exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Your blood glucose may be high after your exercise. Try a 20-30min cool down (light jog & stretching) or take 50% of your normal correction dose after exercise to help reduce blood sugars"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink) to help reduce nighttime hypoglycaemia following afternoon/ evening exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Your blood glucose may be high after your exercise. Try a 20-30min cool down (light jog & stretching) or take 50% of your normal correction dose after exercise to help reduce blood glucose"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% and / or take a bedtime snack without insulin (e.g. fruit and yoghurt; yoghurt drink) to help reduce nighttime hypoglycaemia following afternoon/ evening exercise"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
+        "exercise_intensity": [
+            "mild"
+        ]
+    }
+]

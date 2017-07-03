@@ -1,0 +1,82 @@
+[
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Normal basal rate can be resumed at the end of exercise or later in recovery depending on your blood sugar trends"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood sugar regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% at bedtime for 6 hours to help prevent nighttime hypoglycaemia and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink)"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense"
+        ]
+    },
+    {
+        "exercise_type": "aerobic",
+        "exercise_duration": [
+            0
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Your blood glucose may be high after this high intensity exercise. Try a 20-30mins cool down (light jog & stretching) or increase basal rate by approx 10% for about 1 hour following exercise to help reduce blood glucose"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% at bedtime for 6 hours to help prevent nighttime hypoglycaemia and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink)"
+            }
+        ],
+        "exercise_intensity": [
+            "extremely_intense"
+        ]
+    },
+    {
+        "exercise_type": "mixed",
+        "exercise_duration": [
+            0,
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "exercise_suggestion": "1. Your blood glucose may be high after your exercise. Try a 20-30min cool down (light jog & stretching) or increase basal rate by approx 10% for about 1 hour following exercise"
+            },
+            {
+                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
+            },
+            {
+                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
+            },
+            {
+                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% at bedtime for 6 hours to help prevent nighttime hypoglycaemia and / or take a bedtime snack without insulin (e.g. fruit and yoghurt/ yoghurt drink)"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
+        ]
+    }
+]
