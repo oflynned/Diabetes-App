@@ -31,3 +31,7 @@ def reset_password():
 
 def validate_user():
     pass
+
+
+def has_user_been_below_or_above_target_or_hypo():
+    pass

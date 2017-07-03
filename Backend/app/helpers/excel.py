@@ -82,8 +82,6 @@ class Excel:
                         row_value = row_value.strip()
                         groomed.append(row_value)
 
-                # TODO check BG params are passed okay
-
                 # given the 5th row, sanitise the content for the suggestion object
                 if is_parametrised:
                     parameter_content = data[max_col - 2].strip()
@@ -99,11 +97,19 @@ class Excel:
                             suggestion_object["warning"] = warning_note
 
                         parameter_name = str(headings[3]).replace("/", " ")
-                        parameter_name = Excel.__groom_titles(parameter_name)
+                        parameter_name = Excel.__groom_titles(parameter_name).replace("__","_")
                         suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
 
-                        if suggestion_content == "*":
-                            suggestion_content = "always"
+                        # 3 parameter names -- before_after_meal, bg, bg_below_or_above_target_or_hypo_last_24hrs
+                        if "meal" in parameter_name:
+                            if suggestion_content == "*":
+                                suggestion_content = "always"
+                        elif "bg_below_or_above_target_or_hypo_last_24hrs" in parameter_name:
+                            if suggestion_content == '':
+                                suggestion_content = "always"
+                        elif "bg" in parameter_name and not "bg_" in parameter_name:
+                            if suggestion_content == '':
+                                suggestion_content = "always"
 
                         suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
                         suggestions.append(suggestion_object)
@@ -135,10 +141,8 @@ class Excel:
             if is_first_char_underscore and not is_last_char_underscore:
                 tag = intensity[1:]
             elif not is_first_char_underscore and is_last_char_underscore:
-                print(intensity, intensity[:(len(intensity) - 1)])
                 tag = intensity[:(len(intensity) - 1)]
             elif is_first_char_underscore and is_last_char_underscore:
-                print(intensity, intensity[1:(len(intensity) - 1)])
                 tag = intensity[1:(len(intensity) - 1)]
 
             output_intensity_tags.append(tag)

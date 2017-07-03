@@ -17,7 +17,8 @@ def generate_groomed_recommendations():
 # {
 # "method": [mdi, pump], "epoch": [before, after], "planning": [planned, unplanned],
 # "exercise_type": [aerobic, anaerobic, mixed], "exercise_intensity": [mild, moderate, intense, extremely_intense],
-# "exercise_duration": [0, 1, 2, 3], "bg_level": <float>, "meal_timing": [before, after]
+# "exercise_duration": [0, 1, 2, 3], "exercise_name": "",
+# "bg_level": <float>, "meal_timing": [before, after]
 # }
 
 # RETURN [suggestion]
@@ -59,9 +60,12 @@ def get_recommendation():
         if exercise_bg_level is not -1:
             pass
 
+        if exercise_meal_timing is None and exercise_bg_level is -1:
+            groomed_suggestions.append(suggestion["exercise_suggestion"])
+
     return Content.get_json(groomed_suggestions)
 
 
 @recommendations_endpoint.route("/get-all", methods=["GET"])
 def get_all_recommendations():
-    return Content.get_json(Excel.get_suggestions_from_file("mdi_before_unplanned.json"))
+    return Content.get_json(Excel.get_suggestions_from_file("pump_after_unplanned.json"))
