@@ -14,7 +14,7 @@ def create_user():
     password = data["password"]
     password_hash = custom_app_context.hash(password)
 
-    new_user = {"email": email, "password": password_hash}
+    new_user = {"email": email, "password": password_hash, "validated": False}
 
     if not does_user_exist(email):
         mongo.db.users.save(new_user)
@@ -54,19 +54,39 @@ def delete_user():
     return Content.get_json({"success": True})
 
 
-@user_endpoint.route("/edit", methods=["POST"])
-def edit_user():
-    pass
-
-
 @user_endpoint.route("/reset-password", methods=["POST"])
 def reset_password():
-    pass
+    data = request.json
+    email = data["email"]
+    new_password = data["new_password"]
+
+    if does_user_exist(email):
+        user = list(mongo.db.users.find({"email": email}))[0]
+        user["password"] = custom_app_context.hash(new_password)
+        mongo.db.users.save(user)
+
+        return Content.get_json({"success": True})
+    else:
+        return Content.get_json({"success": False, "reason": "user doesn't exist"})
 
 
 @user_endpoint.route("/validate", methods=["POST"])
 def validate_user():
-    pass
+    data = request.json
+    email = data["email"]
+
+    if does_user_exist(email):
+        user = list(mongo.db.users.find({"email": email}))[0]
+        user["validated"] = True
+        mongo.db.users.save(user)
+        return Content.get_json({"success": True})
+    else:
+        return Content.get_json({"success": False, "reason": "user doesn't exist"})
+
+
+def is_user_validated(email):
+    user = list(mongo.db.users.find({"email": email}))[0]
+    return user["validated"]
 
 
 def does_user_exist(email):

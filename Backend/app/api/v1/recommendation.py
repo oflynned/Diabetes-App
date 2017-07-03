@@ -15,8 +15,7 @@ def generate_groomed_recommendations():
 # {
 # "method": [mdi, pump], "epoch": [before, after], "planning": [planned, unplanned],
 # "exercise_type": [aerobic, anaerobic, mixed], "exercise_intensity": [mild, moderate, intense, extremely_intense],
-# "exercise_duration": [0, 1, 2, 3], "exercise_name": "",
-# "bg_level": <float>, "meal_timing": [before, after]
+# "exercise_duration": [0, 1, 2, 3], "bg_level": <float>, "meal_timing": [before, after]
 # }
 
 # RETURN [suggestion, ...]
@@ -56,8 +55,6 @@ def get_recommendation():
                 groomed_suggestions.append(suggestion["exercise_suggestion"])
 
         elif exercise_bg_level is not -1:
-            print(__get_bg_level_tag(exercise_bg_level, suggestion["bg"]))
-
             if __get_bg_level_tag(exercise_bg_level, suggestion["bg"]) or suggestion["bg"] == "always":
                 groomed_suggestions.append(suggestion["exercise_suggestion"])
 
