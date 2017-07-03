@@ -82,13 +82,11 @@ class Excel:
                         row_value = row_value.strip()
                         groomed.append(row_value)
 
-                # TODO sanitise the incorrect extra underscores
                 # TODO check BG params are passed okay
-                # TODO issue on some suggestions not appearing
 
                 # given the 5th row, sanitise the content for the suggestion object
                 if is_parametrised:
-                    parameter_content = data[3].strip()
+                    parameter_content = data[max_col - 2].strip()
 
                 suggestion_content = data[max_col - 1].strip()
 
@@ -111,15 +109,34 @@ class Excel:
                         suggestions.append(suggestion_object)
 
                     else:
-                        # reason why some are null huehuehue
-                        pass
+                        if suggestion_content is not "always":
+                            suggestion_object["exercise_suggestion"] = suggestion_content
+                            suggestions.append(suggestion_object)
 
             data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
-            data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
             data_object["exercise_duration"] = Excel.__groom_duration_timings(groomed[2])
+            data_object["exercise_suggestions"] = suggestions
 
-            if is_parametrised:
-                data_object["exercise_meal_suggestions"] = suggestions
+            # some tags have random _ characters appended at the start or end or both
+            intensity_tags = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
+            output_intensity_tags = []
+            for intensity in intensity_tags:
+                is_first_char_underscore = intensity[:1] == "_"
+                is_last_char_underscore = intensity[(len(intensity) - 1):] == "_"
+                tag = intensity
+
+                if is_first_char_underscore and not is_last_char_underscore:
+                    tag = intensity[1:]
+                elif not is_first_char_underscore and is_last_char_underscore:
+                    print(intensity, intensity[:(len(intensity) - 1)])
+                    tag = intensity[:(len(intensity) - 1)]
+                elif is_first_char_underscore and is_last_char_underscore:
+                    print(intensity, intensity[1:(len(intensity) - 1)])
+                    tag = intensity[1:(len(intensity) - 1)]
+
+                output_intensity_tags.append(tag)
+
+            data_object["exercise_intensity"] = output_intensity_tags
 
             jsonified_output_data.append(data_object)
 
@@ -268,8 +285,8 @@ class Excel:
         return {"success": False}
 
     @staticmethod
-    def get_suggestions_from_file(file_name, exercise_type, intensity, duration):
-        file_name = Excel.__get_groomed_sets_dir() + "/advice/" + file_name
+    def get_suggestions_from_file(file_name):
+        file_name = Excel.__get_groomed_sets_dir() + "advice/" + file_name
 
         with open(file_name, 'r') as f:
             data = json.load(f)
