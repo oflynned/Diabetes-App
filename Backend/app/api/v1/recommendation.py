@@ -82,8 +82,3 @@ def __get_bg_level_tag(reported_bg_level, tag):
                 return True
 
     return False
-
-
-@recommendations_endpoint.route("/get-all", methods=["GET"])
-def get_all_recommendations():
-    return Content.get_json(Excel.get_suggestions_from_file("pump_after_unplanned.json"))
