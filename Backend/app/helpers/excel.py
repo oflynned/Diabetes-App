@@ -89,18 +89,19 @@ class Excel:
                 # given the 5th row, sanitise the content for the suggestion object
                 if is_parametrised:
                     parameter_content = data[3].strip()
-                    suggestion_content = data[4].strip()
 
-                    if suggestion_content not in heading_exclusions:
-                        suggestion_object = {}
+                suggestion_content = data[max_col - 1].strip()
 
-                        # if there is an astrix, append a warning
+                if suggestion_content not in heading_exclusions:
+                    suggestion_object = {}
+
+                    # if there is an astrix, append a warning
+                    if is_parametrised:
                         if parameter_content == "*":
                             suggestion_object["warning"] = warning_note
 
                         parameter_name = str(headings[3]).replace("/", " ")
                         parameter_name = Excel.__groom_titles(parameter_name)
-
                         suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
 
                         if suggestion_content == "*":
@@ -108,6 +109,10 @@ class Excel:
                         suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
 
                         suggestions.append(suggestion_object)
+
+                    else:
+                        # reason why some are null huehuehue
+                        pass
 
             data_object["exercise_type"] = Excel.__groom_titles(groomed[0])
             data_object["exercise_intensity"] = Excel.__split_tags(Excel.__groom_titles(groomed[1]))
@@ -237,17 +242,36 @@ class Excel:
         info_page_jsonified_data = Excel.__groom_info_page(info_page_raw_data)
         Excel.__save_json_to_file(info_page_name, info_page_jsonified_data, False)
 
-        return {"success": Excel.get_json_files_for_filter()}
+        return {"success": True}
 
     @staticmethod
-    def get_json_files_for_filter():
+    def __get_json_files_for_filter():
         advice_dir = Excel.__get_groomed_sets_dir() + "advice/"
-        output_names = []
+        output = []
 
         for (dir_path, dir_name, file_names) in os.walk(advice_dir):
             for i, file in enumerate(file_names):
                 sanitised_name = str(file).replace(".json", "")
                 name_tags = sanitised_name.split("_")
-                output_names.append({"file_name": file_names[i], "tags": name_tags})
+                output.append({"file_name": file_names[i], "tags": name_tags})
 
-        return output_names
+        return output
+
+    @staticmethod
+    def get_file_by_filter(method, epoch, planning):
+        files_in_dir = Excel.__get_json_files_for_filter()
+        for file in files_in_dir:
+            tags = file["tags"]
+            if method in tags and epoch in tags and planning in tags:
+                return file["file_name"]
+
+        return {"success": False}
+
+    @staticmethod
+    def get_suggestions_from_file(file_name, exercise_type, intensity, duration):
+        file_name = Excel.__get_groomed_sets_dir() + "/advice/" + file_name
+
+        with open(file_name, 'r') as f:
+            data = json.load(f)
+
+        return data
