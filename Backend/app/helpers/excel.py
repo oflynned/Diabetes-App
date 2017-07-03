@@ -253,7 +253,7 @@ class Excel:
         workbook = xlrd.open_workbook(dataset_location)
 
         # iterate over the sheets to save each to its own json representation
-        # the final sheet is of a different format for info and should be done separately
+        # the final sheet is of a different format for ifo and should be done separately
         for i in range(workbook.nsheets - 1):
             sheet_title = Excel.__groom_titles(workbook.sheet_by_index(i).name.strip())
             sheet_title = Excel.__groom_output_json_file_title(sheet_title)
