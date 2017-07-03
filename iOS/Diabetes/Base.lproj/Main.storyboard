@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="5034.375" y="340.14084507042253"/>
         </scene>
-        <!--View Controller-->
+        <!--InfoT1 Exercise-->
         <scene sceneID="Gmr-Pu-aM8">
             <objects>
-                <viewController id="TvV-NV-yA8" sceneMemberID="viewController">
+                <viewController id="TvV-NV-yA8" customClass="infoT1Exercise" customModule="Diabetes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0vJ-yd-apH"/>
                         <viewControllerLayoutGuide type="bottom" id="RZu-IO-vk9"/>
@@ -566,6 +566,11 @@
                             <constraint firstAttribute="trailing" secondItem="9LZ-1J-MBr" secondAttribute="trailing" id="s6B-5B-owK"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="leadingConstraint" destination="qcA-kZ-hXV" id="EuA-kb-QN3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B36-bR-bOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1720,122 +1725,122 @@ Consumption of foods with a low GI before exercise could sustain energy availabi
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgq-xM-PP8">
-                                <rect key="frame" x="-20" y="253" width="360" height="761"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgq-xM-PP8">
+                                <rect key="frame" x="0.0" y="64" width="320" height="950"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="14l-ak-9va">
-                                        <rect key="frame" x="20" y="84" width="320" height="720.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="14l-ak-9va">
+                                        <rect key="frame" x="16" y="0.0" width="288" height="540"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kD-Gf-8qG">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-fM-VbJ">
-                                                <rect key="frame" x="0.0" y="20.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="16" width="288" height="12"/>
                                                 <string key="text">1.	Type of exercise </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-kO-pT6">
-                                                <rect key="frame" x="0.0" y="40.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="32" width="288" height="12"/>
                                                 <string key="text">The main screen includes icons for all types of exercises. You simply need to select your exercise and the app will do the hard work for you by categorising your exercise into aerobic, anaerobic or mixed exercise (see information below). The track and field events icon includes the following: Long jump, javelin, shotput, high jump, pole vault and sprinting). The gymnastics icon includes: bars, beam, floor, rings, vault, horse. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72C-R3-EK3">
-                                                <rect key="frame" x="0.0" y="60.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="48" width="288" height="12"/>
                                                 <string key="text">Aerobic – These exercises use oxygen and help improve cardiovascular endurance. Examples include: Cycling; golf; brisk walk; hiking; mountain biking; jogging; swimming; triathlon</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duf-wZ-Vn3">
-                                                <rect key="frame" x="0.0" y="80.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="64" width="288" height="12"/>
                                                 <string key="text">Mixed – These exercises involve periods of low or moderate intensity activity interspersed with bursts of high intensity activity. Examples include: Football; rugby; basketball; baseball; hockey; badminton; netball; tennis; squash; dancing, high intensity intermittent training (HIIT); water polo  </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrQ-Px-CQK">
-                                                <rect key="frame" x="0.0" y="100.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="80" width="288" height="12"/>
                                                 <string key="text">Anaerobic (include intense aerobic) – These exercises do not use oxygen and help to improve muscle strength and anaerobic capacity. Examples include: Sprint running; speed climbing; sprint swimming; diving; weight lifting; body building; track and field events (Long jump, javelin, shotput, high jump, pole vault, sprinting); archery; gymnastics (bars, beam, floor, rings, vault, horse); fencing</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLP-lC-DDM">
-                                                <rect key="frame" x="0.0" y="120.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="96" width="288" height="12"/>
                                                 <string key="text">2.	Exercise duration</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-rL-PdS">
-                                                <rect key="frame" x="0.0" y="140.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="112" width="288" height="12"/>
                                                 <string key="text">Use the clock to input how long your exercise will last. The duration of your exercise will determine the advice that the app gives you. For example if you are doing less than 30mins of moderate intensity aerobic exercise (we will assume this is planned exercise so you have already reduced your insulin) you should not require any carbohydrate to prevent hypoglycaemia versus if you were doing this same planned exercise for 30-60mins you will likely require a small amount of carbohydrate (approx 10-15g per hour) to prevent hypoglycaemia. Someone doing a marathon or long duration cycle (&gt;150mins) will have much higher carbohydrate requirements (approx 60g per hour) to prevent hypoglycaemia and enhance performance.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZE-I2-ALa">
-                                                <rect key="frame" x="0.0" y="160.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="128" width="288" height="12"/>
                                                 <string key="text">3.	Intensity of exercise </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-vb-Kq9">
-                                                <rect key="frame" x="0.0" y="180.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="144" width="288" height="12"/>
                                                 <string key="text">Exercise intensity refers to how much work is being done when exercising. The intensity of the exercise you do effects the fuel your body uses and the training adaptations (i.e. the effect of training). To make it easy for you to determine the intensity of your exercise we use the borg scale (see below) which measures the rate of perceived exertion. You need to select the intensity based on the information given on the screen. For example if you feel that doing this exercise you will be short of breath, can speak a sentence and be borderline uncomfortable, this exercise is considered vigorous activity so you will need to select 7-8 on the scale. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-3 = Very light to light activity: Easy to breath and carry out a conversation. Feels like you can maintain for hours." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmN-Lj-SmC">
-                                                <rect key="frame" x="0.0" y="200.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="160" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3T-ME-iAY">
-                                                <rect key="frame" x="0.0" y="220.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="176" width="288" height="12"/>
                                                 <string key="text">4-6 = Moderate activity: Breathing heavily, can hold short conversation. Somewhat comfortable but becoming noticeably more challenging.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7-8 = Vigorous activity: Short of breath, can speak a sentence. Borderline uncomfortable." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-1v-8jS">
-                                                <rect key="frame" x="0.0" y="240.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="192" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-r1-py1">
-                                                <rect key="frame" x="0.0" y="260.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="208" width="288" height="12"/>
                                                 <string key="text">9-10 = very hard to max effort activity: Completely out of breath, barely or unable to talk. Can only maintain for very short time. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMS-H8-aLX">
-                                                <rect key="frame" x="0.0" y="280.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="224" width="288" height="12"/>
                                                 <string key="text">4.	Planned / Unplanned exercise </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planned exercise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHu-oX-kJf">
-                                                <rect key="frame" x="0.0" y="300.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="240" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBD-Ek-Xhw">
-                                                <rect key="frame" x="0.0" y="320.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="256" width="288" height="12"/>
                                                 <string key="text">Ideally exercise with type 1 diabetes should be planned well in advance of beginning the activity to ensure that your insulin is balanced at an appropriate level to avoid hypoglycemia during the exercise and simultaneously avoid excessively high blood glucose, or hyperglycemia. 
 If your exercise is planned select planned on the screen. The app will then ask you if your exercise is:
 -	Within 3 hours of your meal
@@ -1849,47 +1854,47 @@ If you know when you are going to be active and you know what you will be doing 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiple daily injections:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dm-f8-3P2">
-                                                <rect key="frame" x="0.0" y="340.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="272" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdH-F3-EqT">
-                                                <rect key="frame" x="0.0" y="360.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="288" width="288" height="12"/>
                                                 <string key="text">➢	If activity is within two to three hours of a bolus/injection of fast acting insulin you can decrease the dose (by 25-75% depending in the intensity and duration of exercise) to reduce the risk of lows.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGe-nK-MOb">
-                                                <rect key="frame" x="0.0" y="380.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="304" width="288" height="12"/>
                                                 <string key="text">➢	If you know you have a very busy, active day ahead you can adjust morning background/basal insulin. If your exercise is in the afternoon/ evening you can reduce night-time basal insulin by approximately 20%.  </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insulin pump:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt5-FA-7bC">
-                                                <rect key="frame" x="0.0" y="400.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="320" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoJ-dJ-Zk9">
-                                                <rect key="frame" x="0.0" y="420.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="336" width="288" height="12"/>
                                                 <string key="text">➢	On a pump you can start a temp basal rate (reduce basal insulin by 50-80% depending in intensity and duration of exercise) about 60 – 90 minutes before you begin an activity until the end of exercise. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WV-OA-BHG">
-                                                <rect key="frame" x="0.0" y="440.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="352" width="288" height="12"/>
                                                 <string key="text">➢	If your exercise is two to three hours of your meal reduce the mealtime insulin by 25-75% depending on the intensity and duration of exercise. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQL-pb-HbV">
-                                                <rect key="frame" x="0.0" y="460.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="368" width="288" height="12"/>
                                                 <string key="text">Sometimes exercise puts your blood glucose levels up – you will learn through experience how you respond to different types of activity and what adjustments you need to make. 
 Remember that every activity may be a bit different and there are lots of different solutions to managing your BG. The key to getting it right is PLANNING. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1897,20 +1902,20 @@ Remember that every activity may be a bit different and there are lots of differ
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unplanned exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epc-N6-evl">
-                                                <rect key="frame" x="0.0" y="480.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="384" width="288" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7o-ZQ-sub">
-                                                <rect key="frame" x="0.0" y="500.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="400" width="288" height="12"/>
                                                 <string key="text">When an activity is planned then the monitoring and insulin adjustments can be planned, but unfortunately life sometimes gets in the way and it is not always possible to plan your activity. If your exercise is therefore unplanned you need to select unplanned on the main screen and the app will then advise you based on unplanned activity. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOJ-Pw-drm">
-                                                <rect key="frame" x="0.0" y="520.5" width="320" height="60"/>
+                                                <rect key="frame" x="0.0" y="416" width="288" height="12"/>
                                                 <string key="text">Here are some tips for unplanned activity:
 Check your blood glucose and if you use an insulin pump/smart blood glucose meter check your ‘active insulin’ or insulin on board (IOB).
 If you are going to do the types of activity that tend to drop blood glucose levels then here is what to do:</string>
@@ -1919,49 +1924,49 @@ If you are going to do the types of activity that tend to drop blood glucose lev
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImA-jb-DYO">
-                                                <rect key="frame" x="0.0" y="580.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="432" width="288" height="12"/>
                                                 <string key="text">1.	If you have had some insulin with food in the last 60-120 minutes there is a bigger chance you may go low during the exercise. Think, do you need some extra carbohydrate before you start?</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-0a-hch">
-                                                <rect key="frame" x="0.0" y="600.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="448" width="288" height="12"/>
                                                 <string key="text">2.	If the pre exercise blood glucose is 7mmol/L or below you are more likely to need extra carbohydrate to prevent a low.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nX1-Dz-dvO">
-                                                <rect key="frame" x="0.0" y="620.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="464" width="288" height="12"/>
                                                 <string key="text">3.	If the blood glucose level is 15mmol/L or more do you need to check for ketones and follow the advice from your diabetes team.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whT-Jn-9cT">
-                                                <rect key="frame" x="0.0" y="640.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="480" width="288" height="12"/>
                                                 <string key="text">5.	Time of day of exercise </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Qo-PWH">
-                                                <rect key="frame" x="0.0" y="660.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="496" width="288" height="12"/>
                                                 <string key="text">Entering the approximate time of day you are going to exercise is important. Firstly this will allow the app to remind you to check your blood glucose after the exercise and for you to let it know if you were successful or not. Secondly the time (along with all the other exercise details you entered) will be stored in the app and you can access all of this information in the history view (calendar icon). You can review this information (and send to your diabetes team if you wish to review with your team) and make changes to insulin adjustments / carbohydrate intake / exercise timing as necessary.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4Q-eP-dpx">
-                                                <rect key="frame" x="0.0" y="680.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="512" width="288" height="12"/>
                                                 <string key="text">6.	Blood glucose before exercise</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-jY-fz5">
-                                                <rect key="frame" x="0.0" y="700.5" width="320" height="20"/>
+                                                <rect key="frame" x="0.0" y="528" width="288" height="12"/>
                                                 <string key="text">Inputting your blood glucose at the start of your exercise will determine the advice that the app gives you. This information will also be displayed in your logbook which will be very useful for going back to look at trends and where issues are arising.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -2006,19 +2011,21 @@ If you are going to do the types of activity that tend to drop blood glucose lev
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="14l-ak-9va" firstAttribute="top" secondItem="rgq-xM-PP8" secondAttribute="top" constant="84" id="4Ug-E4-FDi"/>
+                                    <constraint firstAttribute="trailing" secondItem="14l-ak-9va" secondAttribute="trailing" constant="16" id="00g-zl-Lud"/>
                                     <constraint firstItem="14l-ak-9va" firstAttribute="centerX" secondItem="rgq-xM-PP8" secondAttribute="centerX" id="4Vs-x0-vnw"/>
                                     <constraint firstAttribute="bottom" secondItem="14l-ak-9va" secondAttribute="bottom" constant="20" id="EwS-rJ-YWT"/>
-                                    <constraint firstItem="14l-ak-9va" firstAttribute="width" secondItem="rgq-xM-PP8" secondAttribute="width" constant="-40" id="afI-Lb-ntB"/>
+                                    <constraint firstItem="14l-ak-9va" firstAttribute="leading" secondItem="rgq-xM-PP8" secondAttribute="leading" constant="16" id="QKL-hY-0zh"/>
+                                    <constraint firstItem="14l-ak-9va" firstAttribute="top" secondItem="rgq-xM-PP8" secondAttribute="top" id="yy3-WH-as1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rgq-xM-PP8" secondAttribute="bottom" constant="-446" id="6cq-Ff-vwh"/>
-                            <constraint firstItem="rgq-xM-PP8" firstAttribute="leading" secondItem="TdK-ba-00s" secondAttribute="leadingMargin" constant="-36" id="OXH-Qa-MRK"/>
                             <constraint firstItem="rgq-xM-PP8" firstAttribute="centerX" secondItem="TdK-ba-00s" secondAttribute="centerX" id="QOS-wn-4E3"/>
-                            <constraint firstItem="rgq-xM-PP8" firstAttribute="top" secondItem="DhH-RN-UJl" secondAttribute="bottom" constant="189" id="y7F-GJ-tI0"/>
+                            <constraint firstItem="rgq-xM-PP8" firstAttribute="leading" secondItem="TdK-ba-00s" secondAttribute="leading" id="aZD-dP-FpN"/>
+                            <constraint firstAttribute="trailing" secondItem="rgq-xM-PP8" secondAttribute="trailing" id="mUV-OG-cwN"/>
+                            <constraint firstItem="rgq-xM-PP8" firstAttribute="top" secondItem="DhH-RN-UJl" secondAttribute="bottom" id="sgc-Ex-GcD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -2430,80 +2437,6 @@ Main email: This is your primary email you use that you would like your data his
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cV7-Yt-LeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5923" y="-1401"/>
-        </scene>
-        <!--Personal Settings - Customising the app-->
-        <scene sceneID="gdh-VV-ARt">
-            <objects>
-                <viewController id="Tva-f7-oCS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Ez-FV-wuD"/>
-                        <viewControllerLayoutGuide type="bottom" id="hO4-wp-znp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bYH-iD-sYd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azr-N2-q1e">
-                                <rect key="frame" x="0.0" y="28" width="167" height="496"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="FGI-h2-wpY">
-                                        <rect key="frame" x="8" y="8" width="167" height="120"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLe-bD-3w4">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
-                                                <state key="normal">
-                                                    <string key="title">1.	Blood Glucose Units</string>
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sn-Qd-ifN" userLabel="2. Insulin Therapy">
-                                                <rect key="frame" x="0.0" y="30" width="137" height="30"/>
-                                                <state key="normal">
-                                                    <string key="title">2.	Insulin Therapy </string>
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8o-dF-xjN" userLabel="3. Reminders">
-                                                <rect key="frame" x="0.0" y="60" width="101" height="30"/>
-                                                <state key="normal">
-                                                    <string key="title">3.	Reminders</string>
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-MO-eag">
-                                                <rect key="frame" x="0.0" y="90" width="137" height="30"/>
-                                                <state key="normal">
-                                                    <string key="title">4.	Personal details</string>
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="FGI-h2-wpY" firstAttribute="top" secondItem="Azr-N2-q1e" secondAttribute="topMargin" id="8EV-u4-BG2"/>
-                                    <constraint firstItem="FGI-h2-wpY" firstAttribute="leading" secondItem="Azr-N2-q1e" secondAttribute="leadingMargin" id="kLn-rQ-KfW"/>
-                                    <constraint firstItem="FGI-h2-wpY" firstAttribute="width" secondItem="Azr-N2-q1e" secondAttribute="width" id="m6e-cx-zl3"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Azr-N2-q1e" firstAttribute="top" secondItem="1Ez-FV-wuD" secondAttribute="bottom" constant="8" symbolic="YES" id="0jY-46-ST9"/>
-                            <constraint firstItem="Azr-N2-q1e" firstAttribute="bottom" secondItem="hO4-wp-znp" secondAttribute="top" id="WVW-lB-4QR"/>
-                            <constraint firstItem="Azr-N2-q1e" firstAttribute="leading" secondItem="bYH-iD-sYd" secondAttribute="leading" id="k9v-48-Jmm"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Personal Settings - Customising the app" id="FKf-4S-qpF">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="QfV-zk-HzA"/>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F5B-Py-fiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6493" y="39"/>
         </scene>
     </scenes>
     <resources>

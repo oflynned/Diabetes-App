@@ -31,6 +31,10 @@
 		B8BEC66B3036A6428D09A118 /* Pods_DiabetesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750821DFC0AB85E6EC2984DC /* Pods_DiabetesUITests.framework */; };
 		EB5C37FC1EF7D09400993161 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5C37FB1EF7D09400993161 /* Notifications.swift */; };
 		EBF0E8351EFBE3A800638254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E8341EFBE3A800638254 /* LaunchScreen.storyboard */; };
+		EBF0E8371F0ADAD800638254 /* InfoT1Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E8361F0ADAD800638254 /* InfoT1Exercise.swift */; };
+		EBF0E8391F0ADB1300638254 /* InfoPersonalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E8381F0ADB1300638254 /* InfoPersonalSettings.swift */; };
+		EBF0E83B1F0ADB3100638254 /* InfoMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E83A1F0ADB3100638254 /* InfoMainScreen.swift */; };
+		EBF0E83D1F0ADB4A00638254 /* InfoGeneralInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E83C1F0ADB4A00638254 /* InfoGeneralInformation.swift */; };
 		F92B285F6F57C807D0650AAC /* Pods_DiabetesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF5B5A52427DD287C14DF2F /* Pods_DiabetesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,10 @@
 		EB5C37FB1EF7D09400993161 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		EB7DCF8A67ED16F6EAB36BD6 /* Pods-DiabetesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesUITests/Pods-DiabetesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBF0E8341EFBE3A800638254 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBF0E8361F0ADAD800638254 /* InfoT1Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoT1Exercise.swift; sourceTree = "<group>"; };
+		EBF0E8381F0ADB1300638254 /* InfoPersonalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPersonalSettings.swift; sourceTree = "<group>"; };
+		EBF0E83A1F0ADB3100638254 /* InfoMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMainScreen.swift; sourceTree = "<group>"; };
+		EBF0E83C1F0ADB4A00638254 /* InfoGeneralInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoGeneralInformation.swift; sourceTree = "<group>"; };
 		EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diabetes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes.release.xcconfig"; sourceTree = "<group>"; };
 		FE3038216726979B0182C569 /* Pods-DiabetesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +197,10 @@
 				64B6EA901ED724D3008AE630 /* DiaryViewController.swift */,
 				EB5C37FB1EF7D09400993161 /* Notifications.swift */,
 				EBF0E8341EFBE3A800638254 /* LaunchScreen.storyboard */,
+				EBF0E8361F0ADAD800638254 /* InfoT1Exercise.swift */,
+				EBF0E8381F0ADB1300638254 /* InfoPersonalSettings.swift */,
+				EBF0E83A1F0ADB3100638254 /* InfoMainScreen.swift */,
+				EBF0E83C1F0ADB4A00638254 /* InfoGeneralInformation.swift */,
 			);
 			path = Diabetes;
 			sourceTree = "<group>";
@@ -508,9 +520,13 @@
 				64EC04AA1EC4AE430071E81B /* SplashViewController.swift in Sources */,
 				64C708F51ECDDFDF00D90FE4 /* SportsSelectionViewController.swift in Sources */,
 				64C36D251ED0ACDB0003780E /* ExerciseIntensityViewController.swift in Sources */,
+				EBF0E8371F0ADAD800638254 /* InfoT1Exercise.swift in Sources */,
 				64B6EA911ED724D3008AE630 /* DiaryViewController.swift in Sources */,
 				64C36D271ED0ACEB0003780E /* ExerciseDetailsViewController.swift in Sources */,
+				EBF0E8391F0ADB1300638254 /* InfoPersonalSettings.swift in Sources */,
+				EBF0E83B1F0ADB3100638254 /* InfoMainScreen.swift in Sources */,
 				64EC04A41EC4A52D0071E81B /* InfoViewController.swift in Sources */,
+				EBF0E83D1F0ADB4A00638254 /* InfoGeneralInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
