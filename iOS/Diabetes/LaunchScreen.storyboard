@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,12 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="RGd-xf-N5m">
-                                <rect key="frame" x="52" y="167" width="240" height="363"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="RGd-xf-N5m">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E9J-hf-Uec" firstAttribute="top" secondItem="RGd-xf-N5m" secondAttribute="bottom" id="0xm-S5-yrn"/>
+                            <constraint firstItem="RGd-xf-N5m" firstAttribute="leading" secondItem="9Fp-9e-oOE" secondAttribute="leadingMargin" id="4LF-VT-1sE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RGd-xf-N5m" secondAttribute="trailing" id="QBF-zj-zeS"/>
+                            <constraint firstItem="RGd-xf-N5m" firstAttribute="top" secondItem="odm-tu-Ctr" secondAttribute="bottom" id="lhH-2e-rwq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJa-Su-nGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
