@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from passlib.apps import custom_app_context
+from passlib.hash import sha256_crypt
 
 from app.app import mongo
 from app.helpers.content import Content
@@ -12,7 +12,7 @@ def create_user():
     data = request.json
     email = data["email"]
     password = data["password"]
-    password_hash = custom_app_context.hash(password)
+    password_hash = sha256_crypt.encrypt(password)
 
     new_user = {"email": email, "password": password_hash, "validated": False}
 
@@ -32,15 +32,19 @@ def get_user():
     return Content.get_json(user_details[0])
 
 
+@user_endpoint.route("/get-all", methods=["GET"])
+def get_all_users():
+    return Content.get_json(mongo.db.users.find())
+
+
 @user_endpoint.route("/login", methods=["POST"])
 def login():
     data = request.json
     email = data["email"]
     provided_password = data["password"]
-    hash = custom_app_context.hash(provided_password)
+    user_password_hash = list(mongo.db.users.find({"email": email}))[0]["password"]
 
-    user = list(mongo.db.users.find({"email": email}))[0]
-    if custom_app_context.verify(user["password"], hash):
+    if sha256_crypt.verify(provided_password, user_password_hash):
         return Content.get_json({"success": True})
     else:
         return Content.get_json({"success": False})
@@ -62,7 +66,7 @@ def reset_password():
 
     if __does_user_exist(email):
         user = list(mongo.db.users.find({"email": email}))[0]
-        user["password"] = custom_app_context.hash(new_password)
+        user["password"] = sha256_crypt.encrypt(new_password)
         mongo.db.users.save(user)
 
         return Content.get_json({"success": True})
