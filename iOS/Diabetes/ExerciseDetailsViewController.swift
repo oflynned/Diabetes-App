@@ -63,16 +63,11 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+      
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+                
         
         UNUserNotificationCenter.current().delegate = self
-        
-        
-        
         
         picker1.delegate = self
         picker1.dataSource = self
