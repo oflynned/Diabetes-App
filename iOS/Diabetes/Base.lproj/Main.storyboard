@@ -2045,104 +2045,141 @@ If you are going to do the types of activity that tend to drop blood glucose lev
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZl-Ak-fCh">
-                                <rect key="frame" x="0.0" y="44" width="320" height="495"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RU-LY-WPv">
+                                <rect key="frame" x="8" y="0.0" width="304" height="568"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jHn-no-Ilb">
-                                        <rect key="frame" x="8" y="84" width="320" height="495"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jHn-no-Ilb">
+                                        <rect key="frame" x="16" y="0.0" width="304" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Settings - Customising the app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-BE-CVE">
-                                                <rect key="frame" x="6" y="0.0" width="308" height="7.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-uh-Rh6">
-                                                <rect key="frame" x="0.5" y="11.5" width="319.5" height="89"/>
-                                                <string key="text">In settings you can customise the type 1 diabetes and exercise app for you. The settings page will be password protected so only you have access to this information. You can go through each section using the up and down arrows at the bottom of the screen or access it directly from the main settings page. Once you have completed each section it will be marked with a tick. You much complete all sections before you can proceed with using the app. </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="746" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POv-9S-U4g">
-                                                <rect key="frame" x="68.5" y="104.5" width="183" height="7.5"/>
-                                                <string key="text">1.	Blood Glucose Units</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="747" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fn-Zx-gwR">
-                                                <rect key="frame" x="1.5" y="116" width="317" height="37"/>
-                                                <string key="text">These are the units you use to enter your blood glucose levels. You can select either mmol/L or mg/dL. In Ireland the units we use are mmol/L so this will be used as the default setting. </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="745" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvB-O1-wpK">
-                                                <rect key="frame" x="85.5" y="157" width="149" height="7.5"/>
-                                                <string key="text">2.	Insulin Therapy </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="058-pn-lqg">
-                                                <rect key="frame" x="0.5" y="168.5" width="319.5" height="111"/>
-                                                <string key="text">Most people with type 1 diabetes will either be on multiple daily injection (MDI) basal–bolus insulin regimens OR continuous subcutaneous insulin infusion (CSII or insulin pump) therapy. MDI basal-bolus insulin regimens will consist of rapid acting insulin (e.g. Novorapid, Humalog, Apidra etc.) taken at meals / snacks and long acting insulin (e.g. Levemir, Lantus etc.) taken once / twice daily. 
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1kx-E2-qS9">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Personal Settings - Customising the app" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-BE-CVE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-uh-Rh6">
+                                                        <rect key="frame" x="0.0" y="20" width="304" height="20"/>
+                                                        <string key="text">In settings you can customise the type 1 diabetes and exercise app for you. The settings page will be password protected so only you have access to this information. You can go through each section using the up and down arrows at the bottom of the screen or access it directly from the main settings page. Once you have completed each section it will be marked with a tick. You much complete all sections before you can proceed with using the app. </string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="0Ra-BE-CVE" secondAttribute="bottom" constant="20" symbolic="YES" id="hVP-fU-bLu"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kNJ-Dt-URT">
+                                                <rect key="frame" x="0.0" y="48" width="304" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="746" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POv-9S-U4g">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20"/>
+                                                        <string key="text">1.	Blood Glucose Units</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="747" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fn-Zx-gwR">
+                                                        <rect key="frame" x="0.0" y="20" width="304" height="20"/>
+                                                        <string key="text">These are the units you use to enter your blood glucose levels. You can select either mmol/L or mg/dL. In Ireland the units we use are mmol/L so this will be used as the default setting. </string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="POv-9S-U4g" secondAttribute="bottom" constant="20" symbolic="YES" id="M0r-Xs-IRa"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q8M-ka-WDv">
+                                                <rect key="frame" x="0.0" y="96" width="304" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="745" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvB-O1-wpK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
+                                                        <string key="text">2.	Insulin Therapy </string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="058-pn-lqg">
+                                                        <rect key="frame" x="0.0" y="20.5" width="304" height="43.5"/>
+                                                        <string key="text">Most people with type 1 diabetes will either be on multiple daily injection (MDI) basal–bolus insulin regimens OR continuous subcutaneous insulin infusion (CSII or insulin pump) therapy. MDI basal-bolus insulin regimens will consist of rapid acting insulin (e.g. Novorapid, Humalog, Apidra etc.) taken at meals / snacks and long acting insulin (e.g. Levemir, Lantus etc.) taken once / twice daily. 
 In settings choose your insulin therapy: MDI or Insulin pump. If your insulin therapy changes at any point make sure to go back into settings to change this. </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="746" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-95-1Kc" userLabel="3. Reminders">
-                                                <rect key="frame" x="105.5" y="283.5" width="109.5" height="7.5"/>
-                                                <string key="text">3.	Reminders</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1f-Jg-bq9">
-                                                <rect key="frame" x="0.0" y="295" width="320" height="140.5"/>
-                                                <string key="text">Checking your blood glucose around your exercise is very important. It is especially important to check your blood glucose before you start and at the end of exercise. Also for exercise in the afternoon / evening a blood glucose check before bed (and possibly also 03:00am) is important as you are at increased risk of hypoglycaemia overnight. Therefore we recommend that you set a blood glucose reminder before exercise, after exercise, before bed and the following morning. Your app will automatically send you are reminder to check your blood glucose after exercise and also to check how you got on with your exercise. If you had any issues during exercise it can offer you advice for this specific issue. </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="745" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6i-9q-iO6">
-                                                <rect key="frame" x="85.5" y="439.5" width="149" height="7.5"/>
-                                                <string key="text">4.	Personal details</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qz-2Z-3ud">
-                                                <rect key="frame" x="0.0" y="451" width="320" height="44"/>
-                                                <string key="text">Settings password: This is an optional password to secure all your details in the settings menu. We recommend that you choose this password protection option. 
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-W4-Ztt">
+                                                <rect key="frame" x="0.0" y="168" width="304" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="746" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-95-1Kc" userLabel="3. Reminders">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20"/>
+                                                        <string key="text">3.	Reminders</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1f-Jg-bq9">
+                                                        <rect key="frame" x="0.0" y="20" width="304" height="20"/>
+                                                        <string key="text">Checking your blood glucose around your exercise is very important. It is especially important to check your blood glucose before you start and at the end of exercise. Also for exercise in the afternoon / evening a blood glucose check before bed (and possibly also 03:00am) is important as you are at increased risk of hypoglycaemia overnight. Therefore we recommend that you set a blood glucose reminder before exercise, after exercise, before bed and the following morning. Your app will automatically send you are reminder to check your blood glucose after exercise and also to check how you got on with your exercise. If you had any issues during exercise it can offer you advice for this specific issue. </string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="7a8-95-1Kc" secondAttribute="bottom" constant="20" symbolic="YES" id="hzx-Jj-dZa"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="90S-UR-dJL">
+                                                <rect key="frame" x="0.0" y="216" width="304" height="244"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="745" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6i-9q-iO6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
+                                                        <string key="text">4.	Personal details</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="744" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qz-2Z-3ud">
+                                                        <rect key="frame" x="0.0" y="20.5" width="304" height="223.5"/>
+                                                        <string key="text">Settings password: This is an optional password to secure all your details in the settings menu. We recommend that you choose this password protection option. 
 Main email: This is your primary email you use that you would like your data history file sent to. This email will not be used for any other purpose aside from when you request your data file to be sent to you. </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="90S-UR-dJL" firstAttribute="top" secondItem="jHn-no-Ilb" secondAttribute="top" constant="216" id="JNq-CB-OBk"/>
+                                            <constraint firstItem="rKX-W4-Ztt" firstAttribute="top" secondItem="jHn-no-Ilb" secondAttribute="top" constant="168" id="yDk-Hg-R0g"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="leading" secondItem="BZl-Ak-fCh" secondAttribute="leading" constant="8" id="2Gh-kn-v14"/>
-                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="height" secondItem="BZl-Ak-fCh" secondAttribute="height" id="OEX-Ap-ebv"/>
-                                    <constraint firstAttribute="trailing" secondItem="jHn-no-Ilb" secondAttribute="trailing" constant="8" id="PBe-OY-FPm"/>
-                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="top" secondItem="BZl-Ak-fCh" secondAttribute="top" constant="84" id="YYu-Lv-KQ9"/>
-                                    <constraint firstAttribute="bottom" secondItem="jHn-no-Ilb" secondAttribute="bottom" constant="185" id="d5P-Wn-CM7"/>
-                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="leading" secondItem="BZl-Ak-fCh" secondAttribute="leading" constant="8" id="fRW-Os-9zU"/>
-                                    <constraint firstAttribute="trailing" secondItem="jHn-no-Ilb" secondAttribute="trailing" constant="8" id="hWC-TH-zAj"/>
+                                    <constraint firstAttribute="trailing" secondItem="jHn-no-Ilb" secondAttribute="trailing" constant="16" id="5hL-du-cj0"/>
+                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="width" secondItem="9RU-LY-WPv" secondAttribute="width" id="BC6-Zb-PjF"/>
+                                    <constraint firstAttribute="bottom" secondItem="jHn-no-Ilb" secondAttribute="bottom" constant="266" id="ICs-mC-6S7"/>
+                                    <constraint firstAttribute="trailing" secondItem="jHn-no-Ilb" secondAttribute="trailing" constant="16" id="Vud-T6-9WU"/>
+                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="top" secondItem="9RU-LY-WPv" secondAttribute="top" id="qO9-C1-O48"/>
+                                    <constraint firstItem="jHn-no-Ilb" firstAttribute="leading" secondItem="9RU-LY-WPv" secondAttribute="leading" constant="16" id="sxI-b2-d98"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BZl-Ak-fCh" firstAttribute="centerX" secondItem="cOy-S4-38a" secondAttribute="centerX" id="OQ5-nC-0Cn"/>
-                            <constraint firstItem="BZl-Ak-fCh" firstAttribute="width" secondItem="cOy-S4-38a" secondAttribute="width" id="WBS-Kc-sdw"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="BZl-Ak-fCh" secondAttribute="bottom" constant="29" id="dHP-Yl-QsK"/>
-                            <constraint firstItem="jHn-no-Ilb" firstAttribute="width" secondItem="cOy-S4-38a" secondAttribute="width" id="mam-Fl-7KI"/>
-                            <constraint firstItem="BZl-Ak-fCh" firstAttribute="top" secondItem="cOy-S4-38a" secondAttribute="topMargin" constant="44" id="ndb-mF-56A"/>
+                            <constraint firstAttribute="trailing" secondItem="9RU-LY-WPv" secondAttribute="trailing" constant="8" id="CvR-a9-pxY"/>
+                            <constraint firstItem="9RU-LY-WPv" firstAttribute="leading" secondItem="cOy-S4-38a" secondAttribute="leading" constant="8" id="Quh-uL-WU0"/>
+                            <constraint firstItem="9RU-LY-WPv" firstAttribute="top" secondItem="cOy-S4-38a" secondAttribute="top" id="neC-IN-Qg5"/>
+                            <constraint firstItem="9RU-LY-WPv" firstAttribute="centerY" secondItem="cOy-S4-38a" secondAttribute="centerY" id="pLN-QH-fzc"/>
+                            <constraint firstItem="9RU-LY-WPv" firstAttribute="centerX" secondItem="cOy-S4-38a" secondAttribute="centerX" id="qYZ-89-C0C"/>
                         </constraints>
                     </view>
                 </viewController>
