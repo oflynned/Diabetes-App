@@ -7,6 +7,8 @@ from app.helpers.content import Content
 user_endpoint = Blueprint("user", __name__)
 
 
+# POST {"email": "...", "password": "..."}
+# RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/create", methods=["POST"])
 def create_user():
     data = request.json
@@ -23,6 +25,8 @@ def create_user():
         return Content.get_json({"success": False, "reason": "user already exists"})
 
 
+# POST {"email": "..."}
+# RETURN {"email": "...", "password": "...", "validated": <boolean>}
 @user_endpoint.route("/get", methods=["POST"])
 def get_user():
     data = request.json
@@ -32,11 +36,15 @@ def get_user():
     return Content.get_json(user_details[0])
 
 
+# GET
+# RETURN [{<user>}, {...}, ...]
 @user_endpoint.route("/get-all", methods=["GET"])
 def get_all_users():
     return Content.get_json(mongo.db.users.find())
 
 
+# POST {"email": "...", "password": "..."}
+# RETURN {"success": <boolean>}
 @user_endpoint.route("/login", methods=["POST"])
 def login():
     data = request.json
@@ -50,6 +58,8 @@ def login():
         return Content.get_json({"success": False})
 
 
+# POST {"email": "..."}
+# RETURN {"success": <boolean>}
 @user_endpoint.route("/delete", methods=["DELETE"])
 def delete_user():
     data = request.json
@@ -58,6 +68,8 @@ def delete_user():
     return Content.get_json({"success": True})
 
 
+# POST {"email": "...", "new_password": "..."}
+# RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/reset-password", methods=["POST"])
 def reset_password():
     data = request.json
@@ -74,6 +86,8 @@ def reset_password():
         return Content.get_json({"success": False, "reason": "user doesn't exist"})
 
 
+# POST {"email": "..."}
+# RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/validate", methods=["POST"])
 def validate_user():
     data = request.json
@@ -96,7 +110,3 @@ def __is_user_validated(email):
 def __does_user_exist(email):
     results = list(mongo.db.users.find({"email": email}))
     return len(results) > 0
-
-
-def __has_user_been_below_or_above_target_or_hypo():
-    pass
