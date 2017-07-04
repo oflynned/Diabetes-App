@@ -9,15 +9,19 @@
 import UIKit
 import UserNotifications
 
-class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource{
-
+class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource,  UNUserNotificationCenterDelegate{
+    
     
     @IBAction func add_exercise(_ sender: Any) {
         
+        
+        
+        
+        
         let content = UNMutableNotificationContent()
-        content.title = "Diabetes App Notification"
+        content.title = NSString.localizedUserNotificationString(forKey: "Diabetes App Notification", arguments: nil)
         content.subtitle = "Server not found"
-        content.body = "Please wait while server comes back online"
+        content.body = NSString.localizedUserNotificationString(forKey: "Please wait while server comes back online",arguments: nil)
         content.badge = 1
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
@@ -27,21 +31,18 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         
     }
     
-
+    
+    
     @IBOutlet weak var picker1: UIPickerView!
     
     @IBOutlet weak var picker2: UIPickerView!
     
     @IBOutlet weak var picker3: UIPickerView!
     
-    
-    
     var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
     
     
     
-    
-   
     @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
     @IBOutlet weak var isUnplannedExerciseSwitch: UISwitch!
     
@@ -59,15 +60,19 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     var chosenExerciseDetails: ChosenExercise!
     var bloodGlucoseLevel: Float!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
-        {
-            completionHandler([.alert, .badge, .sound])
-        }
+        
+        
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        
+        
         
         picker1.delegate = self
         picker1.dataSource = self
@@ -78,9 +83,18 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         picker3.delegate = self
         picker3.dataSource = self
         
-
+        print(chosenExerciseDetails)
     }
-
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        //
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -93,7 +107,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
             self.lastEatenLayout.isHidden = !state
         }
     }
-
+    
     @IBAction func onUnplannedExerciseClick(_ sender: Any) {
         let state = isPlannedExerciseSwitch.isOn
         isPlannedExerciseSwitch.setOn(!state, animated: true)
@@ -137,10 +151,10 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Array.count
     }
-    
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
-   
+    
+    
     
 }
