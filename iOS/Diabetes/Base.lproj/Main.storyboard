@@ -2166,7 +2166,7 @@ Main email: This is your primary email you use that you would like your data his
                                 <rect key="frame" x="0.0" y="108" width="320" height="880"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DBl-d9-vgG">
-                                        <rect key="frame" x="16" y="0.0" width="309" height="828.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="309" height="858.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-YQ-WhG">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="174"/>
@@ -2304,7 +2304,7 @@ Main email: This is your primary email you use that you would like your data his
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-xP-QCm">
-                                                <rect key="frame" x="0.0" y="562.5" width="309" height="266"/>
+                                                <rect key="frame" x="0.0" y="562.5" width="309" height="296"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood glucose before exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-bU-kSj">
                                                         <rect key="frame" x="0.0" y="0.0" width="309" height="20"/>
@@ -2340,6 +2340,13 @@ Main email: This is your primary email you use that you would like your data his
                                                         <state key="normal" title="Add Exercise"/>
                                                         <connections>
                                                             <action selector="add_exercise:" destination="cpT-lO-T33" eventType="touchUpInside" id="0os-cc-uQb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-2G-cd5">
+                                                        <rect key="frame" x="0.0" y="266" width="309" height="30"/>
+                                                        <state key="normal" title="POST"/>
+                                                        <connections>
+                                                            <action selector="onPOSTapped:" destination="cpT-lO-T33" eventType="touchUpInside" id="Lhk-2x-h2i"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

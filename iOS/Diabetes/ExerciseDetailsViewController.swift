@@ -8,16 +8,12 @@
 
 import UIKit
 import UserNotifications
+import Foundation
 
 class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource,  UNUserNotificationCenterDelegate{
     
     
     @IBAction func add_exercise(_ sender: Any) {
-        
-        
-        
-        
-        
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey: "Diabetes App Notification", arguments: nil)
         content.subtitle = "Server not found"
@@ -28,9 +24,40 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         let request = UNNotificationRequest(identifier:"timeDone", content:content, trigger:trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-        
     }
     
+    @IBAction func onPOSTapped(_ sender: Any) {
+        
+        let parameters = ["method": "mdi", "epoch": "before", "planning": "unplanned",
+                          "exercise_type": "anaerobic", "exercise_intensity": "intense",
+                          "exercise_duration": 0, "bg_level": 16] as [String : Any]
+        
+        
+        guard let url = URL(string:"https://ec2-54-194-202-146.eu-west-1.compute.amazonaws.com/api/v1/recommendations/get-recommendation") else {return}
+        
+        var request = URLRequest(url:url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody =  try?JSONSerialization.data(withJSONObject: parameters, options: []) else{return}
+        
+        request.httpBody  = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with:request){(data,response,error) in
+            if let response = response{
+                print(response)
+            }
+            if let data = data {
+                do{
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                }
+                catch{
+                    print(error)
+                }
+            }
+        }.resume()
+    }
     
     
     @IBOutlet weak var picker1: UIPickerView!
@@ -64,7 +91,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     override func viewDidLoad() {
         super.viewDidLoad()
       
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
                 
         
         UNUserNotificationCenter.current().delegate = self

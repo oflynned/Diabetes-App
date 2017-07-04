@@ -95,6 +95,7 @@
 		EBF0E8381F0ADB1300638254 /* InfoPersonalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPersonalSettings.swift; sourceTree = "<group>"; };
 		EBF0E83A1F0ADB3100638254 /* InfoMainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMainScreen.swift; sourceTree = "<group>"; };
 		EBF0E83C1F0ADB4A00638254 /* InfoGeneralInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoGeneralInformation.swift; sourceTree = "<group>"; };
+		EBF0E83E1F0BD71300638254 /* Diabetes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diabetes.entitlements; sourceTree = "<group>"; };
 		EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diabetes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diabetes/Pods-Diabetes.release.xcconfig"; sourceTree = "<group>"; };
 		FE3038216726979B0182C569 /* Pods-DiabetesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiabetesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiabetesTests/Pods-DiabetesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +178,7 @@
 		642E61321EC1D06200F91556 /* Diabetes */ = {
 			isa = PBXGroup;
 			children = (
+				EBF0E83E1F0BD71300638254 /* Diabetes.entitlements */,
 				64C36D1C1ED075660003780E /* SportViewCell.swift */,
 				642E61331EC1D06200F91556 /* AppDelegate.swift */,
 				642E61371EC1D06200F91556 /* SettingsViewController.swift */,
@@ -302,6 +304,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = PMD9QD5A2C;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					642E61451EC1D06200F91556 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -673,6 +680,7 @@
 			baseConfigurationReference = AB51979E161C1967F37406AB /* Pods-Diabetes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Diabetes/Diabetes.entitlements;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
 				INFOPLIST_FILE = Diabetes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -687,6 +695,7 @@
 			baseConfigurationReference = EC73143C2E4CFF7DBD2282DC /* Pods-Diabetes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Diabetes/Diabetes.entitlements;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
 				INFOPLIST_FILE = Diabetes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
