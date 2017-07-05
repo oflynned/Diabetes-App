@@ -16,7 +16,7 @@ app.debug = True
 
 app.register_blueprint(recommendations_endpoint, url_prefix="/api/v1/recommendations")
 app.register_blueprint(feedback_endpoint, url_prefix="/api/v1/feedback")
-app.register_blueprint(plan_endpoint, url_prefix="/api/v1/plan")
+app.register_blueprint(plan_endpoint, url_prefix="/api/v1/plans")
 app.register_blueprint(user_endpoint, url_prefix="/api/v1/user")
 
 mongo = PyMongo(app)

@@ -97,7 +97,7 @@ class Excel:
                             suggestion_object["warning"] = warning_note
 
                         parameter_name = str(headings[3]).replace("/", " ")
-                        parameter_name = Excel.__groom_titles(parameter_name).replace("__","_")
+                        parameter_name = Excel.__groom_titles(parameter_name).replace("__", "_")
                         suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
 
                         # 3 parameter names -- before_after_meal, bg, bg_below_or_above_target_or_hypo_last_24hrs
@@ -160,33 +160,36 @@ class Excel:
     def __groom_info_page(raw_data):
         # data only exists in the 0th col over n rows
         output_data = []
-        initial_groomed_content = []
 
+        # get headers
+        initial_groomed_headers = []
         for r in range(raw_data.nrows):
             raw_row_content = raw_data.row_values(r, 0)
-            if raw_row_content is not '':
+            if raw_row_content[0] is not '':
                 groomed_row_content = raw_row_content[0].strip()
-                initial_groomed_content.append(groomed_row_content)
+                initial_groomed_headers.append(groomed_row_content)
 
-        # groom over the data to split it by white spaces
-        # this allows us to assume that 0th element is the title
-        # note that the final item has to be force flushed to the list
-        links = []
-        section_name = ""
+        # get links
+        initial_groomed_links = []
+        for r in range(raw_data.nrows):
+            raw_row_content = raw_data.row_values(r, 1)
+            groomed_row_content = raw_row_content[0].strip()
+            initial_groomed_links.append(groomed_row_content)
 
-        for i, content in enumerate(initial_groomed_content):
-            # content is valid
-            if not Excel.__is_link(content):
-                # create a new section for the new list of links
-                if content is not '':
-                    links = []
-                    section_name = content
+        print(initial_groomed_links)
+
+        # segregate the links by spaces per section
+        curr_link_list = []
+        nested_links = []
+        for i, link in enumerate(initial_groomed_links):
+            if link is '':
+                nested_links.append(curr_link_list)
+                curr_link_list = []
             else:
-                links.append(content)
+                curr_link_list.append(link)
 
-            # time to flush the content to the list
-            if content is '' or content is None or (i == len(initial_groomed_content) - 1):
-                output_data.append({"section_name": section_name, "links": links})
+        for i in range(len(initial_groomed_headers)):
+            output_data.append({"section_name": initial_groomed_headers[i], "links": nested_links[i]})
 
         return output_data
 
@@ -248,7 +251,7 @@ class Excel:
 
     @staticmethod
     def groom_content():
-        dataset_file_name = "app_sug_2.xlsx"
+        dataset_file_name = "suggestions.xlsx"
         dataset_location = Excel.__get_dataset_working_dir(dataset_file_name)
         workbook = xlrd.open_workbook(dataset_location)
 

@@ -2,10 +2,10 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            0,
-            1,
-            2,
-            3
+            "0-30",
+            "30-60",
+            "60-150",
+            ">150"
         ],
         "exercise_suggestions": [
             {
@@ -27,7 +27,7 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            0
+            "0-30"
         ],
         "exercise_suggestions": [
             {
@@ -50,10 +50,10 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            0,
-            1,
-            2,
-            3
+            "0-30",
+            "30-60",
+            "60-150",
+            ">150"
         ],
         "exercise_suggestions": [
             {
@@ -79,7 +79,7 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            0
+            "0-30"
         ],
         "exercise_suggestions": [
             {
@@ -93,7 +93,7 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            0
+            "0-30"
         ],
         "exercise_suggestions": [
             {
@@ -119,9 +119,9 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            1,
-            2,
-            3
+            "30-60",
+            "60-150",
+            ">150"
         ],
         "exercise_suggestions": [
             {
@@ -130,34 +130,6 @@
         ],
         "exercise_intensity": [
             "mild"
-        ]
-    },
-    {
-        "exercise_type": "anaerobic",
-        "exercise_duration": [
-            1,
-            2,
-            3
-        ],
-        "exercise_suggestions": [
-            {
-                "exercise_suggestion": "1. Your blood glucose may have risen during your exercise and often will return to pre exercise levels with longer anaerobic sessions. If your blood glucose remains high after exercise try a 20-30min cool down (light jog & stretching) or take 50% of your normal correction dose after exercise to help reduce blood glucose"
-            },
-            {
-                "exercise_suggestion": "2. For your first meal eaten after exercise reduce  mealtime insulin by 50%"
-            },
-            {
-                "exercise_suggestion": "3. Check blood glucose regularly after your exercise and before bed"
-            },
-            {
-                "exercise_suggestion": "4. Reduce overnight basal insulin by 20% and / or take a bedtime snack without insulin (e.g. fruit and yoghurt; yoghurt drink) to help reduce nighttime hypoglycaemia following afternoon/ evening exercise"
-            }
-        ],
-        "exercise_intensity": [
-            "mild",
-            "moderate",
-            "intense",
-            "extremely_intense"
         ]
     }
 ]

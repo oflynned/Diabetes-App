@@ -15,7 +15,7 @@ def generate_groomed_recommendations():
 # {
 # "method": [mdi, pump], "epoch": [before, after], "planning": [planned, unplanned],
 # "exercise_type": [aerobic, anaerobic, mixed], "exercise_intensity": [mild, moderate, intense, extremely_intense],
-# "exercise_duration": [0, 1, 2, 3], "bg_level": <float>, "meal_timing": [before, after]
+# "exercise_duration": [0, 1, 2, 3], "*bg_level": <float>, "*meal_timing": [before, after]
 # }
 
 # RETURN [suggestion, ...]
