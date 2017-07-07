@@ -6,14 +6,15 @@ from app.app import mongo
 plan_endpoint = Blueprint("plan", __name__)
 
 
-# POST { "email": "...", "time": <int>, "plan": { ... } }
-# Note: schema should be standardised on device side
-@plan_endpoint.route("/create", methods=["POST"])
-def create_plan():
-    data = request.json
-    data["time"] = Content.current_time_in_millis()
-    mongo.db.plans.save(data)
-    return Content.get_json({"success": True})
+class Plan:
+    @staticmethod
+    def create_plan(data):
+        plan_object = {"email": data["email"], "time": Content.current_time_in_millis()}
+
+        # remove the email key as it's now popped to the parent level
+        data.pop("email")
+        plan_object["plan"] = data
+        mongo.db.plans.save(plan_object)
 
 
 # POST { "email": "..." }
@@ -23,4 +24,10 @@ def get_plans():
     email = data["email"]
 
     plans = list(mongo.db.plans.find({"email": email}))
+    print(plans)
     return Content.get_json(plans)
+
+
+@plan_endpoint.route("/get-all", methods=["GET"])
+def get_all_plans():
+    return Content.get_json(list(mongo.db.plans.find()))

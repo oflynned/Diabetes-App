@@ -2,6 +2,7 @@ from flask import Blueprint, request
 
 from app.helpers.content import Content
 from app.helpers.excel import Excel
+from app.api.v1.plan import Plan
 
 recommendations_endpoint = Blueprint("recommendations", __name__)
 
@@ -26,6 +27,8 @@ def get_recommendation():
     method = data["method"]
     epoch = data["epoch"]
     planning = data["planning"]
+
+    # we need the requester to be able to make a plan
 
     exercise_type = data["exercise_type"]
     exercise_intensity = data["exercise_intensity"]
@@ -57,27 +60,33 @@ def get_recommendation():
         if sheet_parameter_name is not None:
             # value of the parameter in rows given the 4th col
             # [always, bg<5, bg<7, bg>15, before_meal, after_meal, gym, team]
-            param = suggestion[sheet_parameter_name]
+            param_value = suggestion[sheet_parameter_name]
 
             # check for the exercise genre
-            if param == exercise_genre:
+            if param_value == exercise_genre:
                 groomed_suggestions.append(suggestion["exercise_suggestion"])
 
             if sheet_parameter_name == "before_after_meal":
-                if exercise_meal_timing == param or param == "always":
+                if exercise_meal_timing == param_value or param_value == "always":
                     groomed_suggestions.append(suggestion["exercise_suggestion"])
             elif sheet_parameter_name == "bg":
-                if __get_bg_level_tag(exercise_bg_level, param) or param == "always":
+                if __get_bg_level_tag(exercise_bg_level, param_value) or param_value == "always":
                     groomed_suggestions.append(suggestion["exercise_suggestion"])
             elif sheet_parameter_name == "bg_below_or_above_target_hypo_last_24hrs":
                 # TODO ... what is target/hypo?
                 pass
 
-            print(sheet_parameter_name, param)
+            print(sheet_parameter_name, param_value)
         else:
             groomed_suggestions.append(suggestion["exercise_suggestion"])
 
-    return Content.get_json(groomed_suggestions)
+    # given a recommendation exists now, we can now return the suggestions
+    if groomed_suggestions is not []:
+        if "email" in data:
+            Plan.create_plan(data)
+        return Content.get_json(groomed_suggestions)
+
+    return Content.get_json({"success": False})
 
 
 def __get_bg_level_tag(reported_bg_level, tag):
