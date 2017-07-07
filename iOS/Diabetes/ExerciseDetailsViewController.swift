@@ -64,7 +64,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     @IBOutlet weak var picker2: UIPickerView!
     
-    @IBOutlet weak var picker3: UIPickerView!
+   
     
     var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
     
@@ -102,8 +102,8 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         picker2.delegate = self
         picker2.dataSource = self
         
-        picker3.delegate = self
-        picker3.dataSource = self
+      
+
         
         print(chosenExerciseDetails)
     }
