@@ -47,7 +47,7 @@
                 "exercise_suggestion": "2. Check blood glucose before you start exercise and at the end of exercise."
             },
             {
-                "bg": "bg<5",
+                "bg": "bg_<5",
                 "exercise_suggestion": "3. If your blood glucose is <5mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
@@ -80,7 +80,7 @@
                 "exercise_suggestion": "3. Check blood glucose before you start, during exercise and at the end of exercise."
             },
             {
-                "bg": "bg<7",
+                "bg": "bg_<7",
                 "exercise_suggestion": "4. If your blood glucose is < 7mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
@@ -126,11 +126,11 @@
                 "exercise_suggestion": "2. You might need 15-30g of carbohydrate to prevent hypoglyaemia"
             },
             {
-                "bg": "always",
+                "bg": "gym",
                 "exercise_suggestion": "3. If you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
             },
             {
-                "bg": "always",
+                "bg": "team",
                 "exercise_suggestion": "4. If your exercise is team sports (e.g. football, rugby) remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
             },
             {
@@ -171,11 +171,11 @@
                 "exercise_suggestion": "3. Check blood glucose before you start and at the end of exercise"
             },
             {
-                "bg": "always",
+                "bg": "gym",
                 "exercise_suggestion": "4. If you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
             },
             {
-                "bg": "always",
+                "bg": "team",
                 "exercise_suggestion": "5. If your exercise is team sports (e.g. football, rugby) remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
             },
             {
@@ -220,11 +220,11 @@
                 "exercise_suggestion": "5. If your blood glucose is >15mmol/l before you start check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             },
             {
-                "bg": "always",
+                "bg": "gym",
                 "exercise_suggestion": "6. If you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
             },
             {
-                "bg": "always",
+                "bg": "team",
                 "exercise_suggestion": "7. If your exercise is team sports (e.g. football, rugby) remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
             }
         ],
@@ -301,7 +301,7 @@
                 "exercise_suggestion": "3. Check blood glucose before you start and at the end of exercise."
             },
             {
-                "bg": "bg_<5",
+                "bg": "bg<5",
                 "exercise_suggestion": "4. If starting blood glucose is <5mmol/l take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
@@ -358,7 +358,7 @@
                 "exercise_suggestion": "4. Check blood glucose before you start, during exercise and at the end of exercise."
             },
             {
-                "bg": "bg_<5",
+                "bg": "bg<5",
                 "exercise_suggestion": "5. If starting blood glucose is <5mmol/l take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
