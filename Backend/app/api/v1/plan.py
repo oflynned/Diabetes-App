@@ -21,11 +21,16 @@ class Plan:
         twenty_four_hours_in_millis = 1000 * 60 * 60 * 24
         time_threshold = Content.current_time_in_millis() - twenty_four_hours_in_millis
 
-        # TODO define hypo and outside target, as I need to query past BG values
-        bg_query = {"$gt": 15, "$lt": 7}
-        query = {"email": email, "time": {"$gt": time_threshold}, "plan": {"bg_level": bg_query}}
-        hazardous_bg_plans = list(mongo.db.plans.find(query))
-        return len(hazardous_bg_plans) > 0
+        query = {
+            "email": email,
+            "time": {"$gt": time_threshold},
+            "$or": [
+                {"plan.bg_level": {"$gt": 15}},
+                {"plan.bg_level": {"$lt": 7}}
+            ]
+        }
+
+        return len(list(mongo.db.plans.find(query))) > 0
 
 
 # POST { "email": "..." }
