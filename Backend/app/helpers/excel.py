@@ -38,15 +38,13 @@ class Excel:
             # [exercise type, min row, max row]
 
             for index, item in enumerate(data_ranges):
+                print(item)
                 if index < len(data_ranges) - 1:
                     data_ranges[index].append(data_ranges[index + 1][1])
                     data_ranges[index] = data_ranges[index][:3]
 
             i += 1
 
-        warning_note = data_ranges[len(data_ranges) - 1][0]
-
-        # don't need the warning anymore so we pop it
         data_ranges.pop()
 
         # now we've the ranges and the data to link
@@ -82,35 +80,23 @@ class Excel:
                         row_value = row_value.strip()
                         groomed.append(row_value)
 
-                # given the 5th row, sanitise the content for the suggestion object
-                if is_parametrised:
-                    parameter_content = data[max_col - 2].strip()
-
                 suggestion_content = data[max_col - 1].strip()
 
                 if suggestion_content not in heading_exclusions:
                     suggestion_object = {}
 
-                    # if there is an astrix, append a warning
+                    # given the 5th row, sanitise the content for the suggestion object
                     if is_parametrised:
-                        if parameter_content == "*":
-                            suggestion_object["warning"] = warning_note
+                        # 3 parameter names -- before_after_meal, bg, bg_below_or_above_target_or_hypo_last_24hrs
+                        # generate 4th column optional content
+                        parameter_content = data[max_col - 2].strip()
+                        if parameter_content == '':
+                            parameter_content = "always"
 
                         parameter_name = str(headings[3]).replace("/", " ")
                         parameter_name = Excel.__groom_titles(parameter_name).replace("__", "_")
+
                         suggestion_object[parameter_name] = Excel.__groom_titles(parameter_content)
-
-                        # 3 parameter names -- before_after_meal, bg, bg_below_or_above_target_or_hypo_last_24hrs
-                        if "meal" in parameter_name:
-                            if suggestion_content == "*":
-                                suggestion_content = "always"
-                        elif "bg_below_or_above_target_or_hypo_last_24hrs" in parameter_name:
-                            if suggestion_content == '':
-                                suggestion_content = "always"
-                        elif "bg" in parameter_name and not "bg_" in parameter_name:
-                            if suggestion_content == '':
-                                suggestion_content = "always"
-
                         suggestion_object["exercise_suggestion"] = suggestion_content.replace("  ", " ")
                         suggestions.append(suggestion_object)
 
@@ -176,8 +162,6 @@ class Excel:
             groomed_row_content = raw_row_content[0].strip()
             initial_groomed_links.append(groomed_row_content)
 
-        print(initial_groomed_links)
-
         # segregate the links by spaces per section
         curr_link_list = []
         nested_links = []
@@ -206,13 +190,13 @@ class Excel:
         for i in range(len(timings)):
             timing = timings[i].strip()
 
-            if timing == "0-30mins":
+            if timing == "0-30":
                 timing = epoch_0_30
-            elif timing == "30-60mins":
+            elif timing == "30-60":
                 timing = epoch_30_60
-            elif timing == "60-150mins":
+            elif timing == "60-150":
                 timing = epoch_60_150
-            elif timing == ">150mins":
+            elif timing == ">150":
                 timing = epoch_gr_150
 
             formatted_timings.append(timing)
@@ -256,7 +240,7 @@ class Excel:
         workbook = xlrd.open_workbook(dataset_location)
 
         # iterate over the sheets to save each to its own json representation
-        # the final sheet is of a different format for ifo and should be done separately
+        # the final sheet is of a different format and should be done separately
         for i in range(workbook.nsheets - 1):
             sheet_title = Excel.__groom_titles(workbook.sheet_by_index(i).name.strip())
             sheet_title = Excel.__groom_output_json_file_title(sheet_title)

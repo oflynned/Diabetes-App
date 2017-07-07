@@ -2,7 +2,7 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -29,7 +29,7 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -56,7 +56,7 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -83,7 +83,7 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -106,9 +106,9 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -135,9 +135,9 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -164,9 +164,9 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -181,9 +181,9 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -198,7 +198,7 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -235,7 +235,7 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -258,9 +258,9 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -296,9 +296,9 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -313,9 +313,9 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -330,7 +330,7 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -345,7 +345,7 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
@@ -366,9 +366,9 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
@@ -378,6 +378,33 @@
         ],
         "exercise_intensity": [
             "mild"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "before_after_meal": "always",
+                "exercise_suggestion": "1. Your blood sugar may rise or remain stable with longer duration anaerobic exercise, therefore no reduction in mealtime insulin or basal insulin is advised initially."
+            },
+            {
+                "before_after_meal": "always",
+                "exercise_suggestion": "2. Carry some carbohydrate with you as you may need it to prevent hypoglycaemia for longer duration anaerobic workouts"
+            },
+            {
+                "before_after_meal": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start (aim for a starting blood glucose between 5-7mmol/l), during exercise and at the end of exercise."
+            }
+        ],
+        "exercise_intensity": [
+            "moderate",
+            "intense",
+            "extremely_intense"
         ]
     }
 ]

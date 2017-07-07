@@ -2,14 +2,24 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <7"
+                "bg": "always",
+                "exercise_suggestion": "1. If you have already taken your full mealtime insulin 2-3hrs before exercise you might need 15-30g of carbohydrate to prevent hypoglyaemia"
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. Check blood glucose before you start and at the end of exercise"
+            },
+            {
+                "bg": "bg<7",
+                "exercise_suggestion": "As your blood glucose is < 7mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             }
         ],
         "exercise_intensity": [
@@ -21,14 +31,28 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <5"
+                "bg": "always",
+                "exercise_suggestion": "1. Your blood sugar will likely rise with this extremely intense exercise therefore take your usual meal time insulin if your exercise is within 2-3hrs of your meal"
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. You will unlikely need any carbohydrate to prevent hypoglyaemia during exercise but carry some with you"
+            },
+            {
+                "bg": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start and at the end of exercise"
+            },
+            {
+                "bg": "bg<5",
+                "exercise_suggestion": "As your blood glucose is < 5mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             }
         ],
         "exercise_intensity": [
@@ -38,16 +62,26 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <7"
+                "bg": "always",
+                "exercise_suggestion": "1. If you have already taken your full mealtime insulin 2-3hrs before exercise you might need 15-30g of carbohydrate every 30mins to prevent hypoglyaemia. Remember the more insulin you have on board the more carbohydrate you will need."
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. Check blood glucose before you start, during exercise and at the end of exercise."
+            },
+            {
+                "bg": "bg<7",
+                "exercise_suggestion": "As your blood glucose is < 7mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             }
         ],
         "exercise_intensity": [
@@ -58,11 +92,16 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
         "exercise_intensity": [
             "intense"
         ]
@@ -70,11 +109,16 @@
     {
         "exercise_type": "aerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
         "exercise_intensity": [
             "extremely_intense"
         ]
@@ -82,20 +126,32 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <7"
+                "bg": "always",
+                "exercise_suggestion": "1. If you have already taken your full mealtime insulin 2-3hrs before exercise you might need 15-30g of carbohydrate to prevent hypoglyaemia. Remember the more insulin you have on board the more carbohydrate you will need."
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. Check blood glucose before you start and at the end of exercise"
             },
             {
-                "exercise_suggestion": "Gym"
+                "bg": "bg<7",
+                "exercise_suggestion": "As your blood glucose is < 7mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
-                "exercise_suggestion": "Team"
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l before you start check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
+            },
+            {
+                "bg": "gym",
+                "exercise_suggestion": "As you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
+            },
+            {
+                "bg": "team",
+                "exercise_suggestion": "As your exercise is team sports remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
             }
         ],
         "exercise_intensity": [
@@ -107,14 +163,28 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <5"
+                "bg": "always",
+                "exercise_suggestion": "1. Your blood sugar will likely rise with this extremely intense exercise therefore take your usual meal time insulin if your exercise is within 2-3hrs of your meal"
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. You will unlikely need any carbohydrate to prevent hypoglyaemia during exercise but carry some with you"
+            },
+            {
+                "bg": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start and at the end of exercise"
+            },
+            {
+                "bg": "bg<5",
+                "exercise_suggestion": "As your blood glucose is <5mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l before you srart check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             }
         ],
         "exercise_intensity": [
@@ -124,22 +194,34 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <7"
+                "bg": "always",
+                "exercise_suggestion": "1. If you have already taken your full mealtime insulin 2-3hrs before exercise you might need 15-30g of carbohydrate every 30mins to prevent hypoglyaemia. Remember the more insulin you have on board the more carbohydrate you will need."
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. Check blood glucose before you start, during exercise and at the end of exercise."
             },
             {
-                "exercise_suggestion": "Gym"
+                "bg": "bg<7",
+                "exercise_suggestion": "As your blood glucose is <7mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
             },
             {
-                "exercise_suggestion": "Team"
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l before you start check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
+            },
+            {
+                "bg": "gym",
+                "exercise_suggestion": "As you are doing both resistance (e.g weight-lifting) and aerobic (e.g. jogging), do resistance exercise first to reduce the risk of hypoglycaemia during and after exercise ."
+            },
+            {
+                "bg": "team",
+                "exercise_suggestion": "As your exercise is team sports remember a match or competition will likely cause your blood sugars to rise due to nerves / adrenaline, therefore you will need less insulin dose reductions and less carbohydrate than you might need during training"
             }
         ],
         "exercise_intensity": [
@@ -150,11 +232,16 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
         "exercise_intensity": [
             "intense"
         ]
@@ -162,11 +249,16 @@
     {
         "exercise_type": "mixed",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "This exercise intensity is not possible for this duration. Change exercise intensity to moderate"
+            }
+        ],
         "exercise_intensity": [
             "extremely_intense"
         ]
@@ -174,9 +266,14 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
         "exercise_intensity": [
             "mild"
         ]
@@ -184,14 +281,24 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "0-30"
+            0
         ],
         "exercise_suggestions": [
             {
-                "exercise_suggestion": "BG <5"
+                "bg": "always",
+                "exercise_suggestion": "1. As your blood glucose is likely to rise with anaerobic exercise no reduction in mealtime insulin or basal insulin is advised."
             },
             {
-                "exercise_suggestion": "BG>15"
+                "bg": "always",
+                "exercise_suggestion": "2. Check blood glucose before you start and at the end of exercise."
+            },
+            {
+                "bg": "bg<5",
+                "exercise_suggestion": "As your blood glucose is <5mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l before you start check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
             }
         ],
         "exercise_intensity": [
@@ -204,13 +311,54 @@
     {
         "exercise_type": "anaerobic",
         "exercise_duration": [
-            "30-60",
-            "60-150",
-            ">150"
+            1,
+            2,
+            3
         ],
-        "exercise_suggestions": [],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "Anaerobic exercise is done at moderate to high intensity. Change to at least 4-6 on the intensity scale"
+            }
+        ],
         "exercise_intensity": [
             "mild"
+        ]
+    },
+    {
+        "exercise_type": "anaerobic",
+        "exercise_duration": [
+            1,
+            2,
+            3
+        ],
+        "exercise_suggestions": [
+            {
+                "bg": "always",
+                "exercise_suggestion": "1. Your blood sugar may rise or remain stable with anaerobic exercise, therefore no reduction in mealtime insulin or basal insulin is advised initially."
+            },
+            {
+                "bg": "always",
+                "exercise_suggestion": "2. Carry some carbohydrate with you as you may need it to prevent hypoglycaemia for longer duration anaerobic workouts"
+            },
+            {
+                "bg": "always",
+                "exercise_suggestion": "3. Check blood glucose before you start, during exercise and at the end of exercise."
+            },
+            {
+                "bg": "bg<5",
+                "exercise_suggestion": "As your blood glucose is <5mmol/l before you start take 10-30g carbohydrate (amount depends on how much active insulin you have on board)"
+            },
+            {
+                "bg": "bg>15",
+                "exercise_suggestion": "As your blood glucose is >15mmol/l before you start check for ketones. If you have ketones up to 1.4mmol/l limit to light intensity exercise for <30mins. If ketones >1.5mmol/l avoid exercise and follow glucose management as per your diabetes team"
+            }
+        ],
+        "exercise_intensity": [
+            "mild",
+            "moderate",
+            "intense",
+            "extremely_intense"
         ]
     }
 ]

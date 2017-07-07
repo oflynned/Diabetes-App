@@ -6,11 +6,13 @@ from app.app import mongo
 plan_endpoint = Blueprint("plan", __name__)
 
 
-# POST { "email": "...", "time": <long>, "plan": { ... } }
+# POST { "email": "...", "time": <int>, "plan": { ... } }
 # Note: schema should be standardised on device side
 @plan_endpoint.route("/create", methods=["POST"])
 def create_plan():
-    mongo.db.plans.save(request.json)
+    data = request.json
+    data["time"] = Content.current_time_in_millis()
+    mongo.db.plans.save(data)
     return Content.get_json({"success": True})
 
 
