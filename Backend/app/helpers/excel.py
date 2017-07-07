@@ -286,3 +286,16 @@ class Excel:
             data = json.load(f)
 
         return data
+
+    @staticmethod
+    def get_file_parameter_name(jsonified_sheet):
+        parameter_keys = ["before_after_meal", "bg", "bg_below_or_above_target_hypo_last_24hrs"]
+        keys_in_suggestion = jsonified_sheet[0]["exercise_suggestions"][0].keys()
+
+        print(jsonified_sheet[0]["exercise_suggestions"][0])
+
+        for parameter_key in parameter_keys:
+            if parameter_key in keys_in_suggestion:
+                return parameter_key
+
+        return None
