@@ -87,7 +87,7 @@ def get_recommendation():
 
     # given a recommendation exists now, we can now return the suggestions
     if groomed_suggestions is not []:
-        # Plan.create_plan(data)
+        Plan.create_plan(data)
         return Content.get_json(groomed_suggestions)
 
     return Content.get_json({"success": False})
