@@ -16,22 +16,6 @@ class Plan:
         plan_object["plan"] = data
         mongo.db.plans.save(plan_object)
 
-    @staticmethod
-    def has_user_been_below_or_above_target_or_hypo_last_24_hrs(email):
-        twenty_four_hours_in_millis = 1000 * 60 * 60 * 24
-        time_threshold = Content.current_time_in_millis() - twenty_four_hours_in_millis
-
-        query = {
-            "email": email,
-            "time": {"$gt": time_threshold},
-            "$or": [
-                {"plan.bg_level": {"$gt": 15}},
-                {"plan.bg_level": {"$lt": 7}}
-            ]
-        }
-
-        return len(list(mongo.db.plans.find(query))) > 0
-
 
 # POST { "email": "..." }
 @plan_endpoint.route("/get", methods=["POST"])
