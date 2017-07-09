@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import Foundation
 
-class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource,  UNUserNotificationCenterDelegate{
+class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UNUserNotificationCenterDelegate{
     
     
     @IBAction func add_exercise(_ sender: Any) {
@@ -59,14 +59,9 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         }.resume()
     }
     
-    
-    @IBOutlet weak var picker1: UIPickerView!
-    
-    @IBOutlet weak var picker2: UIPickerView!
-    
+
    
-    
-    var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
+
     
     
     
@@ -96,12 +91,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         
         UNUserNotificationCenter.current().delegate = self
         
-        picker1.delegate = self
-        picker1.dataSource = self
-        
-        picker2.delegate = self
-        picker2.dataSource = self
-        
+ 
       
 
         
@@ -165,17 +155,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         alert.addAction(submitAction)
         present(alert, animated: true, completion: nil)
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Array.count
-    }
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
+
     
     
     
