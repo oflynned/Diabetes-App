@@ -19,7 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Override point for customization after application launch.
         
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge], completionHandler: {didAllow, error in})
+        } else {
+            // Fallback on earlier versions
+        }
         
         
         

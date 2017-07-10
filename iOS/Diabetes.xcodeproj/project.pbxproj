@@ -683,6 +683,7 @@
 				CODE_SIGN_ENTITLEMENTS = Diabetes/Diabetes.entitlements;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
 				INFOPLIST_FILE = Diabetes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glassbyte.Diabetes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,6 +699,7 @@
 				CODE_SIGN_ENTITLEMENTS = Diabetes/Diabetes.entitlements;
 				DEVELOPMENT_TEAM = PMD9QD5A2C;
 				INFOPLIST_FILE = Diabetes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glassbyte.Diabetes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
