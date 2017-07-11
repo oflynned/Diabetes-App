@@ -33,7 +33,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UNU
                           "exercise_duration": 0, "bg_level": 16] as [String : Any]
         
         
-        guard let url = URL(string:"https://ec2-54-194-202-146.eu-west-1.compute.amazonaws.com/api/v1/recommendations/get-recommendation") else {return}
+        guard let url = URL(string:"https://neurobranchbeta.com/api/v1/recommendations/get-recommendation") else {return}
         
         var request = URLRequest(url:url)
         request.httpMethod = "POST"
@@ -83,6 +83,9 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UNU
     var chosenExerciseDetails: ChosenExercise!
     var bloodGlucoseLevel: Float!
     
+    @IBOutlet weak var bgTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -90,12 +93,25 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UNU
                 
         
         UNUserNotificationCenter.current().delegate = self
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
         
- 
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace, target:nil,action:nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+        
+        bgTextField.inputAccessoryView = toolBar
+     
       
 
         
         print(chosenExerciseDetails)
+    }
+    func doneClicked(){
+        view.endEditing(true)
+    
     }
     
     @available(iOS 10.0, *)
