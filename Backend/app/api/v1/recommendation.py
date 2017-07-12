@@ -41,7 +41,6 @@ def get_recommendation():
     json_file = Excel.get_file_by_filter(method, epoch, planning)
     full_suggestions = Excel.get_suggestions_from_file(json_file)
     sheet_parameter_name = Excel.get_file_parameter_name(full_suggestions)
-    has_been_below_or_above_target_or_hypo = Plan.has_user_been_below_or_above_target_or_hypo_last_24_hrs(email)
 
     suggestions = []
 
@@ -68,20 +67,12 @@ def get_recommendation():
             if param_value == exercise_genre:
                 groomed_suggestions.append(suggestion["exercise_suggestion"])
 
-            if sheet_parameter_name == "before_after_meal":
+            if sheet_parameter_name == "before_after_meal" or "bg_below_or_above_target_hypo_last_24hrs":
                 if exercise_meal_timing == param_value or param_value == "always":
                     groomed_suggestions.append(suggestion["exercise_suggestion"])
             elif sheet_parameter_name == "bg":
                 if __get_bg_level_tag(exercise_bg_level, param_value) or param_value == "always":
                     groomed_suggestions.append(suggestion["exercise_suggestion"])
-            elif sheet_parameter_name == "bg_below_or_above_target_hypo_last_24hrs":
-                if has_been_below_or_above_target_or_hypo:
-                    if exercise_meal_timing == param_value:
-                        groomed_suggestions.append(suggestion["exercise_suggestion"])
-                if param_value == "always":
-                    groomed_suggestions.append(suggestion["exercise_suggestion"])
-
-            # print(sheet_parameter_name, param_value)
         else:
             groomed_suggestions.append(suggestion["exercise_suggestion"])
 
