@@ -10,6 +10,6 @@ if __name__ == '__main__':
         if env == "prod":
             mode = "prod"
             # remember to run only over SSL for iOS
-            app.run(ssl_context=('neurobranchbeta.cer'),host='0.0.0.0', port=443)
+            app.run(ssl_context=('neurobranchbeta.pem'),host='0.0.0.0', port=443)
     else:
         app.run(host='0.0.0.0', port=3000)
