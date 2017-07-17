@@ -6,7 +6,7 @@ from app.helpers.content import Content
 
 user_endpoint = Blueprint("user", __name__)
 
-
+#http://localhost/api/v1/user/create
 # POST {"email": "...", "password": "..."}
 # RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/create", methods=["POST"])
@@ -24,7 +24,7 @@ def create_user():
     else:
         return Content.get_json({"success": False, "reason": "user already exists"})
 
-
+# http://localhost/api/v1/user/get
 # POST {"email": "..."}
 # RETURN {"email": "...", "password": "...", "validated": <boolean>}
 @user_endpoint.route("/get", methods=["POST"])
@@ -35,14 +35,14 @@ def get_user():
 
     return Content.get_json(user_details[0])
 
-
+# http://localhost/api/v1/user/get-all
 # GET
 # RETURN [{<user>}, {...}, ...]
 @user_endpoint.route("/get-all", methods=["GET"])
 def get_all_users():
     return Content.get_json(mongo.db.users.find())
 
-
+# http://localhost/api/v1/user/login
 # POST {"email": "...", "password": "..."}
 # RETURN {"success": <boolean>}
 @user_endpoint.route("/login", methods=["POST"])
@@ -57,7 +57,7 @@ def login():
     else:
         return Content.get_json({"success": False})
 
-
+# http://localhost/api/v1/user/delete
 # POST {"email": "..."}
 # RETURN {"success": <boolean>}
 @user_endpoint.route("/delete", methods=["DELETE"])
@@ -67,7 +67,7 @@ def delete_user():
     mongo.db.users.remove({"email": email})
     return Content.get_json({"success": True})
 
-
+# http://localhost/api/v1/user/reset-password
 # POST {"email": "...", "new_password": "..."}
 # RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/reset-password", methods=["POST"])
@@ -85,7 +85,7 @@ def reset_password():
     else:
         return Content.get_json({"success": False, "reason": "user doesn't exist"})
 
-
+# http://localhost/api/v1/user/validate
 # POST {"email": "..."}
 # RETURN {"success": <boolean>, "*reason": "..."}
 @user_endpoint.route("/validate", methods=["POST"])
