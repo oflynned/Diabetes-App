@@ -38,7 +38,6 @@ class Excel:
             # [exercise type, min row, max row]
 
             for index, item in enumerate(data_ranges):
-                print(item)
                 if index < len(data_ranges) - 1:
                     data_ranges[index].append(data_ranges[index + 1][1])
                     data_ranges[index] = data_ranges[index][:3]
@@ -217,6 +216,7 @@ class Excel:
 
     @staticmethod
     def __get_groomed_sets_dir():
+
         return os.getcwd() + "/app/groomed_datasets/"
 
     @staticmethod
@@ -282,6 +282,7 @@ class Excel:
     def get_suggestions_from_file(file_name):
         file_name = Excel.__get_groomed_sets_dir() + "advice/" + file_name
 
+
         with open(file_name, 'r') as f:
             data = json.load(f)
 
@@ -291,8 +292,6 @@ class Excel:
     def get_file_parameter_name(jsonified_sheet):
         parameter_keys = ["before_after_meal", "bg", "bg_below_or_above_target_hypo_last_24hrs"]
         keys_in_suggestion = jsonified_sheet[0]["exercise_suggestions"][0].keys()
-
-        print(jsonified_sheet[0]["exercise_suggestions"][0])
 
         for parameter_key in parameter_keys:
             if parameter_key in keys_in_suggestion:

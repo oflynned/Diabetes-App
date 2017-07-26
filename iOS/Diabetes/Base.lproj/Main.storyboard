@@ -2222,7 +2222,7 @@ Main email: This is your primary email you use that you would like your data his
                                 <rect key="frame" x="0.0" y="108" width="320" height="880"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DBl-d9-vgG">
-                                        <rect key="frame" x="16" y="0.0" width="309" height="858.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="309" height="633"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-YQ-WhG">
                                                 <rect key="frame" x="0.0" y="0.0" width="309" height="174"/>
@@ -2356,11 +2356,14 @@ Main email: This is your primary email you use that you would like your data his
                                                         <date key="date" timeIntervalSinceReferenceDate="518091316.62088001">
                                                             <!--2017-06-02 10:15:16 +0000-->
                                                         </date>
+                                                        <connections>
+                                                            <action selector="timePicker:" destination="cpT-lO-T33" eventType="valueChanged" id="gxJ-GT-5cI"/>
+                                                        </connections>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-xP-QCm">
-                                                <rect key="frame" x="0.0" y="562.5" width="309" height="296"/>
+                                                <rect key="frame" x="0.0" y="562.5" width="309" height="70.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood glucose before exercise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNT-bU-kSj">
                                                         <rect key="frame" x="0.0" y="0.0" width="309" height="20"/>
@@ -2369,32 +2372,19 @@ Main email: This is your primary email you use that you would like your data his
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="niH-0W-hbK">
-                                                        <rect key="frame" x="0.0" y="20" width="309" height="216"/>
+                                                        <rect key="frame" x="0.0" y="20" width="309" height="20.5"/>
                                                         <subviews>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-B9-oow">
-                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="216"/>
-                                                                <connections>
-                                                                    <outlet property="dataSource" destination="cpT-lO-T33" id="wd2-IG-h4F"/>
-                                                                </connections>
-                                                            </pickerView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mm" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plI-Lh-3uN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="216"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="309" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JU-77-Ilz">
-                                                        <rect key="frame" x="0.0" y="236" width="309" height="30"/>
-                                                        <state key="normal" title="Add Exercise"/>
-                                                        <connections>
-                                                            <action selector="add_exercise:" destination="cpT-lO-T33" eventType="touchUpInside" id="0os-cc-uQb"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-2G-cd5">
-                                                        <rect key="frame" x="0.0" y="266" width="309" height="30"/>
-                                                        <state key="normal" title="POST"/>
+                                                        <rect key="frame" x="0.0" y="40.5" width="309" height="30"/>
+                                                        <state key="normal" title="SEND"/>
                                                         <connections>
                                                             <action selector="onPOSTapped:" destination="cpT-lO-T33" eventType="touchUpInside" id="Lhk-2x-h2i"/>
                                                         </connections>
@@ -2441,12 +2431,11 @@ Main email: This is your primary email you use that you would like your data his
                         <outlet property="isPlannedExerciseSwitch" destination="Rbf-Mh-GYK" id="11J-8w-8bF"/>
                         <outlet property="isUnplannedExerciseSwitch" destination="sI8-tN-fkE" id="JGd-xz-7ES"/>
                         <outlet property="lastEatenLayout" destination="0k9-Dl-Zp3" id="rgN-Qx-gWb"/>
-                        <outlet property="picker2" destination="xg5-B9-oow" id="Kh7-GJ-WAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lI-Jn-yEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4715.625" y="1882.3943661971832"/>
+            <point key="canvasLocation" x="4716" y="2142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k5B-89-PGV">

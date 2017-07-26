@@ -9,31 +9,108 @@
 import UIKit
 import UserNotifications
 import Foundation
+class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCenterDelegate{
+    
+    var nsdata : Any!
+    var chosenExerciseDetails: ChosenExercise!
+    var bloodGlucoseLevel: Float!
+    
 
-class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIPickerViewDataSource,  UNUserNotificationCenterDelegate{
     
-    
-    @IBAction func add_exercise(_ sender: Any) {
-        let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Diabetes App Notification", arguments: nil)
-        content.subtitle = "Server not found"
-        content.body = NSString.localizedUserNotificationString(forKey: "Please wait while server comes back online",arguments: nil)
-        content.badge = 1
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
-        let request = UNNotificationRequest(identifier:"timeDone", content:content, trigger:trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
     
     @IBAction func onPOSTapped(_ sender: Any) {
         
-        let parameters = ["method": "mdi", "epoch": "before", "planning": "unplanned",
-                          "exercise_type": "anaerobic", "exercise_intensity": "intense",
-                          "exercise_duration": 0, "bg_level": 16] as [String : Any]
+
+        let exercise_type = String(describing: chosenExerciseDetails.sport.exercise.self)
+        let exercise_genre = String(describing: chosenExerciseDetails.sport.genre.self)
+        let exercise_duration = Int(chosenExerciseDetails.duration.self)
+        var exercise_planning = String(chosenExerciseDetails.userMetaInfo.isPlanned.self)
+        var exercise_meal = String(chosenExerciseDetails.userMetaInfo.isBeforeMeal.self)
+         var exercise_intensity = Int( chosenExerciseDetails.intensity.self)
+        var exercise_intensity1 = String()
+        var exercise_epoch = String()
         
         
-        guard let url = URL(string:"https://ec2-54-194-202-146.eu-west-1.compute.amazonaws.com/api/v1/recommendations/get-recommendation") else {return}
+        var current_date = chosenExerciseDetails.userMetaInfo.approxTime
+        print("cd",current_date)
+        let exercise_date = chosenExerciseDetails.userMetaInfo.exerciseTime
+        print("ed",exercise_date)
+        
+        if(exercise_date!==nil)
+        {
+            exercise_epoch = "after"
+        }
+        if(current_date! >= exercise_date!)
+        {
+            exercise_epoch = "after"
+        }
+        if(current_date! < exercise_date!)
+        {
+            exercise_epoch = "before"
+        }
+        if(current_date! == exercise_date!)
+        {
+            exercise_epoch = "before"
+        }
+
+        print("ep",exercise_epoch)
+
+    
+        
+        
+        
+        if(exercise_planning == "false"){
+            exercise_planning = "planned"
+        }
+        else{
+            exercise_planning = "unplanned"
+        }
+       
+        if(exercise_meal == "false"){
+           exercise_meal = "within_3_hrs_of_meal"
+        }
+        else{
+           exercise_meal = "more_than_3_hrs_after_meal"
+        }
+        
+        if(exercise_intensity == 0){
+            exercise_intensity1 = "mild"
+        }
+        if(exercise_intensity == 1){
+            exercise_intensity1 = "moderate"
+        }
+        if(exercise_intensity == 2){
+            exercise_intensity1 = "intense"
+        }
+        if(exercise_intensity == 3){
+            exercise_intensity1 = "extremely_intense"
+        }
+
+        
+       
+        print("====",exercise_intensity1)
+        print("====",type(of:exercise_intensity) )
+        //print("Value is \(exercise_duration1 as Int?)")
+        print(chosenExerciseDetails)
+
+    
+        
+        
+     
+        
+        let parameters = [		"email":"suleaa@hotmail.ie",
+                          		"method": "mdi",
+                          		"epoch": exercise_epoch,
+                          		"planning": exercise_planning,
+                          		"exercise_type": exercise_type,
+                          		"exercise_intensity": exercise_intensity1,
+                          		"meal_timing": exercise_meal,
+                          		"exercise_genre": exercise_genre,
+                          		"exercise_duration": 0,
+                          		"bg_level":20] as [String : Any]
+        
+        
+        guard let url = URL(string:"https://neurobranchbeta.com/api/v1/recommendations/get") else {return}
         
         var request = URLRequest(url:url)
         request.httpMethod = "POST"
@@ -41,16 +118,58 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         guard let httpBody =  try?JSONSerialization.data(withJSONObject: parameters, options: []) else{return}
         
         request.httpBody  = httpBody
-        
+        var string4: String?
         let session = URLSession.shared
         session.dataTask(with:request){(data,response,error) in
             if let response = response{
-                print(response)
+                //print("response",response)
             }
             if let data = data {
                 do{
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
+                let json =  try JSONSerialization.jsonObject(with: data, options: [])
+                    if json is [String] {
+                        // obj is a string array
+                       // print("json",json)
+                     
+                        for obj in json as! [AnyObject]{
+                            if obj is String {
+                                if string4 == nil {
+                                    string4 = obj as! String
+                               
+                                }
+                                else {
+                                    string4 = "\n" + string4! + ", \n" + (obj as! String)
+                                }
+                                
+                            }
+                            else{
+                            print("PROBLEM1")
+                            }
+                        }
+                    }
+                    else {
+                        // obj is not a string array or else
+                        //print(type(of: json))
+                    }
+                    //print("string4",string4)
+                    
+                    let content = UNMutableNotificationContent()
+                    content.title = NSString.localizedUserNotificationString(forKey: "Diabetes App", arguments: nil)
+                    content.subtitle = "Reccomendation"
+                    content.body = NSString.localizedUserNotificationString(forKey: string4!,arguments: nil)
+                
+                    content.badge = 1
+               
+                    
+                    
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats:false)
+                    let request2 = UNNotificationRequest(identifier:"timeDone", content:content, trigger:trigger)
+                    UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
+                    
+                    
+                    
+                    
+                 
                 }
                 catch{
                     print(error)
@@ -58,16 +177,6 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
             }
         }.resume()
     }
-    
-    
-    @IBOutlet weak var picker1: UIPickerView!
-    
-    @IBOutlet weak var picker2: UIPickerView!
-    
-   
-    
-    var Array = ["0", "1", "2", "3","4", "5", "6", "7","8", "9"]
-    
     
     
     @IBOutlet weak var isPlannedExerciseSwitch: UISwitch!
@@ -85,8 +194,7 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     @IBOutlet weak var lastEatenLayout: UIStackView!
     
-    var chosenExerciseDetails: ChosenExercise!
-    var bloodGlucoseLevel: Float!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,17 +203,8 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
                 
         
         UNUserNotificationCenter.current().delegate = self
-        
-        picker1.delegate = self
-        picker1.dataSource = self
-        
-        picker2.delegate = self
-        picker2.dataSource = self
-        
-      
 
         
-        print(chosenExerciseDetails)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -124,6 +223,8 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     @IBAction func onPlannedExerciseClick(_ sender: Any) {
         let state = isUnplannedExerciseSwitch.isOn
         isUnplannedExerciseSwitch.setOn(!state, animated: true)
+        print("Planned Clicked")
+        chosenExerciseDetails.userMetaInfo.isPlanned=false
         
         UIView.animate(withDuration: 0.3) {
             self.lastEatenLayout.isHidden = !state
@@ -133,7 +234,8 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     @IBAction func onUnplannedExerciseClick(_ sender: Any) {
         let state = isPlannedExerciseSwitch.isOn
         isPlannedExerciseSwitch.setOn(!state, animated: true)
-        
+        chosenExerciseDetails.userMetaInfo.isPlanned=true
+
         UIView.animate(withDuration: 0.3) {
             self.lastEatenLayout.isHidden = state
         }
@@ -141,11 +243,14 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
     
     @IBAction func isBeforeMealClick(_ sender: Any) {
         let state = isAfterMealSwitch.isOn
+        print("is before/within")
+        chosenExerciseDetails.userMetaInfo.isBeforeMeal=false
         isAfterMealSwitch.setOn(!state, animated: true)
     }
     
     @IBAction func isAfterMealClick(_ sender: Any) {
         let state = isBeforeMealSwitch.isOn
+         chosenExerciseDetails.userMetaInfo.isBeforeMeal=true
         isBeforeMealSwitch.setOn(!state, animated: true)
     }
     
@@ -155,8 +260,20 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         chosenExerciseDetails.userMetaInfo.approxTime = approxExerciseTime.date
         chosenExerciseDetails.userMetaInfo.bloodGlucoseLevel = Float(bloodGlucoseTextField.text!)
         
-        print(chosenExerciseDetails)
     }
+    
+    @IBAction func timePicker(_ sender: Any) {
+     
+        let state = approxExerciseTime.date
+        print(state)
+        print(type(of:state))
+        chosenExerciseDetails.userMetaInfo.exerciseTime = state
+        print("chosen", chosenExerciseDetails.userMetaInfo.exerciseTime)
+        
+        
+    }
+    
+    
     
     func createAlert(title: String, message: String) {
         let submitAction = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in })
@@ -165,18 +282,6 @@ class ExerciseDetailsViewController: UIViewController , UIPickerViewDelegate,UIP
         alert.addAction(submitAction)
         present(alert, animated: true, completion: nil)
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Array[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Array.count
-    }
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
-    
     
     
 }

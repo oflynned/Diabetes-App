@@ -50,11 +50,10 @@ def get_recommendation():
         is_exercise_intensity = exercise_intensity in item["exercise_intensity"]
         is_exercise_duration = exercise_duration in item["exercise_duration"]
 
-        print ("exercise duration", is_exercise_duration)
+
 
         if is_exercise_type and is_exercise_intensity and is_exercise_duration:
             suggestions = item["exercise_suggestions"]
-            print ("suggestions", suggestions)
 
     groomed_suggestions = []
 
@@ -70,12 +69,16 @@ def get_recommendation():
             if param_value == exercise_genre:
                 groomed_suggestions.append(suggestion["exercise_suggestion"])
 
-            if sheet_parameter_name == "before_after_meal" or "bg_below_or_above_target_hypo_last_24hrs":
-                if exercise_meal_timing == param_value or param_value == "always":
-                    groomed_suggestions.append(suggestion["exercise_suggestion"])
-            elif sheet_parameter_name == "bg":
-                if __get_bg_level_tag(exercise_bg_level, param_value) or param_value == "always":
-                    groomed_suggestions.append(suggestion["exercise_suggestion"])
+            if sheet_parameter_name == "before_after_meal" or "bg_below_or_above_target_hypo_last_24hrs" or "bg":
+
+                if sheet_parameter_name == "bg":
+                    print ("BG")
+                    if __get_bg_level_tag(exercise_bg_level, param_value) or param_value == "always":
+                        groomed_suggestions.append(suggestion["exercise_suggestion"])
+
+                elif sheet_parameter_name == "before_after_meal" or "bg_below_or_above_target_hypo_last_24hrs":
+                    if exercise_meal_timing == param_value or param_value == "always":
+                        groomed_suggestions.append(suggestion["exercise_suggestion"])
 
         else:
             groomed_suggestions.append(suggestion["exercise_suggestion"])
@@ -85,19 +88,17 @@ def get_recommendation():
     if groomed_suggestions is not []:
         Plan.create_plan(data)
         #return groomed_suggestions
-        print ("groomed_Stuff type - ", type(groomed_suggestions))
-        print ("groomed_Stuff length- ", len(groomed_suggestions))
         return Content.get_json(groomed_suggestions)
 
     elif groomed_suggestions is []:
 
         return Content.get_json({"success": False})
 
-
 def __get_bg_level_tag(reported_bg_level, tag):
     if tag is not "always":
         stripped_tag = str(tag).replace("bg", "")
         tag_sign = stripped_tag[:1]
+        print("here!!!!")
 
         if tag_sign == "<":
             if reported_bg_level < 7 and tag == "bg<7":

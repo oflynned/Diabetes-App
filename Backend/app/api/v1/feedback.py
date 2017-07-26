@@ -6,7 +6,7 @@ from app.app import mongo
 feedback_endpoint = Blueprint("feedback", __name__)
 
 
-# POST { "plan_id": <oid>, "rating": [0 .. 4], "comment": <string>, "email": <string> }
+##  POST { "plan_id": <oid>, "rating": [0 .. 4], "comment": <string>, "email": <string> }
 @feedback_endpoint.route("/create", methods=["POST"])
 def create_feedback():
     data = request.json
