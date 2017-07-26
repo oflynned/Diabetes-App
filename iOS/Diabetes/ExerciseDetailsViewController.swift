@@ -23,7 +23,7 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
 
         let exercise_type = String(describing: chosenExerciseDetails.sport.exercise.self)
         let exercise_genre = String(describing: chosenExerciseDetails.sport.genre.self)
-        let exercise_duration = Int(chosenExerciseDetails.duration.self)
+        
         var exercise_planning = String(chosenExerciseDetails.userMetaInfo.isPlanned.self)
         var exercise_meal = String(chosenExerciseDetails.userMetaInfo.isBeforeMeal.self)
          var exercise_intensity = Int( chosenExerciseDetails.intensity.self)
@@ -32,9 +32,8 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
         
         
         var current_date = chosenExerciseDetails.userMetaInfo.approxTime
-        print("cd",current_date)
         let exercise_date = chosenExerciseDetails.userMetaInfo.exerciseTime
-        print("ed",exercise_date)
+     
         
         if(exercise_date!==nil)
         {
@@ -52,12 +51,6 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
         {
             exercise_epoch = "before"
         }
-
-        print("ep",exercise_epoch)
-
-    
-        
-        
         
         if(exercise_planning == "false"){
             exercise_planning = "planned"
@@ -86,12 +79,33 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
             exercise_intensity1 = "extremely_intense"
         }
 
+  
+         let state3 = bgTextField.text
+        let exercise_bg = Double(state3!) ?? 0.0
         
-       
-        print("====",exercise_intensity1)
-        print("====",type(of:exercise_intensity) )
-        //print("Value is \(exercise_duration1 as Int?)")
-        print(chosenExerciseDetails)
+        
+        let state4 = chosenExerciseDetails.duration
+        var exercise_duration =  Double(state4!)
+      
+        
+        if (exercise_duration<=30)
+        {
+            exercise_duration = 0
+        }
+        if (exercise_duration>30 && exercise_duration<=60)
+        {
+            exercise_duration = 1
+        }
+        if (exercise_duration>60 && exercise_duration<=150)
+        {
+            exercise_duration = 2
+        }
+        if (exercise_duration>150)
+        {
+            exercise_duration = 3
+        }
+        print("ed", exercise_duration)
+        print("ed", type(of:exercise_duration))
 
     
         
@@ -106,8 +120,8 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
                           		"exercise_intensity": exercise_intensity1,
                           		"meal_timing": exercise_meal,
                           		"exercise_genre": exercise_genre,
-                          		"exercise_duration": 0,
-                          		"bg_level":20] as [String : Any]
+                          		"exercise_duration": exercise_duration,
+                          		"bg_level":exercise_bg] as [String : Any]
         
         
         guard let url = URL(string:"https://neurobranchbeta.com/api/v1/recommendations/get") else {return}
@@ -138,7 +152,7 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
                                
                                 }
                                 else {
-                                    string4 = "\n" + string4! + ", \n" + (obj as! String)
+                                    string4 = "\n" + string4! + " \n" + (obj as! String)
                                 }
                                 
                             }
@@ -194,6 +208,7 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
     
     @IBOutlet weak var lastEatenLayout: UIStackView!
     
+    @IBOutlet weak var bgTextField: UITextField!
  
     
     override func viewDidLoad() {
@@ -203,8 +218,20 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
                 
         
         UNUserNotificationCenter.current().delegate = self
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.flexibleSpace,target:nil, action:nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem:UIBarButtonSystemItem.done,target:self, action:#selector(self.doneClicked))
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+        
+        bgTextField.inputAccessoryView = toolBar
 
         
+    }
+    
+    func doneClicked()
+    {
+        view.endEditing(true)
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -243,7 +270,7 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
     
     @IBAction func isBeforeMealClick(_ sender: Any) {
         let state = isAfterMealSwitch.isOn
-        print("is before/within")
+        //print("is before/within")
         chosenExerciseDetails.userMetaInfo.isBeforeMeal=false
         isAfterMealSwitch.setOn(!state, animated: true)
     }
@@ -265,14 +292,21 @@ class ExerciseDetailsViewController: UIViewController ,  UNUserNotificationCente
     @IBAction func timePicker(_ sender: Any) {
      
         let state = approxExerciseTime.date
-        print(state)
-        print(type(of:state))
+        //print(state)
+        //print(type(of:state))
         chosenExerciseDetails.userMetaInfo.exerciseTime = state
-        print("chosen", chosenExerciseDetails.userMetaInfo.exerciseTime)
+        //print("chosen", chosenExerciseDetails.userMetaInfo.exerciseTime)
         
         
     }
     
+    @IBAction func bgInputTextField(_ sender: Any) {
+        let state2 = bgTextField.text
+        print("state2",state2)
+        print("state2",type(of:state2))
+        
+        
+    }
     
     
     func createAlert(title: String, message: String) {
