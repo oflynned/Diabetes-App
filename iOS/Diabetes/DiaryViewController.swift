@@ -10,7 +10,11 @@ import UIKit
 import SwiftyJSON
 
 class DiaryViewController: UIViewController {
-
+    
+    var TableData:Array< String > = Array < String >()
+    
+    
+   
     @IBOutlet weak var getRequestButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,30 +28,35 @@ class DiaryViewController: UIViewController {
     }
     
     @IBAction func forceGetRequest(_ sender: Any) {
-        let myUrl = URL(string: "http://13.94.249.94/api/v1");
         
-        var request = URLRequest(url:myUrl!)
+        let parameters = ["email":"suleaa@hotmail.ie"] as [String : Any]
+
+        
+        guard let url = URL(string: "https://neurobranchbeta.com/api/v1/plans/get")else {return}
+        
+        var request = URLRequest(url:url)
         request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody =  try?JSONSerialization.data(withJSONObject: parameters, options: []) else{return}
         
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            
-            if error != nil {
-                print("error=\(String(describing: error))")
-                return
+        request.httpBody  = httpBody
+        
+        let session = URLSession.shared
+        session.dataTask(with:request){(data,response,error) in
+            if let response = response{
+                print("response",response)
             }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                
-                if let parseJSON = json {
-                    let response = parseJSON["response"] as? String
-                    self.createAlert(title: "Response", message: response!)
+            if let data = data {
+                do{
+                    let json =  try JSONSerialization.jsonObject(with: data, options: [])
+                    print("JSON", json)
+                 
+                    //print("string4",string4)
+                }catch{print(error)}
                 }
-            } catch {
-                print(error)
-            }
-        }
-        task.resume()
+            
+            
+        }.resume()
     }
     
     func createAlert(title: String, message: String) {

@@ -28,4 +28,5 @@ def get_plans():
 
 @plan_endpoint.route("/get-all", methods=["GET"])
 def get_all_plans():
-    return Content.get_json(list(mongo.db.plans.find()))
+    #return Content.get_json(list(mongo.db.plans.find()))
+    return {"blah":"blah"}
